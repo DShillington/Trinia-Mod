@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "trinia:smelter" },
+        "facing=south": { "model": "trinia:smelter", "y": 180 },
+        "facing=west":  { "model": "trinia:smelter", "y": 270 },
+        "facing=east":  { "model": "trinia:smelter", "y": 90 }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:spikes" },
+        "facing=north": { "model": "trinia:spikes" },
+        "facing=south": { "model": "trinia:spikes", "y": 180 },
+        "facing=west":  { "model": "trinia:spikes", "y": 270 },
+        "facing=east":  { "model": "trinia:spikes", "y": 90 }
+    }
+}

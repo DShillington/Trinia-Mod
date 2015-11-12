@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "trinia:triniaDirt" },
+            { "model": "trinia:triniaDirt", "y": 90 },
+            { "model": "trinia:triniaDirt", "y": 180 },
+            { "model": "trinia:triniaDirt", "y": 270 }
+        ]
+    }
+}

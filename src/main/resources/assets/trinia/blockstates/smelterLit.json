@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:smelterLit" },
+        "facing=north": { "model": "trinia:smelterLit" },
+        "facing=south": { "model": "trinia:smelterLit", "y": 180 },
+        "facing=west":  { "model": "trinia:smelterLit", "y": 270 },
+        "facing=east":  { "model": "trinia:smelterLit", "y": 90 }
+    }
+}

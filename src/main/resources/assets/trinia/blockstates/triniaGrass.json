@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "snowy=false": [
+            { "model": "trinia:triniaGrass" },
+            { "model": "trinia:triniaGrass", "y": 90 },
+            { "model": "trinia:triniaGrass", "y": 180 },
+            { "model": "trinia:triniaGrass", "y": 270 }
+        ],
+        "snowy=true":  { "model": "trinia:triniaStone" }
+    }
+}

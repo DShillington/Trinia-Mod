@@ -1,0 +1,7 @@
+{
+    "parent": "block/column_side",
+    "textures": {
+        "end": "trinia:blocks/log_red_top",
+        "side": "trinia:blocks/log_red"
+    }
+}

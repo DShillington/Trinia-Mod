@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:barrel" },
+        "facing=north": { "model": "trinia:barrel" },
+        "facing=south": { "model": "trinia:barrel", "y": 180 },
+        "facing=west":  { "model": "trinia:barrel", "y": 270 },
+        "facing=east":  { "model": "trinia:barrel", "y": 90 }
+    }
+}

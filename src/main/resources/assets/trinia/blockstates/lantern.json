@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "facing=up": { "model": "trinia:lantern" },
+        "facing=north": { "model": "trinia:lanternWall" },
+        "facing=east": { "model": "trinia:lanternWall", "y": 90 },
+        "facing=south": { "model": "trinia:lanternWall", "y": 180 },
+        "facing=west": { "model": "trinia:lanternWall", "y": 270 }
+    }
+}

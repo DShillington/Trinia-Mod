@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "moisture=0": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=1": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=2": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=3": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=4": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=5": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=6": { "model": "trinia:triniaFarmlandDry" },
+        "moisture=7": { "model": "trinia:triniaFarmlandMoist" }
+    }
+}

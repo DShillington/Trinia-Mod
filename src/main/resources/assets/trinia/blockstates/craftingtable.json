@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:craftingtable" },
+        "facing=north": { "model": "trinia:craftingtable" },
+        "facing=south": { "model": "trinia:craftingtable", "y": 180 },
+        "facing=west":  { "model": "trinia:craftingtable", "y": 270 },
+        "facing=east":  { "model": "trinia:craftingtable", "y": 90 }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:timeMachineBottom" },
+        "facing=north": { "model": "trinia:timeMachineBottom" },
+        "facing=south": { "model": "trinia:timeMachineBottom", "y": 180 },
+        "facing=west":  { "model": "trinia:timeMachineBottom", "y": 270 },
+        "facing=east":  { "model": "trinia:timeMachineBottom", "y": 90 }
+    }
+}

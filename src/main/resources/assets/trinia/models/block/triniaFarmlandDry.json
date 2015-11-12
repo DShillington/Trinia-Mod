@@ -1,0 +1,8 @@
+{
+    "parent": "block/farmland",
+    "textures": {
+        "particle": "trinia:blocks/triniaDirt",
+        "dirt": "trinia:blocks/triniaDirt",
+        "top": "trinia:blocks/triniaFarmlandDry"
+    }
+}

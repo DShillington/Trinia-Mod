@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:tombstone" },
+        "facing=north": { "model": "trinia:tombstone" },
+        "facing=south": { "model": "trinia:tombstone", "y": 180 },
+        "facing=west":  { "model": "trinia:tombstone", "y": 270 },
+        "facing=east":  { "model": "trinia:tombstone", "y": 90 }
+    }
+}

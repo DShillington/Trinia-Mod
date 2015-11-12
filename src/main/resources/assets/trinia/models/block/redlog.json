@@ -1,0 +1,8 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+        "top": "trinia:blocks/log_red_top",
+        "front": "trinia:blocks/log_red",
+        "side": "trinia:blocks/log_red"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:wattleEleven" },
+        "facing=down":  { "model": "trinia:wattleEleven", "x": 90 },
+        "facing=up":  { "model": "trinia:wattleEleven", "x": -90 },
+        "facing=west": { "model": "trinia:wattleEleven" },
+        "facing=east": { "model": "trinia:wattleEleven", "y": 180 },
+        "facing=south":  { "model": "trinia:wattleEleven", "y": 270 },
+        "facing=north":  { "model": "trinia:wattleEleven", "y": 90 }
+    }
+}

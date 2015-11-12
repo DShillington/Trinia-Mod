@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:KingChairOne" },
+        "facing=north": { "model": "trinia:KingChairOne" },
+        "facing=south": { "model": "trinia:KingChairOne", "y": 180 },
+        "facing=west":  { "model": "trinia:KingChairOne", "y": 270 },
+        "facing=east":  { "model": "trinia:KingChairOne", "y": 90 }
+    }
+}

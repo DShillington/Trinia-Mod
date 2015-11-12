@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "trinia:wattleThirteen" },
+            { "model": "trinia:wattleThirteen", "y": 90 },
+            { "model": "trinia:wattleThirteen", "y": 180 },
+            { "model": "trinia:wattleThirteen", "y": 270 }
+        ]
+    }
+}
