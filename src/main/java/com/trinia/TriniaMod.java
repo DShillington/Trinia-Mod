@@ -71,6 +71,11 @@ import com.trinia.world.biome.BiomeGenTrinia;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class TriniaMod {
 	
+	
+	
+	//TESTING TRINIA-BETA GITHUB
+	
+	
 	@Instance(Reference.MOD_ID)
 	public static TriniaMod instance;
 	
