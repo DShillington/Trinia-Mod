@@ -15,7 +15,7 @@ public class TriniaModTab extends CreativeTabs {
 
 	@Override
 	public Item getTabIconItem() {
-		return TriniaItems.SteelIngot;
+		return TriniaItems.orca;
 	}
 
 }

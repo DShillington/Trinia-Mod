@@ -8,7 +8,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
-import com.trinia.items.TriniaBiomes;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
@@ -18,6 +17,7 @@ import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
+import com.trinia.world.gen.TriniaBiomes;
 
 public class TriniaEntities {
 	

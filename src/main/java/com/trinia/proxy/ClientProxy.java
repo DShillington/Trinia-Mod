@@ -20,7 +20,6 @@ import com.trinia.TriniaRenderRegistry;
 import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.init.TriniaItems;
-import com.trinia.items.TriniaBiomes;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
@@ -30,6 +29,7 @@ import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
+import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
 	@Override

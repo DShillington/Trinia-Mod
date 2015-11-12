@@ -58,9 +58,7 @@ public class TriniaBlocks
 	//Portal Stuffs
 	//public static Block TriniaFire;
 	public static Block portalTrinia;
-	public static Block portalMedieval;
 	public static Block portalTriniaFrame;
-	public static Block portalMedievalFrame;
 	
 	public static void init()
 	{
@@ -105,10 +103,9 @@ public class TriniaBlocks
 		tinBlock = new BlockTrinia(Material.rock).setUnlocalizedName("tinBlock");
 		//hardenedBucket = new BlockHardenedBucket(Material.wood).setUnlocalizedName("hardenedBucket");
 		//Portal Stuffs
-		portalTrinia = new BlockTriniaPortal().setUnlocalizedName("portaltrinia");;
-		portalMedieval = new BlockTriniaMedieval().setUnlocalizedName("portalmedieval");
+		portalTrinia = new BlockTriniaPortal().setUnlocalizedName("portalTrinia");
+		
 		portalTriniaFrame = new BlockTriniaFrame(Material.rock).setUnlocalizedName("portalTriniaFrame");
-		portalMedievalFrame = new BlockMedievalFrame(Material.rock).setUnlocalizedName("portalMedievalFrame");
 		//TriniaFire = new BlockTriniaFire().setUnlocalizedName("fire");
 	}
 	public static void register()
@@ -154,9 +151,7 @@ public class TriniaBlocks
 		//GameRegistry.registerBlock(hardenedBucket, hardenedBucket.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
 		//Portal Stuffs
 		GameRegistry.registerBlock(portalTrinia, portalTrinia.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
-		GameRegistry.registerBlock(portalMedieval, portalMedieval.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(portalTriniaFrame, portalTriniaFrame.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
-		GameRegistry.registerBlock(portalMedievalFrame, portalMedievalFrame.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		//GameRegistry.registerBlock(TriniaFire, TriniaFire.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);		
 	}
 	public static void registerTileEntitys()
@@ -208,9 +203,7 @@ public class TriniaBlocks
 		RegisterRender(tinBlock);
 		//portal
 		RegisterRender(portalTrinia);
-		RegisterRender(portalMedieval);
 		RegisterRender(portalTriniaFrame);
-		RegisterRender(portalMedievalFrame);
 		//RegisterRender(TriniaFire);
 	}
 	

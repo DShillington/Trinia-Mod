@@ -12,7 +12,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.trinia.TriniaMod;
-import com.trinia.items.TriniaBiomes;
+import com.trinia.world.gen.TriniaBiomes;
 
 public class WorldProviderMod extends WorldProvider{
 

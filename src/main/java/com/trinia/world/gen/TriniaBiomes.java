@@ -1,4 +1,4 @@
-package com.trinia.items;
+package com.trinia.world.gen;
 
 import com.trinia.TriniaMod;
 import com.trinia.world.biome.BiomeGenMedieval;
@@ -18,19 +18,18 @@ public class TriniaBiomes {
 	}
 	
 	public static BiomeGenBase biomeTrinia;
-	public static BiomeGenBase biomeTriniaMedieval;
+
 	public static void initializeBiome(){
 		
 		biomeTrinia = new BiomeGenTrinia(TriniaMod.DIM_TRINIA_ID, false).setBiomeName("Trinia");
-		biomeTriniaMedieval = new BiomeGenMedieval(TriniaMod.DIM_MEDIEVAL_ID).setBiomeName("Trinia Medieval");
-	}
+		}
 	
 	public static void registerBiome(){
 		BiomeDictionary.registerBiomeType(biomeTrinia, Type.MAGICAL);
-		BiomeDictionary.registerBiomeType(biomeTriniaMedieval, Type.MAGICAL);
+
 		
 		BiomeManager.addSpawnBiome(biomeTrinia);
-		BiomeManager.addSpawnBiome(biomeTriniaMedieval);
+	
 		
 	}
 	

@@ -4,10 +4,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import com.trinia.blocks.BlockTriniaPortal;
 import com.trinia.blocks.TriniaBlocks;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPortal;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
@@ -17,10 +17,9 @@ import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.Teleporter;
 import net.minecraft.world.WorldServer;
 
-public class TeleporterDimensionMod extends Teleporter {
+public class TeleporterDimensionMod{
 
 	private final WorldServer worldServerInstance;
     /** A private Random() function in Teleporter */
@@ -36,14 +35,14 @@ public class TeleporterDimensionMod extends Teleporter {
 
     public TeleporterDimensionMod(WorldServer worldIn)
     {
-		super(worldIn);
+		super();
         this.worldServerInstance = worldIn;
         this.random = new Random(worldIn.getSeed());
     }
 
     public void placeInPortal(Entity entityIn, float rotationYaw)
     {
-        if (this.worldServerInstance.provider.getDimensionId() != 1)
+        if (this.worldServerInstance.provider.getDimensionId() != 0)
         {
             if (!this.placeInExistingPortal(entityIn, rotationYaw))
             {
@@ -91,11 +90,8 @@ public class TeleporterDimensionMod extends Teleporter {
 
         if (this.destinationCoordinateCache.containsItem(k))
         {
-            Teleporter.PortalPosition portalposition = (Teleporter.PortalPosition)this.destinationCoordinateCache.getValueByKey(k);
             d0 = 0.0D;
-            object = portalposition;
-            portalposition.lastUpdateTime = this.worldServerInstance.getTotalWorldTime();
-            flag1 = false;
+             flag1 = false;
         }
         else
         {
@@ -135,7 +131,6 @@ public class TeleporterDimensionMod extends Teleporter {
         {
             if (flag1)
             {
-                this.destinationCoordinateCache.add(k, new Teleporter.PortalPosition((BlockPos)object, this.worldServerInstance.getTotalWorldTime()));
                 this.destinationCoordinateKeys.add(Long.valueOf(k));
             }
 
@@ -439,7 +434,7 @@ public class TeleporterDimensionMod extends Teleporter {
             }
         }
 		
-        IBlockState iblockstate = TriniaBlocks.portalTrinia.getDefaultState().withProperty(BlockPortal.AXIS, l5 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
+        IBlockState iblockstate = TriniaBlocks.portalTrinia.getDefaultState().withProperty(BlockTriniaPortal.AXIS, l5 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
 		
 		
         for (j3 = 0; j3 < 4; ++j3)
@@ -485,13 +480,8 @@ public class TeleporterDimensionMod extends Teleporter {
             while (iterator.hasNext())
             {
                 Long olong = (Long)iterator.next();
-                Teleporter.PortalPosition portalposition = (Teleporter.PortalPosition)this.destinationCoordinateCache.getValueByKey(olong.longValue());
-
-                if (portalposition == null || portalposition.lastUpdateTime < j)
-                {
-                    iterator.remove();
-                    this.destinationCoordinateCache.remove(olong.longValue());
-                }
+            
+               
             }
         }
     }

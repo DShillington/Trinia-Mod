@@ -3,17 +3,14 @@ package com.trinia.blocks;
 import java.util.Random;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockBreakable;
-import net.minecraft.block.BlockPortal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -24,47 +21,29 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockTriniaPortal extends BlockBreakable
+
+public class BlockTriniaPortal extends Block
 {
-    public static final PropertyEnum AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class, new EnumFacing.Axis[] {EnumFacing.Axis.X, EnumFacing.Axis.Z});
-    private static final String __OBFID = "CL_00000284";
 
-    public BlockTriniaPortal()
-    {
-        super(Material.portal, false);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.X));
-        this.setTickRandomly(true);
-    }
+public static final PropertyEnum AXIS = PropertyEnum.create("axis", EnumFacing.Axis.class, new EnumFacing.Axis[] {EnumFacing.Axis.X, EnumFacing.Axis.Z});
 
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        super.updateTick(worldIn, pos, state, rand);
-
-        if (worldIn.provider.isSurfaceWorld() && worldIn.getGameRules().getGameRuleBooleanValue("doMobSpawning") && rand.nextInt(2000) < worldIn.getDifficulty().getDifficultyId())
-        {
-            int i = pos.getY();
-            BlockPos blockpos1;
-
-            for (blockpos1 = pos; !World.doesBlockHaveSolidTopSurface(worldIn, blockpos1) && blockpos1.getY() > 0; blockpos1 = blockpos1.down())
-            {
-                ;
-            }
-
-            if (i > 0 && !worldIn.getBlockState(blockpos1.up()).getBlock().isNormalCube())
-            {
-                Entity entity = ItemMonsterPlacer.spawnCreature(worldIn, 57, (double)blockpos1.getX() + 0.5D, (double)blockpos1.getY() + 1.1D, (double)blockpos1.getZ() + 0.5D);
-
-                if (entity != null)
-                {
-                    entity.timeUntilPortal = entity.getPortalCooldown();
-                }
-            }
-        }
-    }
+public BlockTriniaPortal()
+{
+	super(Material.portal);
+this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Z));
+this.setTickRandomly(true);
+this.setHardness(-1.0F);
+this.setLightLevel(0.75F);
+}
 
     public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state)
     {
         return null;
+    }
+	
+	public boolean isOpaqueCube()
+    {
+        return false;
     }
 
     public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
@@ -95,61 +74,135 @@ public class BlockTriniaPortal extends BlockBreakable
     {
         return false;
     }
-
-    public boolean func_176548_d(World worldIn, BlockPos p_176548_2_)
+	
+	 public int getMetaFromState(IBlockState state)
     {
-        BlockTriniaPortal.Size size = new BlockTriniaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.X);
-
-        if (size.func_150860_b() && size.field_150864_e == 5)
-        {
-            size.func_150859_c();
-            return true;
-        }
-        else
-        {
-        	BlockTriniaPortal.Size size1 = new BlockTriniaPortal.Size(worldIn, p_176548_2_, EnumFacing.Axis.Z);
-
-            if (size1.func_150860_b() && size1.field_150864_e == 5)
-            {
-                size1.func_150859_c();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        return getMetaForAxis((EnumFacing.Axis)state.getValue(AXIS));
     }
-
-    /**
-     * Called when a neighboring block changes.
-     */
-    public void onNeighborBlockChange(World worldIn, BlockPos pos, IBlockState state, Block neighborBlock)
+	
+	public IBlockState getStateFromMeta(int meta)
     {
-        EnumFacing.Axis axis = (EnumFacing.Axis)state.getValue(AXIS);
-        BlockTriniaPortal.Size size;
-
-        if (axis == EnumFacing.Axis.X)
-        {
-            size = new BlockTriniaPortal.Size(worldIn, pos, EnumFacing.Axis.X);
-
-            if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g)
-            {
-                worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-            }
-        }
-        else if (axis == EnumFacing.Axis.Z)
-        {
-            size = new BlockTriniaPortal.Size(worldIn, pos, EnumFacing.Axis.Z);
-
-            if (!size.func_150860_b() || size.field_150864_e < size.field_150868_h * size.field_150862_g)
-            {
-                worldIn.setBlockState(pos, Blocks.air.getDefaultState());
-            }
-        }
+        return this.getDefaultState().withProperty(AXIS, (meta & 3) == 2 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
     }
+/**
+* If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
+*/
+/**
+* Checks to see if this location is valid to create a portal and will return True if it does. Args: world, x, y, z
+*/
+public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4)
+{
+byte b0 = 0;
+byte b1 = 0;
+if (getBlock(par1World,par2 - 1, par3, par4) == TriniaBlocks.portalTriniaFrame || getBlock(par1World,par2 + 1, par3, par4) == TriniaBlocks.portalTriniaFrame)
+{
+b0 = 6;
+}
+if (getBlock(par1World,par2, par3, par4 - 1) == TriniaBlocks.portalTriniaFrame || getBlock(par1World,par2, par3, par4 + 1) == TriniaBlocks.portalTriniaFrame)
+{
+b1 = 6;
+}
+if (b0 == b1)
+{
+return false;
+}
+else
+{
+if (getBlock(par1World,par2 - b0, par3, par4 - b1) == Blocks.air)
+{
+par2 -= b0;
+par4 -= b1;
+}
+int l;
+int i1;
+for (l = -1; l <= 2; ++l)
+{
+for (i1 = -1; i1 <= 3; ++i1)
+{
+         boolean flag = l == -1 || l == 2 || i1 == -1 || i1 == 3;
+         if (l != -1 && l != 2 || i1 != -1 && i1 != 3)
+         {
+         Block j1 = getBlock(par1World,par2 + b0 * l, par3 + i1, par4 + b1 * l);
+         if (flag)
+         {
+         if (j1 != TriniaBlocks.portalTriniaFrame)
+         {
+         return false;
+         }
+         }
 
-    @SideOnly(Side.CLIENT)
+         }
+}
+}
+for (l = 0; l < 2; ++l)
+{
+for (i1 = 0; i1 < 3; ++i1)
+{
+		 IBlockState iblockstate = this.getDefaultState().withProperty(BlockTriniaPortal.AXIS, b0 == 0 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
+         par1World.setBlockState(new BlockPos(par2 + b0 * l, par3 + i1, par4 + b1 * l), iblockstate, 3);
+}
+}
+return true;
+}
+}
+/**
+* Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
+* their own) Args: x, y, z, neighbor blockID
+*/
+public void onNeighborBlockChange(World par1World, BlockPos pos, IBlockState state, Block neighborBlock)
+{
+	
+int par2 = pos.getX();
+int par3 = pos.getY();
+int par4 = pos.getZ();
+	
+byte b0 = 0;
+byte b1 = 1;
+if (getBlock(par1World,par2 - 1, par3, par4) == this || getBlock(par1World,par2 + 1, par3, par4) == this)
+{
+b0 = 1;
+b1 = 0;
+}
+int i1;
+for (i1 = par3; getBlock(par1World,par2, i1 - 1, par4) == this; --i1)
+{
+;
+}
+if (getBlock(par1World,par2, i1 - 1, par4) != TriniaBlocks.portalTriniaFrame)
+{
+par1World.setBlockToAir(new BlockPos(par2, par3, par4));
+}
+else
+{
+int j1;
+for (j1 = 1; j1 < 4 && getBlock(par1World,par2, i1 + j1, par4) == this; ++j1)
+{
+;
+}
+if (j1 == 3 && getBlock(par1World,par2, i1 + j1, par4) == TriniaBlocks.portalTriniaFrame)
+{
+boolean flag = getBlock(par1World,par2 - 1, par3, par4) == this || getBlock(par1World,par2 + 1, par3, par4) == this;
+boolean flag1 = getBlock(par1World,par2, par3, par4 - 1) == this || getBlock(par1World,par2, par3, par4 + 1) == this;
+if (flag && flag1)
+{
+         par1World.setBlockToAir(new BlockPos(par2, par3, par4));
+}
+else
+{
+         if ((getBlock(par1World,par2 + b0, par3, par4 + b1) != TriniaBlocks.portalTriniaFrame || getBlock(par1World,par2 - b0, par3, par4 - b1) != this) && (getBlock(par1World,par2 - b0, par3, par4 - b1) != TriniaBlocks.portalTriniaFrame || getBlock(par1World,par2 + b0, par3, par4 + b1) != this))
+         {
+         par1World.setBlockToAir(new BlockPos(par2, par3, par4));
+         }
+}
+}
+else
+{
+par1World.setBlockToAir(new BlockPos(par2, par3, par4));
+}
+}
+}
+
+@SideOnly(Side.CLIENT)
     public boolean shouldSideBeRendered(IBlockAccess worldIn, BlockPos pos, EnumFacing side)
     {
         EnumFacing.Axis axis = null;
@@ -183,249 +236,131 @@ public class BlockTriniaPortal extends BlockBreakable
         boolean flag5 = flag2 || flag3 || axis == EnumFacing.Axis.Z;
         return flag4 && side == EnumFacing.WEST ? true : (flag4 && side == EnumFacing.EAST ? true : (flag5 && side == EnumFacing.NORTH ? true : flag5 && side == EnumFacing.SOUTH));
     }
-
-    /**
-     * Returns the quantity of items to drop on block destruction.
-     */
-    public int quantityDropped(Random random)
-    {
-        return 0;
-    }
-
-    /**
-     * Called When an Entity Collided with the Block
-     */
-    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn)
-    {
-        if (entityIn.ridingEntity == null && entityIn.riddenByEntity == null)
-        {
-            entityIn.setInPortal();
-        }
-    }
-
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
-    public IBlockState getStateFromMeta(int meta)
-    {
-        return this.getDefaultState().withProperty(AXIS, (meta & 3) == 2 ? EnumFacing.Axis.Z : EnumFacing.Axis.X);
-    }
-
-    @SideOnly(Side.CLIENT)
+	
+	 @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
         return EnumWorldBlockLayer.TRANSLUCENT;
     }
-
-    @SideOnly(Side.CLIENT)
-    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
-    {
-        if (rand.nextInt(100) == 0)
-        {
-            worldIn.playSound((double)pos.getX() + 0.5D, (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D, "portal.portal", 0.5F, rand.nextFloat() * 0.4F + 0.8F, false);
-        }
-
-        for (int i = 0; i < 4; ++i)
-        {
-            double d0 = (double)((float)pos.getX() + rand.nextFloat());
-            double d1 = (double)((float)pos.getY() + rand.nextFloat());
-            double d2 = (double)((float)pos.getZ() + rand.nextFloat());
-            double d3 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
-            double d4 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
-            double d5 = ((double)rand.nextFloat() - 0.5D) * 0.5D;
-            int j = rand.nextInt(2) * 2 - 1;
-
-            if (worldIn.getBlockState(pos.west()).getBlock() != this && worldIn.getBlockState(pos.east()).getBlock() != this)
-            {
-                d0 = (double)pos.getX() + 0.5D + 0.25D * (double)j;
-                d3 = (double)(rand.nextFloat() * 2.0F * (float)j);
-            }
-            else
-            {
-                d2 = (double)pos.getZ() + 0.5D + 0.25D * (double)j;
-                d5 = (double)(rand.nextFloat() * 2.0F * (float)j);
-            }
-
-            worldIn.spawnParticle(EnumParticleTypes.PORTAL, d0, d1, d2, d3, d4, d5, new int[0]);
-        }
-    }
-
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
-    public int getMetaFromState(IBlockState state)
-    {
-        return getMetaForAxis((EnumFacing.Axis)state.getValue(AXIS));
-    }
-
-    @SideOnly(Side.CLIENT)
-    public Item getItem(World worldIn, BlockPos pos)
-    {
-        return null;
-    }
-
-    protected BlockState createBlockState()
+	
+	  protected BlockState createBlockState()
     {
         return new BlockState(this, new IProperty[] {AXIS});
     }
 
-    public static class Size
-        {
-            private final World world;
-            private final EnumFacing.Axis axis;
-            private final EnumFacing field_150866_c;
-            private final EnumFacing field_150863_d;
-            private int field_150864_e = 0;
-            private BlockPos field_150861_f;
-            private int field_150862_g;
-            private int field_150868_h;
-            private static final String __OBFID = "CL_00000285";
-
-            public Size(World worldIn, BlockPos p_i45694_2_, EnumFacing.Axis p_i45694_3_)
-            {
-                this.world = worldIn;
-                this.axis = p_i45694_3_;
-
-                if (p_i45694_3_ == EnumFacing.Axis.X)
-                {
-                    this.field_150863_d = EnumFacing.EAST;
-                    this.field_150866_c = EnumFacing.WEST;
-                }
-                else
-                {
-                    this.field_150863_d = EnumFacing.NORTH;
-                    this.field_150866_c = EnumFacing.SOUTH;
-                }
-
-                for (BlockPos blockpos1 = p_i45694_2_; p_i45694_2_.getY() > blockpos1.getY() - 21 && p_i45694_2_.getY() > 0 && this.func_150857_a(worldIn.getBlockState(p_i45694_2_.down()).getBlock()); p_i45694_2_ = p_i45694_2_.down())
-                {
-                    ;
-                }
-
-                int i = this.func_180120_a(p_i45694_2_, this.field_150863_d) - 1;
-
-                if (i >= 0)
-                {
-                    this.field_150861_f = p_i45694_2_.offset(this.field_150863_d, i);
-                    this.field_150868_h = this.func_180120_a(this.field_150861_f, this.field_150866_c);
-
-                    if (this.field_150868_h < 2 || this.field_150868_h > 21)
-                    {
-                        this.field_150861_f = null;
-                        this.field_150868_h = 0;
-                    }
-                }
-
-                if (this.field_150861_f != null)
-                {
-                    this.field_150862_g = this.func_150858_a();
-                }
-            }
-
-            protected int func_180120_a(BlockPos p_180120_1_, EnumFacing p_180120_2_)
-            {
-                int i;
-
-                for (i = 0; i < 22; ++i)
-                {
-                    BlockPos blockpos1 = p_180120_1_.offset(p_180120_2_, i);
-
-                    if (!this.func_150857_a(this.world.getBlockState(blockpos1).getBlock()) || this.world.getBlockState(blockpos1.down()).getBlock() != TriniaBlocks.portalTriniaFrame)
-                    {
-                        break;
-                    }
-                }
-
-                Block block = this.world.getBlockState(p_180120_1_.offset(p_180120_2_, i)).getBlock();
-                return block == TriniaBlocks.portalTriniaFrame ? i : 0;
-            }
-
-            protected int func_150858_a()
-            {
-                int i;
-                label56:
-
-                for (this.field_150862_g = 0; this.field_150862_g < 21; ++this.field_150862_g)
-                {
-                    for (i = 0; i < this.field_150868_h; ++i)
-                    {
-                        BlockPos blockpos = this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g);
-                        Block block = this.world.getBlockState(blockpos).getBlock();
-
-                        if (!this.func_150857_a(block))
-                        {
-                            break label56;
-                        }
-
-                        if (block == TriniaBlocks.portalTrinia)
-                        {
-                            ++this.field_150864_e;
-                        }
-
-                        if (i == 0)
-                        {
-                            block = this.world.getBlockState(blockpos.offset(this.field_150863_d)).getBlock();
-
-                            if (block != TriniaBlocks.portalTriniaFrame)
-                            {
-                                break label56;
-                            }
-                        }
-                        else if (i == this.field_150868_h - 1)
-                        {
-                            block = this.world.getBlockState(blockpos.offset(this.field_150866_c)).getBlock();
-
-                            if (block != TriniaBlocks.portalTriniaFrame)
-                            {
-                                break label56;
-                            }
-                        }
-                    }
-                }
-
-                for (i = 0; i < this.field_150868_h; ++i)
-                {
-                    if (this.world.getBlockState(this.field_150861_f.offset(this.field_150866_c, i).up(this.field_150862_g)).getBlock() != TriniaBlocks.portalTriniaFrame)
-                    {
-                        this.field_150862_g = 0;
-                        break;
-                    }
-                }
-
-                if (this.field_150862_g <= 21 && this.field_150862_g >= 3)
-                {
-                    return this.field_150862_g;
-                }
-                else
-                {
-                    this.field_150861_f = null;
-                    this.field_150868_h = 0;
-                    this.field_150862_g = 0;
-                    return 0;
-                }
-            }
-
-            protected boolean func_150857_a(Block p_150857_1_)
-            {
-                return p_150857_1_.getMaterial() == Material.air || p_150857_1_ == TriniaBlocks.portalTrinia || p_150857_1_ == TriniaBlocks.portalTrinia;
-            }
-
-            public boolean func_150860_b()
-            {
-                return this.field_150861_f != null && this.field_150868_h >= 2 && this.field_150868_h <= 21 && this.field_150862_g >= 3 && this.field_150862_g <= 21;
-            }
-
-            public void func_150859_c()
-            {
-                for (int i = 0; i < this.field_150868_h; ++i)
-                {
-                    BlockPos blockpos = this.field_150861_f.offset(this.field_150866_c, i);
-
-                    for (int j = 0; j < this.field_150862_g; ++j)
-                    {
-                        this.world.setBlockState(blockpos.up(j), TriniaBlocks.portalTrinia.getDefaultState().withProperty(BlockTriniaPortal.AXIS, this.axis), 2);
-                    }
-                }
-            }
-        }
+//@SideOnly(Side.CLIENT)
+/**
+* Returns true if the given side of this block type should be rendered, if the adjacent block is at the given
+* coordinates. Args: blockAccess, x, y, z, side
+*/
+/*public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
+{
+if (getBlock(par1IBlockAccess,par2, par3, par4) == this)
+{
+return false;
 }
+else
+{
+boolean flag = getBlock(par1IBlockAccess,par2 - 1, par3, par4) == this && getBlock(par1IBlockAccess,par2 - 2, par3, par4) != this;
+boolean flag1 = getBlock(par1IBlockAccess,par2 + 1, par3, par4) == this && getBlock(par1IBlockAccess,par2 + 2, par3, par4) != this;
+boolean flag2 = getBlock(par1IBlockAccess,par2, par3, par4 - 1) == this && getBlock(par1IBlockAccess,par2, par3, par4 - 2) != this;
+boolean flag3 = getBlock(par1IBlockAccess,par2, par3, par4 + 1) == this && getBlock(par1IBlockAccess,par2, par3, par4 + 2) != this;
+boolean flag4 = flag || flag1;
+boolean flag5 = flag2 || flag3;
+return flag4 && par5 == 4 ? true : (flag4 && par5 == 5 ? true : (flag5 && par5 == 2 ? true : flag5 && par5 == 3));
+}
+}*/
+/**
+* Returns the quantity of items to drop on block destruction.
+*/
+public int quantityDropped(Random par1Random)
+{
+return 0;
+}
+/**
+* Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
+*/
+//@Override
+public void onEntityCollidedWithBlock(World par1World, BlockPos pos, IBlockState state, Entity par5Entity)
+{
+	
+	int par2 = pos.getX();
+int par3 = pos.getY();
+int par4 = pos.getZ();
+	
+	
+	//par1World.createExplosion((Entity)null, par2, par3, par4, 0.004F, true);
+if (par5Entity.ridingEntity == null && par5Entity.riddenByEntity == null && par5Entity instanceof EntityPlayerMP){
+			 
+         EntityPlayerMP thePlayer = (EntityPlayerMP)par5Entity;
+         if (thePlayer.timeUntilPortal > 0)
+         {
+                 thePlayer.timeUntilPortal = 10;
+         }
+         else if (thePlayer.dimension != 6)
+         {
+                 thePlayer.timeUntilPortal = 10;
+                 thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 6);
+         }
+         else {
+                 thePlayer.timeUntilPortal = 10;
+                 thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
+         }
+         }
+}
+	
+@SideOnly(Side.CLIENT)
+/**
+* A randomly called display update to be able to add particles or other items for display
+*/
+public void randomDisplayTick(World par1World, BlockPos pos, IBlockState state, Random par5Random)
+{
+	
+int par2 = pos.getX();
+int par3 = pos.getY();
+int par4 = pos.getZ();
+	
+if (par5Random.nextInt(100) == 0)
+{
+par1World.playSound((double)par2 + 0.5D, (double)par3 + 0.5D, (double)par4 + 0.5D, "", 0.5F, par5Random.nextFloat() * 0.4F + 0.8F, false);
+}
+for (int l = 0; l < 4; ++l)
+{
+double d0 = (double)((float)par2 + par5Random.nextFloat());
+double d1 = (double)((float)par3 + par5Random.nextFloat());
+double d2 = (double)((float)par4 + par5Random.nextFloat());
+double d3 = 0.0D;
+double d4 = 0.0D;
+double d5 = 0.0D;
+int i1 = par5Random.nextInt(2) * 2 - 1;
+d3 = ((double)par5Random.nextFloat() - 0.5D) * 0.5D;
+d4 = ((double)par5Random.nextFloat() - 0.5D) * 0.5D;
+d5 = ((double)par5Random.nextFloat() - 0.5D) * 0.5D;
+if (getBlock(par1World,par2 - 1, par3, par4) != this && getBlock(par1World,par2 + 1, par3, par4) != this)
+{
+d0 = (double)par2 + 0.5D + 0.25D * (double)i1;
+d3 = (double)(par5Random.nextFloat() * 2.0F * (float)i1);
+}
+else
+{
+d2 = (double)par4 + 0.5D + 0.25D * (double)i1;
+d5 = (double)(par5Random.nextFloat() * 2.0F * (float)i1);
+}
+par1World.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, d0, d1, d2, d3, d4, d5);
+}
+}
+@SideOnly(Side.CLIENT)
+/**
+* only called by clickMiddleMouseButton , and passed to inventory.setCurrentItem (along with isCreative)
+*/
+public int idPicked(World par1World, int par2, int par3, int par4)
+{
+return 0;
+}
+
+public static Block getBlock(IBlockAccess world, int i, int j, int k){
+	return world.getBlockState(new BlockPos(i,j,k)).getBlock();
+}
+
+}
+//portal block

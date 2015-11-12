@@ -54,7 +54,6 @@ import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
 import com.trinia.init.TriniaItems;
-import com.trinia.items.TriniaBiomes;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
@@ -67,6 +66,7 @@ import com.trinia.mob.model.ModelMermaid;
 import com.trinia.proxy.CommonProxy;
 import com.trinia.world.WorldProviderMod;
 import com.trinia.world.biome.BiomeGenTrinia;
+import com.trinia.world.gen.TriniaBiomes;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class TriniaMod {
@@ -85,10 +85,7 @@ public class TriniaMod {
 	public static int mobid3 = 2;
 	
 	//Dimension ID
-	public static int DIM_TRINIA_ID = 5;
-	public static int DIM_MEDIEVAL_ID = 6;
-	public static int DIM_FUTURISTIC_ID = 7;
-	
+	public static int DIM_TRINIA_ID = 6;
 	public Random ChunkGenRand;
 	public int ChunkGenRandNum = 0;
 	
