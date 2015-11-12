@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.trinia.TriniaMod;
-import com.trinia.init.TriniaItems;
+import com.trinia.items.TriniaItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

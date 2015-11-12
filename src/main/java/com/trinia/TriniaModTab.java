@@ -1,7 +1,7 @@
 package com.trinia;
 
 
-import com.trinia.init.TriniaItems;
+import com.trinia.items.TriniaItems;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;

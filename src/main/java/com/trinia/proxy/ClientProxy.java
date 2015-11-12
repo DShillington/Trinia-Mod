@@ -1,6 +1,7 @@
 package com.trinia.proxy;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,7 +20,7 @@ import com.trinia.TriniaRecipes;
 import com.trinia.TriniaRenderRegistry;
 import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.TriniaBlocks;
-import com.trinia.init.TriniaItems;
+import com.trinia.items.TriniaItems;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
@@ -47,7 +48,7 @@ public class ClientProxy extends CommonProxy{
 	{
 		return Minecraft.getMinecraft().thePlayer;
 	}
-
+	public ModelBiped getArmorModel(int id){ return null; } 
 	@Override
 	public boolean isSinglePlayer()
 	{

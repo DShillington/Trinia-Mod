@@ -1,6 +1,7 @@
 package com.trinia.proxy;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
@@ -10,6 +11,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.trinia.blocks.BlockTriniaSmelter;
+import com.trinia.items.ItemAmuletArmor;
+import com.trinia.model.ModelAmulet;
 import com.trinia.world.gen.TriniaWorldGen;
 
 public class CommonProxy implements ProxyInterface
@@ -24,6 +27,13 @@ public class CommonProxy implements ProxyInterface
 	{
 		
 	}
+private static final ModelAmulet tutChest = new ModelAmulet(); 
+	
+	public ModelBiped getArmorModel(int id){ switch (id) { 
+	case 0: return tutChest; 
+	default: break; } 
+	return tutChest; //default, if whenever you should have passed on a wrong id 
+	} 
 	public static Block blockInventoryAdvanced;  // this holds the unique instance of your block
 
 	public static void preInitCommon()
