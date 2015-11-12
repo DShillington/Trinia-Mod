@@ -97,7 +97,6 @@ public class TriniaMod {
 	public static CommonProxy proxy;
 
 	public static CreativeTabs TriniaMainTab = new TriniaModTab("tabTriniaMain");
-	public static CreativeTabs TriniaMedievalTab = new TriniaWattleTab("tabTriniaMedieval");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
 
 	public static String ASSET_PREFIX = "trinia";

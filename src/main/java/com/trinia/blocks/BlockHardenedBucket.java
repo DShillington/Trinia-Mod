@@ -61,7 +61,7 @@ public class BlockHardenedBucket extends Block
 	}
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
-        return Item.getItemFromBlock(TriniaBlocks.tombstone);
+        return Item.getItemFromBlock(TriniaBlocks.adimiteOre);
     }
 
     public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)

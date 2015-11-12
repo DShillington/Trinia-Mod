@@ -22,22 +22,6 @@ public class TriniaRecipes
 				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.copperBlock),"CCC", "CCC", "CCC",'C', TriniaItems.copperIngot);
 				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.silverBlock),"CCC", "CCC", "CCC",'C', TriniaItems.silverIngot);
 				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.tinBlock),"CCC", "CCC", "CCC",'C', TriniaItems.tinIngot);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.lantern),"III", "ITI", "III",'I', TriniaItems.SteelIngot,'T', Blocks.torch);
-				
-				//Wattle
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleEight, 4),"CCC", "SSS", "CCC",'C', Items.clay_ball,'S', Items.stick);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleOne, 1),"SSS", "SWS", "SSS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleTwo, 1),"SSS", "SSS", "SWS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleThree, 3),"SSS", "SWS", "WSW",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleFour, 4),"SWS", "SWS", "WSW",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleFive, 2),"SSS", "SWS", "SWS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleSix,2),"SWS", "SWS", "SSS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleSeven,3),"SWS", "SSS", "WSW",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleNine,3),"SWS", "SWS", "SWS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleTen,3),"SSS", "WWW", "SSS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleThirteen,5),"SWS", "WWW", "SWS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleFourteen,5),"SSS", "WWW", "SSS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
-				GameRegistry.addRecipe(new ItemStack(TriniaBlocks.wattleFifteen, 4),"WSW", "SWS", "SWS",'S', Items.stick,'W', TriniaBlocks.wattleEight);
 				//Crafting Table
 				//GameRegistry.addRecipe(new ItemStack(TriniaBlocks.craftingTable),"WCW", " R ", "RRR",'C', Blocks.crafting_table,'R', TriniaBlocks.triniaCobblestone,'W', Blocks.planks);
 				//Smelting
