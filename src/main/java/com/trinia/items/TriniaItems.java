@@ -35,7 +35,7 @@ public class TriniaItems {
 	public static ToolMaterial TriniaHalberd = EnumHelper.addToolMaterial("TriniaHalberd", 3, 2500, 15.0F, 3.0F, 20);
 	//Armor
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
-	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("Amulet", "trinia:Amulet", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	
 	//-Weapons-
 	//Steel
@@ -234,7 +234,7 @@ public class TriniaItems {
 		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaToolsTab);
 	
-		triniaAmulet = (new ItemAmuletArmor("triniaAmulet", TriniaAmuletArmor, 2, 1).setUnlocalizedName("Amulet")).setCreativeTab(TriniaMod.TriniaMainTab);
+		triniaAmulet = (new ItemAmulet().setUnlocalizedName("amulet")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 	}
 	
@@ -253,7 +253,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSteelLeggings = new ItemSteelArmor("steelLeggings", TriniaSteelArmor, 2, 2), "steelLeggings");
 		GameRegistry.registerItem(triniaSteelBoots = new ItemSteelArmor("steelBoots", TriniaSteelArmor, 1, 3), "steelBoots");       
 		
-		GameRegistry.registerItem(triniaAmulet = new ItemAmuletArmor("Amulet", TriniaAmuletArmor, 2, 1), "triniaAmulet");
+		GameRegistry.registerItem(triniaAmulet = new ItemAmulet(), "amulet");
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(copperIngot, copperIngot.getUnlocalizedName().substring(5));
