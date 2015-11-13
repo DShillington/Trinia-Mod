@@ -107,6 +107,7 @@ public class TriniaMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
 		FMLCommonHandler.instance().bus().register(new GuiHandler());
@@ -124,7 +125,27 @@ public class TriniaMod {
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
 
-		proxy_common.preInit();
+		proxy_common.preInit(event);
+	}
+	
+	
+	
+	@EventHandler
+	public void Init(FMLInitializationEvent event)
+	{		
+		proxy_common.registerRenders();
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		proxy_common.registerRenders();
+	}
+	
+
+	public void loadEntities() 
+	{
+		
 	}
 	
 	public void generateSurface(World world, Random rand, int i, int j)
@@ -145,32 +166,5 @@ public class TriniaMod {
 		List<BiomeGenBase> list = new ArrayList<BiomeGenBase>(Arrays.asList(v));
 		list.removeAll(Collections.singleton(null));
 		return list.toArray(new BiomeGenBase[list.size()]);
-	}
-	
-	@EventHandler
-	public void Init(FMLInitializationEvent event)
-	{
-		
-		proxy_common.registerRenders();
-
-		
-		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
-	}
-	
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event)
-	{
-		proxy_common.registerRenders();
-	}
-	
-	@EventHandler
-	 public void load(FMLInitializationEvent event)
-	 {
-	
-	 }
-
-	public void loadEntities() 
-	{
-		
 	}
 }
