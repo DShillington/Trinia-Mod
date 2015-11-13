@@ -1,5 +1,7 @@
 package com.trinia.web;
-
+/**
+ * @author Magik
+ */
 public class Version implements Comparable<Version>
 	{
 	    private String version;

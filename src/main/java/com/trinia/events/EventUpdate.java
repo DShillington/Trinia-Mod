@@ -21,7 +21,6 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 			EntityPlayer player = (EntityPlayer) e.player;
 			if(UpdateHandler.show)
 			{
-				player.addChatMessage(new ChatComponentText(UpdateHandler.updateStatus));
 			}
 		}
 }

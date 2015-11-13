@@ -80,12 +80,6 @@ public class ClientProxy extends CommonProxy{
 		return false;
 	}
 
-	@Override
-	public void preInit()
-	{
-		MinecraftForge.EVENT_BUS.register(this);
-	}
-
 	@SubscribeEvent
 	public void onClientWorldLoad(WorldEvent.Load event)
 	{

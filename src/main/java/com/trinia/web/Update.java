@@ -1,5 +1,7 @@
 package com.trinia.web;
-
+/**
+ * @author Magik
+ */
 public class Update {
 	   private boolean isAvailable;
 	    private String version;

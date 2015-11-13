@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
-
+/**
+ * @author Magik
+ */
 public class UpdateChecker extends Thread
 {
     public Update update;

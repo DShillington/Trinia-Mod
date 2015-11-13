@@ -32,14 +32,10 @@ public static void init() {
 	LogWrapper.info("Trinia Mod is up to date!");
 	}else {
 	show = true;
-	updateStatus = "§c[Trinia Mod] out of date! Your Version: " + currentVersion + " §cLatest Version: " + newestVersion;
-	LogWrapper.info("Trinia Mod out of date! Your Version: " + currentVersion + " Latest Version: " + newestVersion);
 	}
 	}else {
 	show = true;
-	updateStatus = "[Trinia Mod] Failed to connect to check if update is available!";
-	LogWrapper.info("Failed to connect to check if update is available!");
-}
+	}
 }
 
 private static void getNewestVersion() {
