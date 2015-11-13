@@ -18,6 +18,7 @@ public class ConfigurationHandler
 	public static boolean canDisplay = true;
 	public static boolean hasDisplayedOnce = false;
 	public static boolean api_debug = true;
+    public static boolean checkForUpdates;
 
 	public static void init(File file)
 	{
@@ -30,7 +31,9 @@ public class ConfigurationHandler
 
 	public static void loadConfig(boolean shouldChange)
 	{
-		api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, true, "If true, prints out information about RecipeAPI. Recommended 'true' for people trying to add custom recipe.");
+		 checkForUpdates = getBoolean("Check For Updates", true, "If false, the Trinia Mod will not check for updates.");       
+	
+		 api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, true, "If true, prints out information about RecipeAPI. Recommended 'true' for people trying to add custom recipe.");
 		canDisplay = config.getBoolean("display", CATEGORY_SETTINGS, canDisplay, "Enabled or disable the welcome message");
 		items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");
 		config.addCustomCategoryComment(CATEGORY_RECIPE_SETTINGS, "Enabled or disable the default recipes");
@@ -57,4 +60,8 @@ public class ConfigurationHandler
 			loadConfig(true);
 		}
 	}
+	  private static boolean getBoolean(String name, boolean defualt, String desc)
+	    {
+	        return config.getBoolean(name, "Options", defualt, desc);
+	    }
 }
