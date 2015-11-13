@@ -125,7 +125,7 @@ public class TriniaMod {
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
 
-		proxy_common.preInit(event);
+
 	}
 	
 	
