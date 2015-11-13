@@ -21,7 +21,6 @@ import com.trinia.blocks.gui.GuiHandler;
 import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
-import com.trinia.events.TriniaWelcomeHandler;
 import com.trinia.events.UpdateHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
@@ -83,7 +82,6 @@ public class TriniaMod {
 		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
 		FMLCommonHandler.instance().bus().register(new GuiHandler());
 		FMLCommonHandler.instance().bus().register(new EventUpdate());
-		FMLCommonHandler.instance().bus().register(new TriniaWelcomeHandler());
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		UpdateHandler.init();
 		TriniaBlocks.init();

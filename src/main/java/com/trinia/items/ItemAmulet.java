@@ -1,10 +1,8 @@
 package com.trinia.items;
 
-<<<<<<< HEAD
+
 import java.util.List;
 
-=======
->>>>>>> origin/master
 import com.trinia.TriniaMod;
 
 import net.minecraft.block.state.IBlockState;
@@ -20,10 +18,8 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
-<<<<<<< HEAD
 import net.minecraftforge.fml.relauncher.SideOnly;
-=======
->>>>>>> origin/master
+
 
 public class ItemAmulet extends ItemArmor {
 
@@ -54,13 +50,11 @@ public class ItemAmulet extends ItemArmor {
         }
 	return var1;
 }
-<<<<<<< HEAD
+
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
     {
     	info.add("Place this amulet in the ChestPlate Slot.");
     }
-    
-=======
->>>>>>> origin/master
+
 }
