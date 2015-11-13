@@ -65,7 +65,6 @@ import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
 import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
-import com.trinia.web.Update;
 import com.trinia.world.WorldProviderMod;
 import com.trinia.world.biome.BiomeGenTrinia;
 import com.trinia.world.gen.TriniaBiomes;
@@ -74,8 +73,7 @@ import com.trinia.world.gen.TriniaBiomes;
 public class TriniaMod {
 	
 	
-	  public static Update latestUpdate;
-
+	
 	//TESTING TRINIA-BETA GITHUB
 	
 	
