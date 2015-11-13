@@ -36,7 +36,6 @@ import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
 	
-	private static final ModelAmulet modelAmulet = new ModelAmulet(1.0F);
 	@Override
 	public void registerRenders() 
 	{
@@ -47,19 +46,7 @@ public class ClientProxy extends CommonProxy{
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceDragon.class, new RenderIceDragon(Minecraft.getMinecraft().getRenderManager(), new ModelIceDragon(), 2){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/dragon/ice/dragon_ice.png");}});
 	}
 	
-	@Override
-	public ModelBiped getArmorModel(String par1String)
-	{
-		if (par1String.equals("amulet"))
-		{
-			return modelAmulet;
-		}
-		
-		else
-		{
-			return null;
-		}
-	}
+	
 	
 	
 	@Override

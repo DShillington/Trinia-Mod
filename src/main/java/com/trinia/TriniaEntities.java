@@ -44,7 +44,7 @@ public class TriniaEntities {
 		
 		EntityRegistry.addSpawn(EntityMermaid.class, 30, 1, 3, EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
 		EntityRegistry.addSpawn(EntityBlemmyae.class, 31, 2, 4, EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityIceDragon.class, 32, 3, 5, EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
+		EntityRegistry.addSpawn(EntityIceDragon.class, 20, 1, 1, EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
 		}
 	
 }

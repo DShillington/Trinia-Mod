@@ -18,8 +18,8 @@ public class WorldProviderMod extends WorldProvider{
 
     public void registerWorldChunkManager(){
         this.worldChunkMgr = new WorldChunkManagerHell(TriniaBiomes.biomeTrinia, TriniaMod.DIM_TRINIA_ID);
-        this.isHellWorld = false;
-        this.hasNoSky = true;
+        this.isHellWorld = true;
+        this.hasNoSky = false;
         this.dimensionId = TriniaMod.DIM_TRINIA_ID;
     }
     public BiomeGenBase getBiome()
@@ -34,9 +34,12 @@ public class WorldProviderMod extends WorldProvider{
 
     @SideOnly(Side.CLIENT)
 	public Vec3 getFogColor(float par1, float par2){
-	    return new Vec3(1.0D,1.0D,8.0D);
+    	return new Vec3(0.0D,5.0D,5.0D);
     }
-    public IChunkProvider createChunkGenerator()
+    public float getCloudHeight(){ 
+    	return 0.5F;     
+    	} 
+     public IChunkProvider createChunkGenerator()
     {
         return new ChunkProviderTrinia(this.worldObj, this.worldObj.getSeed());
     }
@@ -44,10 +47,6 @@ public class WorldProviderMod extends WorldProvider{
     public String getWelcomeMessage()
     {
         if (this instanceof WorldProviderMod)
-        {
-            return "Entering Trinia";
-        }
-        else if (this instanceof WorldProviderMod)
         {
             return "Entering Trinia";
         }
@@ -65,10 +64,7 @@ public class WorldProviderMod extends WorldProvider{
         {
             return "Leaving Trinia.. Already?";
         }
-        else if (this instanceof WorldProviderMod)
-        {
-            return "Leaving Trinia.. Already?";
-        }
+        
         return null;
     }
 
@@ -77,11 +73,11 @@ public class WorldProviderMod extends WorldProvider{
     }
 
     public boolean canCoordinateBeSpawn(int par1, int par2){
-        return true;
+        return false;
     }
 
     public boolean canRespawnHere(){
-        return true;
+        return false;
     }
 
     @SideOnly(Side.CLIENT)

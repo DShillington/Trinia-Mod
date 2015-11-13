@@ -1,66 +1,48 @@
 package com.trinia.items;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
-import com.trinia.TriniaModTab;
 
-import net.minecraft.client.model.ModelBiped;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityBeacon;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.relauncher.Side;
 
-public class ItemAmulet extends ItemArmor
-{
-	public ItemAmulet()
-	{
-		super(ItemArmor.ArmorMaterial.GOLD, 4, 1);
-		this.setMaxDamage(0);
-		this.setCreativeTab(TriniaMod.TriniaMainTab);
-	}
+public class ItemAmulet extends ItemArmor {
 
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, int layer)
-	{
-		return Reference.MOD_ID + ":textures/models/armor/Amulet.png";
-	}
-
-	public ModelBiped getArmorModel(EntityLivingBase entityLiving, ItemStack itemstack, int armorSlot) 
-	{
-		ModelBiped armorModel = null;
-
-		if (itemstack != null)
-		{
-			if (itemstack.getItem() instanceof ItemAmulet)
-			{
-				int type = ((ItemArmor)itemstack.getItem()).armorType;
-
-				armorModel = TriniaMod.proxy_client.getArmorModel("amulet");
-			}
-
-			if (armorModel != null)
-			{
-				armorModel.bipedHead.showModel = armorSlot == 0;
-				armorModel.bipedHeadwear.showModel = armorSlot == 0;
-				armorModel.bipedBody.showModel = armorSlot == 1;
-				armorModel.bipedRightArm.showModel = armorSlot == 1;
-				armorModel.bipedLeftArm.showModel = armorSlot == 1;
-				armorModel.bipedRightLeg.showModel = armorSlot == 2;
-				armorModel.bipedLeftLeg.showModel = armorSlot == 2;
-
-				armorModel.isSneak = entityLiving.isSneaking();
-				armorModel.isRiding = entityLiving.isRiding();
-				armorModel.isChild = entityLiving.isChild();
-				if (entityLiving instanceof EntityPlayer)
-				{
-					ItemStack itemstack1 = entityLiving.getHeldItem();
-					armorModel.aimedBow = ((EntityPlayer)entityLiving).getItemInUseDuration() > 0 && itemstack1 != null && itemstack1.getItemUseAction() == EnumAction.BOW;
-					armorModel.heldItemRight = ((EntityPlayer)entityLiving).getItemInUseDuration() > 0 && itemstack1 != null && itemstack1.getItemUseAction() == EnumAction.BLOCK ? 3 : (entityLiving.getEquipmentInSlot(0) != null ? 1 : 0);
-				}
-				return armorModel;
-			}
-		}
-		return null;
-	}
+    public ItemAmulet(String unlocalizedName, ArmorMaterial material, int renderIndex, int armorType) {
+        super(material, renderIndex, armorType);
+        this.setUnlocalizedName(unlocalizedName);
+        this.setCreativeTab(TriniaMod.TriniaMainTab);
+    }
+    
+    @Override
+    public ItemStack onItemRightClick(ItemStack var1, World var2, EntityPlayer var3){
+    if (var3.ridingEntity == null && var3.riddenByEntity == null && var3 instanceof EntityPlayerMP){
+		 
+        EntityPlayerMP thePlayer = (EntityPlayerMP)var3;
+        if (thePlayer.timeUntilPortal > 0)
+        {
+                thePlayer.timeUntilPortal = 10;
+        }
+        else if (thePlayer.dimension != 6)
+        {
+                thePlayer.timeUntilPortal = 10;
+                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 6);
+        }
+        else {
+                thePlayer.timeUntilPortal = 10;
+                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
+        }
+        }
+	return var1;
+}
 }

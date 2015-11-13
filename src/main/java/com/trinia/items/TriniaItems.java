@@ -234,7 +234,7 @@ public class TriniaItems {
 		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaToolsTab);
 	
-		triniaAmulet = (new ItemAmulet().setUnlocalizedName("amulet")).setCreativeTab(TriniaMod.TriniaMainTab);
+		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 2, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 	}
 	
@@ -253,7 +253,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSteelLeggings = new ItemSteelArmor("steelLeggings", TriniaSteelArmor, 2, 2), "steelLeggings");
 		GameRegistry.registerItem(triniaSteelBoots = new ItemSteelArmor("steelBoots", TriniaSteelArmor, 1, 3), "steelBoots");       
 		
-		GameRegistry.registerItem(triniaAmulet = new ItemAmulet(), "amulet");
+		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 2, 1), "triniaAmulet");
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(copperIngot, copperIngot.getUnlocalizedName().substring(5));
