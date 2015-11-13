@@ -6,7 +6,7 @@ item.steelingot.name=Steel Ingot
 item.copperIngot.name=Copper Ingot
 item.silverIngot.name=Silver Ingot
 item.tinIngot.name=Tin Ingot
-item.adimite.name=Adimite Shard
+item.adimite.name=Adimite Ingot
 
 item.steelBattleAxe.name=Battle Axe
 item.steelBastardSword.name=Bastard Sword
@@ -31,9 +31,9 @@ item.tinPickaxe.name=Tin Pickaxe
 item.tinAxe.name=Tin Axe
 item.tinSword.name=Tin Sword
 item.tinSpade.name=Tin Shovel
-item.bridroneIngot.name=Bridrone
-item.orca.name=Orca
-item.orisone.name=Orisone
+item.bridroneIngot.name=Bridrone Ingot
+item.orca.name=Orca Ball
+item.orisone.name=Orizone Capsule
 item.moltenSteel.name=Bucket of Steel
 item.moltenSilver.name=Bucket of Silver
 item.moltenTin.name=Bucket of Tin
@@ -65,6 +65,8 @@ item.steelChestplate.name=Steel Chestplate
 item.steelLeggings.name=Steel Leggings
 item.steelBoots.name=Steel Boots
 
+item.triniaAmulet.name=Amulate
+
 entity.mermaid.name=Mermaid
 
 tile.log.red.name=Red Wood
@@ -92,7 +94,7 @@ tile.triniaStoneBrick.name=Stonebrick
 tile.adimiteOre.name=Adimite Ore
 tile.bridroneOre.name=Bridrone Ore
 tile.orcaOre.name=Orca Ore
-tile.orisoneOre.name=Orisone Ore
+tile.orisoneOre.name=Orizone Ore
 tile.triniaBubble.name=Trinia Dimension Trophy
 tile.redLeaves.name=Red Leaves
 tile.greenLeaves.name=Green Leaves

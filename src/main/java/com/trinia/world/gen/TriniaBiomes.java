@@ -1,7 +1,6 @@
 package com.trinia.world.gen;
 
 import com.trinia.TriniaMod;
-import com.trinia.world.biome.BiomeGenMedieval;
 import com.trinia.world.biome.BiomeGenTrinia;
 
 import net.minecraft.world.biome.BiomeGenBase;

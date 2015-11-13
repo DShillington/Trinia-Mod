@@ -2,7 +2,14 @@ package com.trinia.world.biome;
 
 import java.util.Random;
 
+import com.trinia.mob.entity.EntityBlemmyae;
+import com.trinia.mob.entity.EntityIceDragon;
+import com.trinia.mob.entity.EntityMermaid;
+
 import net.minecraft.block.BlockSilverfish;
+import net.minecraft.entity.monster.EntityGhast;
+import net.minecraft.entity.monster.EntityMagmaCube;
+import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
@@ -32,6 +39,13 @@ public class BiomeGenTrinia extends BiomeGenBase
         this.field_150636_aF = 1;
         this.field_150637_aG = 2;
         this.field_150638_aH = this.field_150635_aE;
+        this.spawnableMonsterList.clear();
+        this.spawnableCreatureList.clear();
+        this.spawnableWaterCreatureList.clear();
+        this.spawnableCaveCreatureList.clear();
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityMermaid.class, 10, 1, 1));
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityBlemmyae.class, 10, 1, 1));
+        this.spawnableMonsterList.add(new BiomeGenBase.SpawnListEntry(EntityIceDragon.class, 1, 1, 1));
 
         if (p_i45373_2_)
         {

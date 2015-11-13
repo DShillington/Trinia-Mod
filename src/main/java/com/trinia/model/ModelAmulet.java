@@ -6,7 +6,6 @@ import net.minecraft.entity.Entity;
 
 public class ModelAmulet extends ModelBiped
 {
-  //fields
    
     ModelRenderer ChainRightOne;
     ModelRenderer ChainLeftOne;
