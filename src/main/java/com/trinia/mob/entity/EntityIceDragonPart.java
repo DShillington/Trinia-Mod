@@ -8,7 +8,7 @@ import net.minecraft.util.DamageSource;
 public class EntityIceDragonPart extends Entity
 {
     /** The dragon entity this dragon part belongs to */
-    public final EntityMultiPart EntityIceDragonObj;
+    public final EntityIceDragon EntityIceDragonObj;
     public final String partName;
     private static final String __OBFID = "CL_00001657";
 
@@ -40,13 +40,7 @@ public class EntityIceDragonPart extends Entity
         return true;
     }
 
-    /**
-     * Called when the entity is attacked.
-     */
-    public boolean attackEntityFrom(DamageSource source, float amount)
-    {
-        return this.isEntityInvulnerable(source) ? false : this.EntityIceDragonObj.attackEntityFromPart(this, source, amount);
-    }
+   
 
     /**
      * Returns true if Entity argument is equal to this Entity
