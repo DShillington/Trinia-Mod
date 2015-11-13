@@ -20,6 +20,7 @@ import com.trinia.TriniaRecipes;
 import com.trinia.TriniaRenderRegistry;
 import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.TriniaBlocks;
+import com.trinia.items.ItemAmulet;
 import com.trinia.items.TriniaItems;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
@@ -30,19 +31,37 @@ import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
+import com.trinia.model.ModelAmulet;
 import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
+	
+	private static final ModelAmulet modelAmulet = new ModelAmulet(1.0F);
 	@Override
 	public void registerRenders() 
 	{
 		TriniaBlocks.registerRenders();
 		TriniaItems.registerRenders();
-		
 		RenderingRegistry.registerEntityRenderingHandler(EntityMermaid.class, new RenderMermaid(Minecraft.getMinecraft().getRenderManager(), new ModelMermaid(), 0){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/mermaid/mermaid.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityBlemmyae.class, new RenderBlemmyae(Minecraft.getMinecraft().getRenderManager(), new ModelBlemmyae(), 1){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/blemmyae/ModelBlemmyae.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityIceDragon.class, new RenderIceDragon(Minecraft.getMinecraft().getRenderManager(), new ModelIceDragon(), 2){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/dragon/ice/dragon_ice.png");}});
 	}
+	
+	@Override
+	public ModelBiped getArmorModel(String par1String)
+	{
+		if (par1String.equals("amulet"))
+		{
+			return modelAmulet;
+		}
+		
+		else
+		{
+			return null;
+		}
+	}
+	
+	
 	@Override
 	public EntityPlayer getClientPlayer()
 	{
@@ -91,4 +110,6 @@ public class ClientProxy extends CommonProxy{
 	{
 		
 	}
+	
+	
 }

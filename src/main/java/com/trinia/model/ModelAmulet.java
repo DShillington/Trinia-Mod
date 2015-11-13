@@ -18,8 +18,9 @@ public class ModelAmulet extends ModelBiped
     ModelRenderer StoneHorizontal;
     ModelRenderer StoneVertical;
   
-  public ModelAmulet()
+  public ModelAmulet(float f)
   {
+	  super(f, 0, 64,64);
     textureWidth = 64;
     textureHeight = 64;
     
@@ -78,7 +79,15 @@ public class ModelAmulet extends ModelBiped
       StoneVertical.setTextureSize(64, 64);
       StoneVertical.mirror = true;
       setRotation(StoneVertical, 0.7853982F, 0F, 1.570796F);
-      
+     
+      this.bipedBody.addChild(ChainRightOne);
+		this.bipedBody.addChild(ChainRightTwo);
+		this.bipedBody.addChild(ChainRightThree);
+		this.bipedBody.addChild(BaseTop);
+		this.bipedBody.addChild(BaseMiddle);
+		this.bipedBody.addChild(BaseBottom);
+		this.bipedBody.addChild(StoneHorizontal);
+		this.bipedBody.addChild(StoneVertical);
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
@@ -86,15 +95,6 @@ public class ModelAmulet extends ModelBiped
     super.render(entity, f, f1, f2, f3, f4, f5);
     setRotationAngles(f, f1, f2, f3, f4, f5, entity);
 
-    ChainRightOne.render(f5);
-    ChainLeftOne.render(f5);
-    ChainRightTwo.render(f5);
-    ChainRightThree.render(f5);
-    BaseTop.render(f5);
-    BaseMiddle.render(f5);
-    BaseBottom.render(f5);
-    StoneHorizontal.render(f5);
-    StoneVertical.render(f5);
   }
   
   private void setRotation(ModelRenderer model, float x, float y, float z)

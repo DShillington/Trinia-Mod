@@ -63,7 +63,9 @@ import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
+import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
+import com.trinia.web.Update;
 import com.trinia.world.WorldProviderMod;
 import com.trinia.world.biome.BiomeGenTrinia;
 import com.trinia.world.gen.TriniaBiomes;
@@ -72,7 +74,7 @@ import com.trinia.world.gen.TriniaBiomes;
 public class TriniaMod {
 	
 	
-	
+	public static Update latestUpdate;
 	//TESTING TRINIA-BETA GITHUB
 	
 	
@@ -91,8 +93,10 @@ public class TriniaMod {
 	
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
-	public static CommonProxy proxy;
-
+	
+	public static CommonProxy proxy_common;
+    public static ClientProxy proxy_client;
+    
 	public static CreativeTabs TriniaMainTab = new TriniaModTab("tabTriniaMain");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
 
@@ -118,7 +122,7 @@ public class TriniaMod {
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
 
-		proxy.preInit();
+		proxy_common.preInit();
 	}
 	
 	public void generateSurface(World world, Random rand, int i, int j)
@@ -144,9 +148,8 @@ public class TriniaMod {
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
-		TriniaMod.proxy.registerRenders();
 		
-		proxy.registerRenders();
+		proxy_common.registerRenders();
 
 		
 		NetworkRegistry.INSTANCE.registerGuiHandler(instance, new GuiHandler());
@@ -155,7 +158,7 @@ public class TriniaMod {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		proxy.registerRenders();
+		proxy_common.registerRenders();
 	}
 	
 	@EventHandler
