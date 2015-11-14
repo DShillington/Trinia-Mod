@@ -1,29 +1,18 @@
 package com.trinia.items;
 
-<<<<<<< HEAD
+
 import java.util.List;
 
-=======
->>>>>>> origin/master
 import com.trinia.TriniaMod;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityBeacon;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldServer;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
-<<<<<<< HEAD
 import net.minecraftforge.fml.relauncher.SideOnly;
-=======
->>>>>>> origin/master
+
 
 public class ItemAmulet extends ItemArmor {
 
@@ -54,13 +43,20 @@ public class ItemAmulet extends ItemArmor {
         }
 	return var1;
 }
-<<<<<<< HEAD
-    @SideOnly(Side.CLIENT)
+
+    @SuppressWarnings("unchecked")
+	@SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
     {
     	info.add("Place this amulet in the ChestPlate Slot.");
+    	info.add("Right Click to teleport to Trinia.");
+    	info.add("§4 *** Abilities ***");
+    	info.add("");
+    	info.add("§a * Cloaking Ability");
+    	info.add("§a * Healing Factor");
+    	info.add("");
+    	info.add("§9 +10 Sword Damage");
+    	info.add("§9 +5 Punch Damage");
     }
-    
-=======
->>>>>>> origin/master
+
 }

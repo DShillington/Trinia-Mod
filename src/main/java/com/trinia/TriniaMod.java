@@ -21,7 +21,6 @@ import com.trinia.blocks.gui.GuiHandler;
 import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
-import com.trinia.events.TriniaWelcomeHandler;
 import com.trinia.events.UpdateHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
@@ -56,6 +55,8 @@ public class TriniaMod {
 	public static int mobid = 0;
 	public static int mobid2 = 1;
 	public static int mobid3 = 2;
+	public static int mobid4 = 3;
+	public static int mobid5 = 4;
 	
 	//Dimension ID
 	public static int DIM_TRINIA_ID = 6;
@@ -65,8 +66,7 @@ public class TriniaMod {
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	
-	public static CommonProxy proxy_common;
-    public static ClientProxy proxy_client;
+	public static CommonProxy proxy;
     
 	public static CreativeTabs TriniaMainTab = new TriniaModTab("tabTriniaMain");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
@@ -77,46 +77,28 @@ public class TriniaMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-
-		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
-		FMLCommonHandler.instance().bus().register(new GuiHandler());
-		FMLCommonHandler.instance().bus().register(new EventUpdate());
-		FMLCommonHandler.instance().bus().register(new TriniaWelcomeHandler());
-		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-		UpdateHandler.init();
-		TriniaBlocks.init();
-		TriniaBlocks.register();
-		TriniaItems.init();
-		TriniaItems.register();
-		TriniaTileEntities.register();
-		TriniaBiomes.init();
-		TriniaRecipes.loadRecipes();
-		TriniaEntities.loadEntities();	
-		TriniaRenderRegistry.loadEntities();
-
-
+		proxy.preInit(event);	
 	}
-	
-	
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{		
-		proxy_common.registerRenders();
+		proxy.registerRenders();
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		proxy_common.registerRenders();
+		proxy.registerRenders();
 	}
 	
 
-	public void loadEntities() 
-	{
-		
-	}
+	
+	
+	
+	
+	
+	
 	
 	public void generateSurface(World world, Random rand, int i, int j)
 	{
