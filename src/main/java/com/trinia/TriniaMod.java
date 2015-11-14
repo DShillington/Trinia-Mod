@@ -77,7 +77,28 @@ public class TriniaMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+<<<<<<< HEAD
 		proxy.preInit(event);	
+=======
+
+		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
+		FMLCommonHandler.instance().bus().register(new GuiHandler());
+		FMLCommonHandler.instance().bus().register(new EventUpdate());
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		UpdateHandler.init();
+		TriniaBlocks.init();
+		TriniaBlocks.register();
+		TriniaItems.init();
+		TriniaItems.register();
+		TriniaTileEntities.register();
+		TriniaBiomes.init();
+		TriniaRecipes.loadRecipes();
+		TriniaEntities.loadEntities();	
+		TriniaRenderRegistry.loadEntities();
+
+
+>>>>>>> origin/master
 	}
 	
 	@EventHandler
