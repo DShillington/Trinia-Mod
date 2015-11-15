@@ -44,12 +44,8 @@ public class ItemAmulet extends ItemArmor {
 	return var1;
 }
 
-<<<<<<< HEAD
     @SuppressWarnings("unchecked")
 	@SideOnly(Side.CLIENT)
-=======
-    @SideOnly(Side.CLIENT)
->>>>>>> origin/master
     public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
     {
     	info.add("Place this amulet in the ChestPlate Slot.");

@@ -2,6 +2,8 @@ package com.trinia.events;
  
 import java.util.regex.Pattern;
 
+import javax.swing.JList;
+
 import com.trinia.TriniaMod;
 import com.trinia.web.Update;
 
@@ -65,6 +67,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 		      
 		        }
 			
+		
 		}
 		
 		
