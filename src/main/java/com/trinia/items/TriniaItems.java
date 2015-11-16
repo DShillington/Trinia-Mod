@@ -8,6 +8,7 @@ import com.trinia.blocks.TriniaBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
@@ -234,7 +235,7 @@ public class TriniaItems {
 		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaToolsTab);
 	
-		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 2, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaMainTab);
+		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 	}
 	
@@ -253,7 +254,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSteelLeggings = new ItemSteelArmor("steelLeggings", TriniaSteelArmor, 2, 2), "steelLeggings");
 		GameRegistry.registerItem(triniaSteelBoots = new ItemSteelArmor("steelBoots", TriniaSteelArmor, 1, 3), "steelBoots");       
 		
-		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 2, 1), "triniaAmulet");
+		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1), "triniaAmulet");
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(copperIngot, copperIngot.getUnlocalizedName().substring(5));
@@ -368,7 +369,6 @@ public class TriniaItems {
 		registerRender(triniaSteelChestplate);
 		registerRender(triniaSteelLeggings);
 		registerRender(triniaSteelBoots);
-		
 		registerRender(triniaAmulet);
 		
 		//-Tool Parts-
@@ -394,6 +394,7 @@ public class TriniaItems {
 	
 	public static void registerRender(Item item)
 	{
+		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
-	}
+		}
 }

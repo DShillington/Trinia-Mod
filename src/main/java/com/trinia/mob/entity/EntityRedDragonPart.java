@@ -5,18 +5,18 @@ import net.minecraft.entity.IEntityMultiPart;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 
-public class EntityIceDragonPart extends Entity
+public class EntityRedDragonPart extends Entity
 {
     /** The dragon entity this dragon part belongs to */
-    public final EntityIceDragon EntityIceDragonObj;
+    public final EntityRedDragon EntityRedDragonObj;
     public final String partName;
     private static final String __OBFID = "CL_00001657";
 
-    public EntityIceDragonPart(EntityIceDragon entityIceDragon, String partName, float base, float sizeHeight)
+    public EntityRedDragonPart(EntityRedDragon entityRedDragon, String partName, float base, float sizeHeight)
     {
-        super(entityIceDragon.getWorld());
+        super(entityRedDragon.getWorld());
         this.setSize(base, sizeHeight);
-        this.EntityIceDragonObj = entityIceDragon;
+        this.EntityRedDragonObj = entityRedDragon;
         this.partName = partName;
     }
 
@@ -47,6 +47,6 @@ public class EntityIceDragonPart extends Entity
      */
     public boolean isEntityEqual(Entity entityIn)
     {
-        return this == entityIn || this.EntityIceDragonObj == entityIn;
+        return this == entityIn || this.EntityRedDragonObj == entityIn;
     }
 }

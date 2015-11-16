@@ -40,21 +40,21 @@ import net.minecraft.util.Vec3;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
-public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, IMob
+public class EntityRedDragon extends EntityLiving implements IEntityMultiPart, IMob
 {
     public double targetX;
     public double targetY;
     public double targetZ;
     public double[][] ringBuffer = new double[64][3];
     public int ringBufferIndex = -1;
-    public EntityIceDragonPart[] dragonPartArray;
-    public EntityIceDragonPart dragonPartHead;
-    public EntityIceDragonPart dragonPartBody;
-    public EntityIceDragonPart dragonPartTail1;
-    public EntityIceDragonPart dragonPartTail2;
-    public EntityIceDragonPart dragonPartTail3;
-    public EntityIceDragonPart dragonPartWing1;
-    public EntityIceDragonPart dragonPartWing2;
+    public EntityRedDragonPart[] dragonPartArray;
+    public EntityRedDragonPart dragonPartHead;
+    public EntityRedDragonPart dragonPartBody;
+    public EntityRedDragonPart dragonPartTail1;
+    public EntityRedDragonPart dragonPartTail2;
+    public EntityRedDragonPart dragonPartTail3;
+    public EntityRedDragonPart dragonPartWing1;
+    public EntityRedDragonPart dragonPartWing2;
     public float prevAnimTime;
     public float animTime;
     public boolean forceNewTarget;
@@ -63,10 +63,10 @@ public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, I
     public int deathTicks;
     private static final String __OBFID = "CL_00001659";
 
-    public EntityIceDragon(World worldIn)
+    public EntityRedDragon(World worldIn)
     {
         super(worldIn);
-        this.dragonPartArray = new EntityIceDragonPart[] {this.dragonPartHead = new EntityIceDragonPart(this, "head", 6.0F, 6.0F), this.dragonPartBody = new EntityIceDragonPart(this, "body", 8.0F, 8.0F), this.dragonPartTail1 = new EntityIceDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartTail2 = new EntityIceDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartTail3 = new EntityIceDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartWing1 = new EntityIceDragonPart(this, "wing", 4.0F, 4.0F), this.dragonPartWing2 = new EntityIceDragonPart(this, "wing", 4.0F, 4.0F)};
+        this.dragonPartArray = new EntityRedDragonPart[] {this.dragonPartHead = new EntityRedDragonPart(this, "head", 6.0F, 6.0F), this.dragonPartBody = new EntityRedDragonPart(this, "body", 8.0F, 8.0F), this.dragonPartTail1 = new EntityRedDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartTail2 = new EntityRedDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartTail3 = new EntityRedDragonPart(this, "tail", 4.0F, 4.0F), this.dragonPartWing1 = new EntityRedDragonPart(this, "wing", 4.0F, 4.0F), this.dragonPartWing2 = new EntityRedDragonPart(this, "wing", 4.0F, 4.0F)};
         this.setHealth(this.getMaxHealth());
         this.setSize(16.0F, 8.0F);
         this.noClip = false;
@@ -323,7 +323,7 @@ public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, I
 
             for (int j = 0; j < 3; ++j)
             {
-            	EntityIceDragonPart entitydragonpart = null;
+            	EntityRedDragonPart entitydragonpart = null;
 
                 if (j == 0)
                 {
@@ -378,7 +378,7 @@ public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, I
         return (float)MathHelper.wrapAngleTo180_double(p_70973_1_);
     }
 
-    public boolean attackEntityFromPart(EntityIceDragonPart p_70965_1_, DamageSource p_70965_2_, float p_70965_3_)
+    public boolean attackEntityFromPart(EntityRedDragonPart p_70965_1_, DamageSource p_70965_2_, float p_70965_3_)
     {
         if (p_70965_1_ != this.dragonPartHead)
         {
@@ -461,7 +461,7 @@ public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, I
 	}
 	class AILookAround extends EntityAIBase
     {
-        private EntityIceDragon field_179472_a = EntityIceDragon.this;
+        private EntityRedDragon field_179472_a = EntityRedDragon.this;
         private static final String __OBFID = "CL_00002217";
 
         public AILookAround()
@@ -503,7 +503,7 @@ public class EntityIceDragon extends EntityLiving implements IEntityMultiPart, I
 
     class AIRandomFly extends EntityAIBase
     {
-        private EntityIceDragon field_179454_a = EntityIceDragon.this;
+        private EntityRedDragon field_179454_a = EntityRedDragon.this;
         private static final String __OBFID = "CL_00002214";
 
         public AIRandomFly()
