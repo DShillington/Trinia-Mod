@@ -39,22 +39,8 @@ public class CommonProxy implements ProxyInterface
 
 	public void preInit(FMLPreInitializationEvent event) {
 	
-		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
-	    FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
-	  	FMLCommonHandler.instance().bus().register(new GuiHandler());
-		FMLCommonHandler.instance().bus().register(new EventUpdate());
-		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-		UpdateHandler.init();
-		TriniaBlocks.init();
-		TriniaBlocks.register();
-		TriniaItems.init();
-		TriniaItems.register();
-		TriniaTileEntities.register();
-		TriniaBiomes.init();
-		TriniaRecipes.loadRecipes();
-		TriniaEntities.loadEntities();	
-		TriniaRenderRegistry.loadEntities();
+
     }
 
     public void postInit(FMLPostInitializationEvent event) {

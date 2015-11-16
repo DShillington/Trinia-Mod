@@ -89,11 +89,7 @@ public class EntityTownsmen extends EntityAnimal
 
     protected Item getDropItem()
     {
-<<<<<<< HEAD
         return Items.stick;
-=======
-        return Items.apple;
->>>>>>> origin/master
     }
 
 

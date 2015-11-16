@@ -77,9 +77,7 @@ public class TriniaMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
-<<<<<<< HEAD
 		proxy.preInit(event);	
-=======
 
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
@@ -97,8 +95,6 @@ public class TriniaMod {
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
 
-
->>>>>>> origin/master
 	}
 	
 	@EventHandler
