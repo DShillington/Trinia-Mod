@@ -1,17 +1,34 @@
 {
-    "parent": "builtin/generated",
+    "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "layer0": "trinia:items/castSword"
+        "0": "trinia:items/Cast_Side",
+        "1": "trinia:items/cast_Sword",
+        "2": "trinia:items/Cast_Bottom"
     },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 0.0, 0.0, 0.0 ], 
+            "to": [ 16.0, 1.0, 16.0 ], 
+            "faces": {
+                "north": { "texture": "#0", "uv": [ 0.0, 15.0, 16.0, 16.0 ] },
+                "east": { "texture": "#0", "uv": [ 0.0, 15.0, 16.0, 16.0 ] },
+                "south": { "texture": "#0", "uv": [ 0.0, 15.0, 16.0, 16.0 ] },
+                "west": { "texture": "#0", "uv": [ 0.0, 15.0, 16.0, 16.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] },
+                "down": { "texture": "#2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+            }
+        }
+    ],
     "display": {
         "thirdperson": {
-            "rotation": [ -90, 0, 0 ],
-            "translation": [ 0, 1, -3 ],
-            "scale": [ 0.55, 0.55, 0.55 ]
+            "rotation": [ 180, 0, 0],
+            "translation": [ -0, -0, -1 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
         },
         "firstperson": {
-            "rotation": [ 0, -135, 25 ],
-            "translation": [ 0, 4, 2 ],
+            "rotation": [ -90, 0, 25 ],
+            "translation": [ 3, 4, -3 ],
             "scale": [ 1.7, 1.7, 1.7 ]
         }
     }

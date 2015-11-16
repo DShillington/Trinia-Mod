@@ -58,6 +58,7 @@ item.tinSpadeHead.name=Tin Shovel Head
 item.tinSwordHandle.name=Tin Sword Handle
 item.castPickaxe.name=Pickaxe Cast
 item.castAxe.name=Axe Cast
+item.castBlank.name=Blank Cast
 item.castSpade.name=Shovel Cast
 item.castSword.name=Sword Cast
 item.castSwordHandle.name=Sword Handle Cast
@@ -65,7 +66,7 @@ item.steelHelmet.name=Steel Helmet
 item.steelChestplate.name=Steel Chestplate
 item.steelLeggings.name=Steel Leggings
 item.steelBoots.name=Steel Boots
-item.triniaAmulet.name=Amulate
+item.triniaAmulet.name=Trinia Amulet
 
 tile.log.red.name=Red Wood
 tile.triniaDirt.name=Dirt
