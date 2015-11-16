@@ -143,8 +143,10 @@ public class TriniaItems {
 	public static Item triniaTinLeggings;
 	public static Item triniaTinBoots;
 	
+	//random shit I didn't know how to put into categories -papertazer
 	public static Item triniaAmulet;
 	public static Item MagicalBedItem;
+	public static Item Chisel;
 	public static void init()
 	{
 		//-Weapons-
@@ -205,6 +207,8 @@ public class TriniaItems {
 		TinAxe = (new ItemSteelAxe(null, TriniaTin).setUnlocalizedName("tinAxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSpade = (new ItemSteelSpade(null, TriniaTin).setUnlocalizedName("tinSpade")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		
+		Chisel = (new ItemMagicalBed().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//Casts
 		CastBlank = (new ItemTrinia().setUnlocalizedName("castBlank")).setCreativeTab(TriniaMod.TriniaToolsTab);
@@ -292,6 +296,8 @@ public class TriniaItems {
 		GameRegistry.registerItem(TinSpade, TinSpade.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(TinSword, TinSword.getUnlocalizedName().substring(5));
 		
+		GameRegistry.registerItem(Chisel, Chisel.getUnlocalizedName().substring(5));
+		
 		//Casts
 		GameRegistry.registerItem(CastBlank, CastBlank.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(CastPickaxe, CastPickaxe.getUnlocalizedName().substring(5));
@@ -367,6 +373,7 @@ public class TriniaItems {
 		registerRender(TinSpade);
 		registerRender(TinSword);
 		
+		registerRender(Chisel);
 		//Casts
 		registerRender(CastPickaxe);
 		registerRender(CastAxe);
@@ -401,9 +408,7 @@ public class TriniaItems {
 		registerRender(TinSpadeHead);
 		registerRender(TinSwordHead);
 		registerRender(TinSwordHandle);
-		
-		
-		
+
 		registerRender(MagicalBedItem);
 	}
 	

@@ -13,6 +13,8 @@ item.steelBastardSword.name=Bastard Sword
 item.Katar.name=Katar
 item.Halberd.name=Halberd
 item.Dagger.name=Dagger
+item.Chisel.name=Chisel
+item.MagicalBedItem.name=Magical Bed
 
 entity.mermaid.name=Mermaid
 entity.blemmyae.name=Blemmyae
@@ -109,6 +111,7 @@ tile.barrel.name=Barrel
 tile.KingChairOne.name=King Chair
 tile.hardenedBucket.name=Hardened Bucket
 tile.triniaGravel.name=Gravel
+tile.CastingBench.name=Tool Cast Creator
 
 tile.FlowerStem.name=Flower Stem
 tile.FlowerBlue.name=Blue Flower Petal

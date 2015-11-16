@@ -44,6 +44,7 @@ public class TriniaBlocks
 	public static Block FlowerRed;
 	public static Block FlowerYellow;
 	public static Block MagicalBed;
+	public static Block CastingBench;
 	//Trinia Blocks
 	public static Block steelBlock;
 	public static Block copperBlock;
@@ -92,6 +93,7 @@ public class TriniaBlocks
 		orcaOre = new BlockTrinia(Material.rock).setUnlocalizedName("orcaOre");
 		orisoneOre = new BlockTrinia(Material.rock).setUnlocalizedName("orisoneOre");
 		MagicalBed = new BlockMagicalBed().setUnlocalizedName("MagicalBed");
+		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
 		
 		
 		//Trinia Blocks
@@ -136,6 +138,7 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(orcaOre, orcaOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(orisoneOre, orisoneOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(MagicalBed, MagicalBed.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone);
+		GameRegistry.registerBlock(CastingBench, CastingBench.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//Trinia Blocks
 		GameRegistry.registerBlock(steelBlock, steelBlock.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
@@ -159,6 +162,7 @@ public class TriniaBlocks
 		RegisterRender(FlowerPurple);
 		RegisterRender(FlowerRed);
 		RegisterRender(FlowerYellow);
+		RegisterRender(CastingBench);
 		//RegisterRender(hardenedBucket);
 		//Random
 		RegisterRender(redLeaves);
