@@ -141,7 +141,7 @@ public class TriniaItems {
 	public static Item triniaTinBoots;
 	
 	public static Item triniaAmulet;
-	
+	public static Item MagicalBedItem;
 	public static void init()
 	{
 		//-Weapons-
@@ -183,6 +183,7 @@ public class TriniaItems {
 		moltenSilver = (new ItemTrinia().setUnlocalizedName("moltenSilver")).setCreativeTab(TriniaMod.TriniaMainTab);
 		moltenTin = (new ItemTrinia().setUnlocalizedName("moltenTin")).setCreativeTab(TriniaMod.TriniaMainTab);
 		moltenCopper = (new ItemTrinia().setUnlocalizedName("moltenCopper")).setCreativeTab(TriniaMod.TriniaMainTab);
+		MagicalBedItem = (new ItemMagicalBed().setUnlocalizedName("MagicalBedItem")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//-Tools-
 		//Steel
@@ -313,6 +314,10 @@ public class TriniaItems {
 		GameRegistry.registerItem(TinSpadeHead, TinSpadeHead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(TinSwordHead, TinSwordHead.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(TinSwordHandle, TinSwordHandle.getUnlocalizedName().substring(5));
+		
+		
+		GameRegistry.registerItem(MagicalBedItem, MagicalBedItem.getUnlocalizedName().substring(5));
+		
 	}
 	
 	public static void registerRenders()
@@ -390,6 +395,10 @@ public class TriniaItems {
 		registerRender(TinSpadeHead);
 		registerRender(TinSwordHead);
 		registerRender(TinSwordHandle);
+		
+		
+		
+		registerRender(MagicalBedItem);
 	}
 	
 	public static void registerRender(Item item)

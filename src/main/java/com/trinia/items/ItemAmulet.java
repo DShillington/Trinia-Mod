@@ -35,11 +35,7 @@ public class ItemAmulet extends ItemArmor {
         {
                 thePlayer.timeUntilPortal = 10;
         }
-        else if (thePlayer.dimension != 6)
-        {
-                thePlayer.timeUntilPortal = 10;
-                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 6);
-        }
+        
         else {
                 thePlayer.timeUntilPortal = 10;
                 thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
@@ -91,7 +87,7 @@ public class ItemAmulet extends ItemArmor {
     public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
     {
     	info.add("Place this amulet in the ChestPlate Slot.");
-    	info.add("Right Click to teleport to Trinia. (temporary)");
+    	info.add("Right Click to teleport back from Trinia");
     	info.add("§4 *** Abilities ***");
     	info.add("");
     	info.add("§a * Cloaking Ability");
