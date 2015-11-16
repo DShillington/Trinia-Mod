@@ -44,10 +44,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class TriniaMod {
 	
-	
 	public static Update latestUpdate;
 	//TESTING TRINIA-BETA GITHUB
-	
 	
 	@Instance(Reference.MOD_ID)
 	public static TriniaMod instance;
@@ -100,14 +98,15 @@ public class TriniaMod {
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
-	{		
+	{	
+		proxy.register();
 		proxy.registerRenders();
 	}
 	
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event)
 	{
-		proxy.registerRenders();
+		System.out.println("postInit done");
 	}
 
 	public void generateSurface(World world, Random rand, int i, int j)

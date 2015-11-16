@@ -21,7 +21,10 @@ import com.trinia.world.gen.TriniaBiomes;
 import com.trinia.world.gen.TriniaWorldGen;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBiped;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.World;
@@ -42,6 +45,7 @@ public class CommonProxy implements ProxyInterface
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 
     }
+
 
     public void postInit(FMLPostInitializationEvent event) {
     	   
@@ -65,51 +69,21 @@ public class CommonProxy implements ProxyInterface
 	{
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-private static final ModelAmulet Chest = new ModelAmulet(1.0f); 
-	
-public ModelBiped getArmorModel(int id) {
-    switch (id) {
-        case 0: {
-            return Chest;
-        }
-        
-    }
-    return null;
-}
+
 public void register(){
-	
+	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
+	  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet2.png"));
 	
 	}
-
-
 	public static Block blockInventoryAdvanced;
 
 	
 	public static void preInitCommon()
 	 
 	{
-		
-		// each instance of your block should have a name that is unique within your mod.  use lower case.
 		blockInventoryAdvanced = new BlockTriniaSmelter().setUnlocalizedName("mbe31_block_inventory_furnace");
 		GameRegistry.registerBlock(blockInventoryAdvanced, "mbe31_block_inventory_furnace");
-		// Each of your tile entities needs to be registered with a name that is unique to your mod.
-		// you don't need to register an item corresponding to the block, GameRegistry.registerBlock does this automatically.
-
-		// You need to register a GUIHandler for the container.  However there can be only one handler per mod, so for the purposes
-		//   of this project, we create a single GuiHandlerRegistry for all examples.
-		// We register this GuiHandlerRegistry with the NetworkRegistry, and then tell the GuiHandlerRegistry about
-		//   each example's GuiHandler, in this case GuiHandlerMBE31, so that when it gets a request from NetworkRegistry,
-		//   it passes the request on to the correct example's GuiHandler.
-	}
+		}
 	 public void registerNetworkStuff(){
 		  }
 
@@ -137,11 +111,11 @@ public void register(){
 				return MinecraftServer.getServer().isDedicatedServer();
 			}
     
-		    public ModelBiped getArmorModel(String par1String)
-			{
-				return null;
-			}
-
-		
-	
+			
+			private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
+			
+			public ModelBiped getArmorModel(){
+				return masque_loup;
+				}
+			
 }

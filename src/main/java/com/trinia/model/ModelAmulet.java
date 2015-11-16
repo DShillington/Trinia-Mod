@@ -79,14 +79,14 @@ public class ModelAmulet extends ModelBiped
       StoneVertical.mirror = true;
       setRotation(StoneVertical, 0.7853982F, 0F, 1.570796F);
      
-      this.bipedBody.addChild(ChainRightOne);
+     /** this.bipedBody.addChild(ChainRightOne);
 		this.bipedBody.addChild(ChainRightTwo);
 		this.bipedBody.addChild(ChainRightThree);
 		this.bipedBody.addChild(BaseTop);
 		this.bipedBody.addChild(BaseMiddle);
 		this.bipedBody.addChild(BaseBottom);
 		this.bipedBody.addChild(StoneHorizontal);
-		this.bipedBody.addChild(StoneVertical);
+		this.bipedBody.addChild(StoneVertical); */
   }
   
   public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
