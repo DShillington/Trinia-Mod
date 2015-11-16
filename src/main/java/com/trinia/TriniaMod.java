@@ -94,10 +94,7 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/master
 	}
 	
 	@EventHandler
