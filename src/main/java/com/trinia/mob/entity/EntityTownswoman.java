@@ -1,5 +1,7 @@
 package com.trinia.mob.entity;
 
+import com.trinia.items.TriniaItems;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.SharedMonsterAttributes;
@@ -20,11 +22,11 @@ import net.minecraft.pathfinding.PathNavigateGround;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
-public class EntityTownsmen extends EntityAnimal
+public class EntityTownswoman extends EntityAnimal
 {
     private static final String __OBFID = "CL_00001640";
 
-    public EntityTownsmen(World worldIn)
+    public EntityTownswoman(World worldIn)
     {
         super(worldIn);
         this.setSize(0.9F, 1.9F);
@@ -32,7 +34,7 @@ public class EntityTownsmen extends EntityAnimal
         this.tasks.addTask(0, new EntityAISwimming(this));
         this.tasks.addTask(1, new EntityAIPanic(this, 2.0D));
         this.tasks.addTask(2, new EntityAIMate(this, 1.0D));
-        this.tasks.addTask(3, new EntityAITempt(this, 1.25D, Items.wheat, false));
+        this.tasks.addTask(3, new EntityAITempt(this, 1.25D, TriniaItems.triniaAmulet, false));
         this.tasks.addTask(4, new EntityAIFollowParent(this, 1.25D));
         this.tasks.addTask(5, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(6, new EntityAIWatchClosest(this, EntityPlayer.class, 6.0F));
@@ -45,6 +47,7 @@ public class EntityTownsmen extends EntityAnimal
         this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(10.0D);
         this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.20000000298023224D);
     }
+
 
     protected String getLivingSound()
     {
@@ -82,15 +85,15 @@ public class EntityTownsmen extends EntityAnimal
 
     protected Item getDropItem()
     {
-        return Items.stick;
+        return Items.apple;
     }
 
 
     
 
-    public EntityTownsmen createChild(EntityAgeable ageable)
+    public EntityTownswoman createChild(EntityAgeable ageable)
     {
-        return new EntityTownsmen(this.worldObj);
+        return new EntityTownswoman(this.worldObj);
     }
 
     public float getEyeHeight()

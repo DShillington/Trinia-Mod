@@ -5,6 +5,7 @@
  * Contributors:
  *     papertazer - Codeing/modeling/textures
  *     OMGitsMiniMe -  Codeing/modeling/textures
+ *     MagikModder - Coding
  *     Snurly - Textures
  ******************************************************************************/
 
@@ -57,12 +58,13 @@ public class TriniaMod {
 	public static int mobid3 = 2;
 	public static int mobid4 = 3;
 	public static int mobid5 = 4;
+	public static int mobid6 = 6;
 	
 	//Dimension ID
 	public static int DIM_TRINIA_ID = 6;
+	
 	public Random ChunkGenRand;
 	public int ChunkGenRandNum = 0;
-	
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	
@@ -94,7 +96,6 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
-
 	}
 	
 	@EventHandler
@@ -108,15 +109,7 @@ public class TriniaMod {
 	{
 		proxy.registerRenders();
 	}
-	
 
-	
-	
-	
-	
-	
-	
-	
 	public void generateSurface(World world, Random rand, int i, int j)
 	{
 		ChunkGenRand = new Random();

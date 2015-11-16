@@ -18,6 +18,8 @@ entity.mermaid.name=Mermaid
 entity.blemmyae.name=Blemmyae
 entity.icedragon.name=Ice Dragon
 entity.reddragon.name=Red Dragon
+entity.townsmen.name=Worker Fella
+entity.townswoman.name=Lady Worker
 
 item.SteelPickaxe.name=Steel Pickaxe
 item.steelAxe.name=Steel Axe
@@ -39,7 +41,6 @@ item.moltenSteel.name=Bucket of Steel
 item.moltenSilver.name=Bucket of Silver
 item.moltenTin.name=Bucket of Tin
 item.moltenCopper.name=Bucket of Copper
-
 item.steelPickaxeHead.name=Steel Pickaxe Head
 item.steelAxeHead.name=Steel Axe Head
 item.steelSpadeHead.name=Steel Shovel Head
@@ -55,7 +56,6 @@ item.tinAxeHead.name=Tin Axe Head
 item.tinSwordHead.name=Tin Sword Head
 item.tinSpadeHead.name=Tin Shovel Head
 item.tinSwordHandle.name=Tin Sword Handle
-
 item.castPickaxe.name=Pickaxe Cast
 item.castAxe.name=Axe Cast
 item.castSpade.name=Shovel Cast
@@ -65,10 +65,7 @@ item.steelHelmet.name=Steel Helmet
 item.steelChestplate.name=Steel Chestplate
 item.steelLeggings.name=Steel Leggings
 item.steelBoots.name=Steel Boots
-
 item.triniaAmulet.name=Amulate
-
-entity.mermaid.name=Mermaid
 
 tile.log.red.name=Red Wood
 tile.triniaDirt.name=Dirt
