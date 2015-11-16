@@ -24,6 +24,15 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TriniaItems {
+	
+	//Casts
+	public static Item CastBlank;
+    public static Item CastPickaxe;
+	public static Item CastAxe;
+	public static Item CastSword;
+	public static Item CastSwordHandle;
+	public static Item CastSpade;
+		
 	//Tool Materials
 	public static ToolMaterial TriniaSteel = EnumHelper.addToolMaterial("Steel", 3, 5000, 15.0F, 4.0F, 20);
 	public static ToolMaterial TriniaSilver = EnumHelper.addToolMaterial("Silver", 2, 4000, 10.0F, 2.0F, 15);
@@ -98,12 +107,6 @@ public class TriniaItems {
 	public static Item TinAxe;
 	public static Item TinSword;
 	public static Item TinSpade;
-	//Casts
-	public static Item CastPickaxe;
-	public static Item CastAxe;
-	public static Item CastSword;
-	public static Item CastSwordHandle;
-	public static Item CastSpade;
 	//-Tool Parts-
 	//Steel
 	public static Item SteelPickaxeHead;
@@ -204,6 +207,7 @@ public class TriniaItems {
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
 		//Casts
+		CastBlank = (new ItemTrinia().setUnlocalizedName("castBlank")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		CastPickaxe = (new ItemTrinia().setUnlocalizedName("castPickaxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		CastAxe = (new ItemTrinia().setUnlocalizedName("castAxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		CastSword = (new ItemTrinia().setUnlocalizedName("castSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
@@ -289,6 +293,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(TinSword, TinSword.getUnlocalizedName().substring(5));
 		
 		//Casts
+		GameRegistry.registerItem(CastBlank, CastBlank.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(CastPickaxe, CastPickaxe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(CastAxe, CastAxe.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(CastSword, CastSword.getUnlocalizedName().substring(5));
@@ -368,6 +373,7 @@ public class TriniaItems {
 		registerRender(CastSword);
 		registerRender(CastSwordHandle);
 		registerRender(CastSpade);
+		registerRender(CastBlank);
 		
 		//-Armor-
 		registerRender(triniaSteelHelmet);
