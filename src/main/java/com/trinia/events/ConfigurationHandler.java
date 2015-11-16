@@ -19,7 +19,6 @@ public class ConfigurationHandler
 	public static boolean hasDisplayedOnce = false;
 	public static boolean api_debug = true;
     public static boolean checkForUpdates;
-    public static boolean customcursor;
 
 	public static void init(File file)
 	{
@@ -33,7 +32,7 @@ public class ConfigurationHandler
 	public static void loadConfig(boolean shouldChange)
 	{
 		 checkForUpdates = getBoolean("Check For Updates", true, "If false, the Trinia Mod will not check for updates.");       
-		 customcursor = getBoolean("Custom Cursor", false, "If false, the Trinia Mod will not change the cursor.");       
+	
 		 api_debug = config.getBoolean("recipe-api-debug", CATEGORY_SETTINGS, true, "If true, prints out information about RecipeAPI. Recommended 'true' for people trying to add custom recipe.");
 		canDisplay = config.getBoolean("display", CATEGORY_SETTINGS, canDisplay, "Enabled or disable the welcome message");
 		items = config.getStringList("custom-recipes", CATEGORY_API, items, "Insert custom recipes here");

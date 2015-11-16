@@ -1,18 +1,6 @@
 package com.trinia.proxy;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.Point;
-import java.awt.Shape;
-import java.awt.Toolkit;
-import java.awt.geom.Ellipse2D;
-import java.awt.image.BufferedImage;
 import java.util.logging.Level;
-
-import javax.swing.ImageIcon;
 
 import com.trinia.TriniaEntities;
 import com.trinia.TriniaMod;
@@ -22,7 +10,6 @@ import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.BlockTriniaSmelter;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
-import com.trinia.cursor.CustomImageCursor;
 import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
@@ -50,20 +37,56 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class CommonProxy implements ProxyInterface
 {
 
-     public void registerRenders() 
-     {
-    	 
-     }
-
 	public void preInit(FMLPreInitializationEvent event) {
 	
-			}
-	 public void init(FMLInitializationEvent event) {
+		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
+	    FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
+	  	FMLCommonHandler.instance().bus().register(new GuiHandler());
+		FMLCommonHandler.instance().bus().register(new EventUpdate());
+		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+		UpdateHandler.init();
+		TriniaBlocks.init();
+		TriniaBlocks.register();
+		TriniaItems.init();
+		TriniaItems.register();
+		TriniaTileEntities.register();
+		TriniaBiomes.init();
+		TriniaRecipes.loadRecipes();
+		TriniaEntities.loadEntities();	
+		TriniaRenderRegistry.loadEntities();
+    }
+
+    public void postInit(FMLPostInitializationEvent event) {
+    	   
+    	
+    		if (Loader.isModLoaded("TwilightForest"))
+           {
+               ChatHandler.logException(Level.SEVERE, "TwilightForest Mod is not compatible with Trinia, Trinia has it's own Dimension system. Remove the TwilightForest Mod to fix this error.");
+           }
+           
+    }
+
+
+	public void init(FMLInitializationEvent event)
+	{
+
+		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance, new GuiHandler());
+		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 0);
 	}
 
-	    public void postInit(FMLPostInitializationEvent event) {
-	    }
- 
+	public void registerRenders() 
+	{
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 private static final ModelAmulet Chest = new ModelAmulet(1.0f); 
 	

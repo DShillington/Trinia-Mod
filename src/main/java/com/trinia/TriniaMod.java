@@ -15,29 +15,23 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Level;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
-import com.trinia.cursor.CustomImageCursor;
 import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
-import com.trinia.handler.ChatHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
-import com.trinia.world.gen.TriniaWorldGen;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -45,9 +39,6 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.fml.common.registry.LanguageRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class TriniaMod {
@@ -75,8 +66,7 @@ public class TriniaMod {
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	
-	public static CommonProxy common_proxy;
-	public static CommonProxy client_proxy;
+	public static CommonProxy proxy;
     
 	public static CreativeTabs TriniaMainTab = new TriniaModTab("tabTriniaMain");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
@@ -87,10 +77,13 @@ public class TriniaMod {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+<<<<<<< HEAD
+		proxy.preInit(event);	
+=======
+
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
-		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
-	    FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
-	  	FMLCommonHandler.instance().bus().register(new GuiHandler());
+		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
+		FMLCommonHandler.instance().bus().register(new GuiHandler());
 		FMLCommonHandler.instance().bus().register(new EventUpdate());
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		UpdateHandler.init();
@@ -103,32 +96,27 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
-		
-		
-		if(ConfigurationHandler.checkForUpdates = true){
-	
-			CustomImageCursor.init();
-		
-		}
+
+
+>>>>>>> origin/master
 	}
 	
-	   public void postInit(FMLPostInitializationEvent event) {
-		   
-	    	if (Loader.isModLoaded("TwilightForest"))
-	           {
-	               ChatHandler.logException(Level.SEVERE, "TwilightForest Mod is not compatible with Trinia, Trinia has it's own Dimension system. Remove the TwilightForest Mod to fix this error.");
-	           }
-	           
-	    }
+	@EventHandler
+	public void Init(FMLInitializationEvent event)
+	{		
+		proxy.registerRenders();
+	}
+	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event)
+	{
+		proxy.registerRenders();
+	}
+	
 
-	   	@SuppressWarnings("deprecation")
-		public void init(FMLInitializationEvent event)
-		{
-			NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance, new GuiHandler());
-			GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 0);
-		    LanguageRegistry.instance().addStringLocalization("death.attack.thirstDeath", "%1$s ran out of water");
-		}
-
+	
+	
+	
 	
 	
 	
