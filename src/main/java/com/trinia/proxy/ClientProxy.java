@@ -55,7 +55,7 @@ private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
 	
 	public void register() {
     	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-		  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet2.png"));
+		  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet.png"));
 		 // renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation("trinia:triniaAmulet", "inventory"));
 			
 	}

@@ -53,7 +53,7 @@ public class ItemAmulet extends ItemArmor {
 	{
 		if(stack.getItem() == TriniaItems.triniaAmulet)
 		{
-		return Reference.MOD_ID + ":" + "textures/models/armor/Amulet2.png";
+		return Reference.MOD_ID + ":" + "textures/models/armor/Amulet.png";
 		}
 		
 		return null;

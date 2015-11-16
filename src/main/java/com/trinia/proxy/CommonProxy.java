@@ -46,17 +46,12 @@ public class CommonProxy implements ProxyInterface
 
     }
 
-
-    public void postInit(FMLPostInitializationEvent event) {
-    	   
-    	
+    public void postInit(FMLPostInitializationEvent event) {   
     		if (Loader.isModLoaded("TwilightForest"))
            {
                ChatHandler.logException(Level.SEVERE, "TwilightForest Mod is not compatible with Trinia, Trinia has it's own Dimension system. Remove the TwilightForest Mod to fix this error.");
-           }
-           
+           }  
     }
-
 
 	public void init(FMLInitializationEvent event)
 	{
@@ -71,8 +66,6 @@ public class CommonProxy implements ProxyInterface
 	}
 
 public void register(){
-	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-	  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet2.png"));
 	
 	}
 	public static Block blockInventoryAdvanced;
@@ -112,10 +105,9 @@ public void register(){
 			}
     
 			
-			private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
 			
 			public ModelBiped getArmorModel(){
-				return masque_loup;
+				return null;
 				}
 			
 }
