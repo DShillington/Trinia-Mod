@@ -104,10 +104,17 @@ public void register(){
 				return MinecraftServer.getServer().isDedicatedServer();
 			}
     
-			
+			public ModelBiped getArmorModelHalo(){
+				return null;
+				}
 			
 			public ModelBiped getArmorModel(){
 				return null;
 				}
+
+			public ModelBiped getArmorModelWings() {
+				
+				return null;
+			}
 			
 }

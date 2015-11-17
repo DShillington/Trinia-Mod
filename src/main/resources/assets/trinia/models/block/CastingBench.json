@@ -5,7 +5,7 @@
         "1": "trinia:blocks/steelBlock",
         "2": "trinia:blocks/CastingBench_Side",
         "3": "trinia:blocks/CastingBench_Top",
-        "4": "trinia:blocks/Cast_Bottom"
+        "4": "trinia:blocks/CastingBench_Bottom"
     },
     "elements": [
         {

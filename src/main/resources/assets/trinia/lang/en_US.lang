@@ -2,20 +2,6 @@ itemGroup.tabTriniaMain=Trinia
 itemGroup.tabTriniaMedieval=Trinia Medieval
 itemGroup.tabTriniaTools=Trinia Tools
 
-item.steelingot.name=Steel Ingot
-item.copperIngot.name=Copper Ingot
-item.silverIngot.name=Silver Ingot
-item.tinIngot.name=Tin Ingot
-item.adimite.name=Adimite Ingot
-
-item.steelBattleAxe.name=Battle Axe
-item.steelBastardSword.name=Bastard Sword
-item.Katar.name=Katar
-item.Halberd.name=Halberd
-item.Dagger.name=Dagger
-item.Chisel.name=Chisel
-item.MagicalBedItem.name=Magical Bed
-
 entity.mermaid.name=Mermaid
 entity.blemmyae.name=Blemmyae
 entity.icedragon.name=Ice Dragon
@@ -23,6 +9,20 @@ entity.reddragon.name=Red Dragon
 entity.townsmen.name=Worker Fella
 entity.townswoman.name=Lady Worker
 
+item.steelingot.name=Steel Ingot
+item.copperIngot.name=Copper Ingot
+item.silverIngot.name=Silver Ingot
+item.tinIngot.name=Tin Ingot
+item.adimite.name=Adimite Ingot
+item.steelBattleAxe.name=Battle Axe
+item.steelBastardSword.name=Bastard Sword
+item.Katar.name=Katar
+item.Halberd.name=Halberd
+item.Dagger.name=Dagger
+item.Chisel.name=Chisel
+item.MagicalBedItem.name=Magical Bed
+item.angelWings.name=Angel Wings
+item.angelHalo.name=Angel Halo
 item.SteelPickaxe.name=Steel Pickaxe
 item.steelAxe.name=Steel Axe
 item.steelSpade.name=Steel Shovel
@@ -109,10 +109,8 @@ tile.portalTrinia.name=Trinia Portal
 tile.smelter.name=Smeltery
 tile.barrel.name=Barrel
 tile.KingChairOne.name=King Chair
-tile.hardenedBucket.name=Hardened Bucket
 tile.triniaGravel.name=Gravel
 tile.CastingBench.name=Tool Cast Creator
-
 tile.FlowerStem.name=Flower Stem
 tile.FlowerBlue.name=Blue Flower Petal
 tile.FlowerGreen.name=Green Flower Petal
@@ -121,7 +119,6 @@ tile.FlowerPink.name=Pink Flower Petal
 tile.FlowerPurple.name=Purple Flower Petal
 tile.FlowerRed.name=Red Flower Petal
 tile.FlowerYellow.name=Yellow Flower Petal
-
 tile.wattleOne.name=Wattle
 tile.wattleTwo.name=Wattle
 tile.wattleThree.name=Wattle
@@ -137,9 +134,14 @@ tile.wattleTwelve.name=Wattle
 tile.wattleThirteen.name=Wattle
 tile.wattleFourteen.name=Wattle
 tile.wattleFifteen.name=Wattle
-
 tile.medievalGravel.name=Gravel
 tile.medievalStone.name=Stone
 tile.medievalCobble.name=Cobblestone
+tile.hardenedBucket.name=Hardened Bucket
+tile.hardenedBucketLava.name=Hardened Bucket of Lava
+tile.hardenedBucketCopper.name=Hardened Bucket of Copper
+tile.hardenedBucketSilver.name=Hardened Bucket of Silver
+tile.hardenedBucketSteel.name=Hardened Bucket of Steel
+tile.hardenedBucketTin.name=Hardened Bucket of Tin
 
 tile.Ore.name=GURER JVYY OR N GEVAVN GJB CBVAG MREB VA GUR ARNE SHGHER

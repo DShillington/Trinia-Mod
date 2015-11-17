@@ -25,38 +25,51 @@ import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.items.ItemAmulet;
 import com.trinia.items.TriniaItems;
+import com.trinia.mob.Render.RenderAngelBoss;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
 import com.trinia.mob.Render.RenderRedDragon;
 import com.trinia.mob.Render.RenderTownsmen;
 import com.trinia.mob.Render.RenderTownswoman;
+import com.trinia.mob.entity.EntityAngelBoss;
 import com.trinia.mob.entity.EntityBlemmyae;
 import com.trinia.mob.entity.EntityIceDragon;
 import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.entity.EntityRedDragon;
 import com.trinia.mob.entity.EntityTownsmen;
 import com.trinia.mob.entity.EntityTownswoman;
+import com.trinia.mob.model.ModelAngelBoss;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
 import com.trinia.mob.model.ModelRedDragon;
 import com.trinia.model.ModelAmulet;
+import com.trinia.model.ModelAngelHalo;
+import com.trinia.model.ModelAngelWings;
 import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
 	
 private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
+private static final ModelAngelWings Wings = new ModelAngelWings(0.5F);
+private static final ModelAngelHalo Halo = new ModelAngelHalo(0.5F);
 	
 	public ModelBiped getArmorModel(){
 		return masque_loup;
 		}
-
+	public ModelBiped getArmorModelWings(){
+		return Wings;
+		}
+	public ModelBiped getArmorModelHalo(){
+			return Halo;
+			}
 	
 	public void register() {
     	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet.png"));
-		 // renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation("trinia:triniaAmulet", "inventory"));
+		  renderItem.getItemModelMesher().register(TriniaItems.angelWings, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/AngelWings.png"));
+		  renderItem.getItemModelMesher().register(TriniaItems.angelHalo, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/angelHalo.png"));
 			
 	}
 	
@@ -119,5 +132,6 @@ private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
 		RenderingRegistry.registerEntityRenderingHandler(EntityRedDragon.class, new RenderRedDragon(Minecraft.getMinecraft().getRenderManager(), new ModelRedDragon(), 3){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/dragon/red/dragon_red.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityTownsmen.class, new RenderTownsmen(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 4){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/people/townsmen.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityTownswoman.class, new RenderTownswoman(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 5){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/people/townswoman.png");}});
-	}
+		RenderingRegistry.registerEntityRenderingHandler(EntityAngelBoss.class, new RenderAngelBoss(Minecraft.getMinecraft().getRenderManager(), new ModelAngelBoss(), 6){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/boss/AngelBoss.png");}});
+		}
 }

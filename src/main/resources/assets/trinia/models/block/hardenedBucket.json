@@ -1,7 +1,7 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "trinia:blocks/steelBlock"
+        "0": "trinia:blocks/CastingBench_Metal"
     },
     "elements": [
         {

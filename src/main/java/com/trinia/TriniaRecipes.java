@@ -43,23 +43,23 @@ public class TriniaRecipes
 				GameRegistry.addRecipe(new ItemStack(TriniaItems.CastSpade),"PSS", "SPS", "PSP",'S', Items.stick, 'P', Blocks.planks);
 				//-Tool Parts-
 				//Steel
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaItems.moltenSteel);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelAxeHead, 1), TriniaItems.CastAxe, TriniaItems.moltenSteel);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSwordHead, 1), TriniaItems.CastSword, TriniaItems.moltenSteel);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaItems.moltenSteel);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSpadeHead, 1), TriniaItems.CastSpade, TriniaItems.moltenSteel);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaBlocks.hardenedBucketSteel);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelAxeHead, 1), TriniaItems.CastAxe, TriniaBlocks.hardenedBucketSteel);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSwordHead, 1), TriniaItems.CastSword, TriniaBlocks.hardenedBucketSteel);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaBlocks.hardenedBucketSteel);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SteelSpadeHead, 1), TriniaItems.CastSpade, TriniaBlocks.hardenedBucketSteel);
 				//Tin
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaItems.moltenTin);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinAxeHead, 1), TriniaItems.CastAxe, TriniaItems.moltenTin);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSwordHead, 1), TriniaItems.CastSword, TriniaItems.moltenTin);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaItems.moltenTin);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSpadeHead, 1), TriniaItems.CastSpade, TriniaItems.moltenTin);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaBlocks.hardenedBucketTin);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinAxeHead, 1), TriniaItems.CastAxe, TriniaBlocks.hardenedBucketTin);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSwordHead, 1), TriniaItems.CastSword, TriniaBlocks.hardenedBucketTin);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaBlocks.hardenedBucketTin);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.TinSpadeHead, 1), TriniaItems.CastSpade, TriniaBlocks.hardenedBucketTin);
 				//Silver
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaItems.moltenSilver);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverAxeHead, 1), TriniaItems.CastAxe, TriniaItems.moltenSilver);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSwordHead, 1), TriniaItems.CastSword, TriniaItems.moltenSilver);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaItems.moltenSilver);
-				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSpadeHead, 1), TriniaItems.CastSpade, TriniaItems.moltenSilver);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverPickaxeHead, 1), TriniaItems.CastPickaxe, TriniaBlocks.hardenedBucketSilver);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverAxeHead, 1), TriniaItems.CastAxe, TriniaBlocks.hardenedBucketSilver);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSwordHead, 1), TriniaItems.CastSword, TriniaBlocks.hardenedBucketSilver);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSwordHandle, 1), TriniaItems.CastSwordHandle, TriniaBlocks.hardenedBucketSilver);
+				GameRegistry.addShapelessRecipe(new ItemStack(TriniaItems.SilverSpadeHead, 1), TriniaItems.CastSpade, TriniaBlocks.hardenedBucketSilver);
 				//-Tools-
 				//Steel
 				GameRegistry.addRecipe(new ItemStack(TriniaItems.SteelPickaxe),"P", "S", 'S', Items.stick, 'P', TriniaItems.SteelPickaxeHead);

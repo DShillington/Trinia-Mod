@@ -46,7 +46,12 @@ public class TriniaItems {
 	//Armor
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
 	
+	
+	
+	public static Item angelWings;
+	public static Item angelHalo;
 	//-Weapons-
 	//Steel
 	public static Item steelBattleAxe;
@@ -85,12 +90,7 @@ public class TriniaItems {
 	public static Item bridroneIngot;
 	public static Item orca;
 	public static Item orisone;
-	//Molten Buckets
-	public static Item moltenSteel;
-	public static Item moltenTin;
-	public static Item moltenSilver;
-	public static Item moltenCopper;
-	//-Tools-
+		//-Tools-
 	//Steel
 	public static Item SteelPickaxe;
 	public static Item SteelAxe;
@@ -183,11 +183,6 @@ public class TriniaItems {
 		bridroneIngot = (new ItemTrinia().setUnlocalizedName("bridroneIngot")).setCreativeTab(TriniaMod.TriniaMainTab);
 		orca = (new ItemTrinia().setUnlocalizedName("orca")).setCreativeTab(TriniaMod.TriniaMainTab);
 		orisone = (new ItemTrinia().setUnlocalizedName("orisone")).setCreativeTab(TriniaMod.TriniaMainTab);
-		//Molten
-		moltenSteel = (new ItemTrinia().setUnlocalizedName("moltenSteel")).setCreativeTab(TriniaMod.TriniaMainTab);
-		moltenSilver = (new ItemTrinia().setUnlocalizedName("moltenSilver")).setCreativeTab(TriniaMod.TriniaMainTab);
-		moltenTin = (new ItemTrinia().setUnlocalizedName("moltenTin")).setCreativeTab(TriniaMod.TriniaMainTab);
-		moltenCopper = (new ItemTrinia().setUnlocalizedName("moltenCopper")).setCreativeTab(TriniaMod.TriniaMainTab);
 		MagicalBedItem = (new ItemMagicalBed().setUnlocalizedName("MagicalBedItem")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//-Tools-
@@ -245,11 +240,17 @@ public class TriniaItems {
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaToolsTab);
 	
 		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaMainTab);
+		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaMainTab);
+		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 	}
 	
 	public static void register()
 	{
+		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1), "triniaAmulet");
+		GameRegistry.registerItem(angelWings = new ItemAngelArmor("angelWings", TriniaAngelArmor, 1, 1), "angelWings");
+		GameRegistry.registerItem(angelHalo = new ItemAngelArmor("angelHalo", TriniaAngelArmor, 1, 0), "angelHalo");
+		
 		//-Weapons-
 		//Steel
 		GameRegistry.registerItem(steelBattleAxe, steelBattleAxe.getUnlocalizedName().substring(5));
@@ -263,7 +264,6 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSteelLeggings = new ItemSteelArmor("steelLeggings", TriniaSteelArmor, 2, 2), "steelLeggings");
 		GameRegistry.registerItem(triniaSteelBoots = new ItemSteelArmor("steelBoots", TriniaSteelArmor, 1, 3), "steelBoots");       
 		
-		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1), "triniaAmulet");
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(copperIngot, copperIngot.getUnlocalizedName().substring(5));
@@ -273,11 +273,6 @@ public class TriniaItems {
 		GameRegistry.registerItem(bridroneIngot, bridroneIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(orca, orca.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(orisone, orisone.getUnlocalizedName().substring(5));
-		//Molten
-		GameRegistry.registerItem(moltenSteel, moltenSteel.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(moltenSilver, moltenSilver.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(moltenTin, moltenTin.getUnlocalizedName().substring(5));
-		GameRegistry.registerItem(moltenCopper, moltenCopper.getUnlocalizedName().substring(5));
 		//-Tools-
 		//Steel
 		GameRegistry.registerItem(SteelPickaxe, SteelPickaxe.getUnlocalizedName().substring(5));
@@ -350,12 +345,7 @@ public class TriniaItems {
 		registerRender(orca);
 		registerRender(orisone);
 		
-		//Molten
-		registerRender(moltenSteel);
-		registerRender(moltenSilver);
-		registerRender(moltenTin);
-		registerRender(moltenCopper);
-		//-Tools-
+			//-Tools-
 		//Steel
 		registerRender(SteelPickaxe);
 		registerRender(SteelAxe);
@@ -410,6 +400,8 @@ public class TriniaItems {
 		registerRender(TinSwordHandle);
 
 		registerRender(MagicalBedItem);
+		registerRender(angelWings);
+		registerRender(angelHalo);
 	}
 	
 	public static void registerRender(Item item)

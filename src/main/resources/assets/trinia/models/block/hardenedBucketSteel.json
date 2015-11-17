@@ -1,19 +1,8 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
-        "0": "trinia:blocks/CastingBench_Metal"
-    },
-    "display": {
-        "thirdperson": {
-            "rotation": [ 200, 0, 0 ],
-            "translation": [ 0, 1.2, -1.5 ],
-            "scale": [ 1, 1, 1 ]
-        },
-        "firstperson": {
-            "rotation": [ 0, -45, 0 ],
-            "translation": [ 0, 2, 0 ],
-            "scale": [ 2.5, 2.5, 2.5 ]
-        }
+        "0": "trinia:blocks/CastingBench_Metal",
+        "1": "trinia:blocks/moltenSteel"
     },
     "elements": [
         {
@@ -339,6 +328,71 @@
                 "west": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
                 "up": { "texture": "#0", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
                 "down": { "texture": "#0", "uv": [ 0.0, 0.0, 0.0, 0.0 ] }
+            }
+        },
+        {
+            "name": "Cube26",
+            "from": [ 4.0, 9.0, 4.0 ], 
+            "to": [ 12.0, 10.0, 12.0 ], 
+            "faces": {
+                "north": { "texture": "#-1", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "south": { "texture": "#-1", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "west": { "texture": "#-1", "uv": [ 0.0, 0.0, 8.0, 1.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 8.0, 8.0 ] },
+                "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 8.0, 8.0 ] }
+            }
+        },
+        {
+            "name": "Cube27",
+            "from": [ 5.0, 9.0, 3.0 ], 
+            "to": [ 11.0, 10.0, 4.0 ], 
+            "faces": {
+                "north": { "texture": "#1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "south": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "west": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] }
+            }
+        },
+        {
+            "name": "Cube28",
+            "from": [ 5.0, 9.0, 12.0 ], 
+            "to": [ 11.0, 10.0, 13.0 ], 
+            "faces": {
+                "north": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "south": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "west": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] }
+            }
+        },
+        {
+            "name": "Cube29",
+            "from": [ 3.0, 9.0, 5.0 ], 
+            "to": [ 4.0, 10.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "south": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "west": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 1.0, 6.0 ] },
+                "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 6.0 ] }
+            }
+        },
+        {
+            "name": "Cube28",
+            "from": [ 12.0, 9.0, 5.0 ], 
+            "to": [ 13.0, 10.0, 11.0 ], 
+            "faces": {
+                "north": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "east": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "south": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 1.0 ] },
+                "west": { "texture": "#-1", "uv": [ 0.0, 0.0, 6.0, 1.0 ] },
+                "up": { "texture": "#1", "uv": [ 0.0, 0.0, 1.0, 6.0 ] },
+                "down": { "texture": "#-1", "uv": [ 0.0, 0.0, 1.0, 6.0 ] }
             }
         }
     ]

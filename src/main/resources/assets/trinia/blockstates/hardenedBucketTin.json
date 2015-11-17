@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:hardenedBucketTin" },
+        "facing=north": { "model": "trinia:hardenedBucket" },
+        "facing=south": { "model": "trinia:hardenedBucket", "y": 180 },
+        "facing=west":  { "model": "trinia:hardenedBucket", "y": 270 },
+        "facing=east":  { "model": "trinia:hardenedBucket", "y": 90 }
+    }
+}

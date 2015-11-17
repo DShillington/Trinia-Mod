@@ -50,7 +50,13 @@ public class TriniaBlocks
 	public static Block copperBlock;
 	public static Block silverBlock;
 	public static Block tinBlock;
-	//public static Block hardenedBucket;
+	public static Block hardenedBucket;
+	public static Block hardenedBucketLava;
+	public static Block hardenedBucketSilver;
+	public static Block hardenedBucketSteel;
+	public static Block hardenedBucketTin;
+	public static Block hardenedBucketCopper;
+	
 	//World Gen Blocks Medeival World
 	public static Block adimiteOre;
 	public static Block bridroneOre;
@@ -101,8 +107,14 @@ public class TriniaBlocks
 		copperBlock = new BlockTrinia(Material.rock).setUnlocalizedName("copperBlock");
 		silverBlock = new BlockTrinia(Material.rock).setUnlocalizedName("silverBlock");
 		tinBlock = new BlockTrinia(Material.rock).setUnlocalizedName("tinBlock");
-		//hardenedBucket = new BlockHardenedBucket(Material.wood).setUnlocalizedName("hardenedBucket");
-		}
+		hardenedBucket = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucket");
+		hardenedBucketLava = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketLava");
+		hardenedBucketCopper = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketCopper");
+		hardenedBucketSilver = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketSilver");
+		hardenedBucketSteel = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketSteel");
+		hardenedBucketTin = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketTin");
+		
+	}
 	public static void register()
 	{
 		//Trinia World Gen Blocks
@@ -145,8 +157,14 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(copperBlock, copperBlock.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(silverBlock, silverBlock.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(tinBlock, tinBlock.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
-		//GameRegistry.registerBlock(hardenedBucket, hardenedBucket.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
-}
+		GameRegistry.registerBlock(hardenedBucket, hardenedBucket.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+		GameRegistry.registerBlock(hardenedBucketLava, hardenedBucketLava.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+		GameRegistry.registerBlock(hardenedBucketCopper, hardenedBucketCopper.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+		GameRegistry.registerBlock(hardenedBucketSilver, hardenedBucketSilver.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+		GameRegistry.registerBlock(hardenedBucketSteel, hardenedBucketSteel.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+		GameRegistry.registerBlock(hardenedBucketTin, hardenedBucketTin.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);;
+
+	}
 	public static void registerTileEntitys()
 	{
 		GameRegistry.registerTileEntity(TileEntityTriniaWorkBench.class, "craftingTileEntity");
@@ -163,7 +181,12 @@ public class TriniaBlocks
 		RegisterRender(FlowerRed);
 		RegisterRender(FlowerYellow);
 		RegisterRender(CastingBench);
-		//RegisterRender(hardenedBucket);
+		RegisterRender(hardenedBucket);
+		RegisterRender(hardenedBucketLava);
+		RegisterRender(hardenedBucketCopper);
+		RegisterRender(hardenedBucketSilver);
+		RegisterRender(hardenedBucketSteel);
+		RegisterRender(hardenedBucketTin);
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);
