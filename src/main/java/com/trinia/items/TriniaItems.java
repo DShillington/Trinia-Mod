@@ -24,14 +24,6 @@ import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class TriniaItems {
-	
-	//Casts
-	public static Item CastBlank;
-    public static Item CastPickaxe;
-	public static Item CastAxe;
-	public static Item CastSword;
-	public static Item CastSwordHandle;
-	public static Item CastSpade;
 		
 	//Tool Materials
 	public static ToolMaterial TriniaSteel = EnumHelper.addToolMaterial("Steel", 3, 5000, 15.0F, 4.0F, 20);
@@ -48,10 +40,16 @@ public class TriniaItems {
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
 	
-	
-	
 	public static Item angelWings;
 	public static Item angelHalo;
+	public static Item goldenKey;
+	//Casts
+	public static Item CastBlank;
+    public static Item CastPickaxe;
+	public static Item CastAxe;
+	public static Item CastSword;
+	public static Item CastSwordHandle;
+	public static Item CastSpade;
 	//-Weapons-
 	//Steel
 	public static Item steelBattleAxe;
@@ -59,7 +57,6 @@ public class TriniaItems {
 	public static Item steelDagger;
 	//Tin
 	//Silver
-	
 	public static Item Polearm;
 	public static Item Warhammer;
 	public static Item Wand;
@@ -204,6 +201,7 @@ public class TriniaItems {
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
 		Chisel = (new ItemMagicalBed().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaMainTab);
+		goldenKey = (new ItemGoldenKey().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//Casts
 		CastBlank = (new ItemTrinia().setUnlocalizedName("castBlank")).setCreativeTab(TriniaMod.TriniaToolsTab);
@@ -292,6 +290,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(TinSword, TinSword.getUnlocalizedName().substring(5));
 		
 		GameRegistry.registerItem(Chisel, Chisel.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(goldenKey, goldenKey.getUnlocalizedName().substring(5));
 		
 		//Casts
 		GameRegistry.registerItem(CastBlank, CastBlank.getUnlocalizedName().substring(5));
@@ -402,6 +401,7 @@ public class TriniaItems {
 		registerRender(MagicalBedItem);
 		registerRender(angelWings);
 		registerRender(angelHalo);
+		registerRender(goldenKey);
 	}
 	
 	public static void registerRender(Item item)

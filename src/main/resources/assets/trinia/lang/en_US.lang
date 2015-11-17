@@ -9,6 +9,7 @@ entity.reddragon.name=Red Dragon
 entity.townsmen.name=Worker Fella
 entity.townswoman.name=Lady Worker
 
+item.goldenKey.name=Dungeon Key
 item.steelingot.name=Steel Ingot
 item.copperIngot.name=Copper Ingot
 item.silverIngot.name=Silver Ingot
@@ -70,6 +71,12 @@ item.steelLeggings.name=Steel Leggings
 item.steelBoots.name=Steel Boots
 item.triniaAmulet.name=Trinia Amulet
 
+tile.cloud.name=High Elevation Cloud
+tile.bluecloud.name=Blue High Elevation Cloud
+tile.goldenBrick.name=Golden Brick
+tile.goldenDoor.name=Dungeon Door Block
+tile.goldenKeyHole.name=Dungeon Door Key Hole
+tile.goldenPillar.name=Golden Pillar
 tile.log.red.name=Red Wood
 tile.triniaDirt.name=Dirt
 tile.triniaStone.name=Stone

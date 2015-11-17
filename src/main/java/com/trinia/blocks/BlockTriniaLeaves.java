@@ -258,7 +258,7 @@ public abstract class BlockTriniaLeaves extends BlockTriniaLeavesBase implements
     @SideOnly(Side.CLIENT)
     public EnumWorldBlockLayer getBlockLayer()
     {
-        return this.isTransparent ? EnumWorldBlockLayer.CUTOUT_MIPPED : EnumWorldBlockLayer.SOLID;
+    	return EnumWorldBlockLayer.TRANSLUCENT;
     }
 
     public boolean isVisuallyOpaque()

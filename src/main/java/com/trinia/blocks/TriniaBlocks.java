@@ -56,6 +56,12 @@ public class TriniaBlocks
 	public static Block hardenedBucketSteel;
 	public static Block hardenedBucketTin;
 	public static Block hardenedBucketCopper;
+	public static Block cloud;
+	public static Block bluecloud;
+	public static Block goldenBrick;
+	public static Block goldenDoor;
+	public static Block goldenKeyHole;
+	public static Block goldenPillar;
 	
 	//World Gen Blocks Medeival World
 	public static Block adimiteOre;
@@ -67,6 +73,11 @@ public class TriniaBlocks
 	public static void init()
 	{
 		//Trinia World Gen Blocks
+		goldenBrick = new BlockTrinia(Material.rock).setUnlocalizedName("goldenBrick");
+		goldenDoor = new BlockTrinia(Material.rock).setUnlocalizedName("goldenDoor");
+		goldenKeyHole = new BlockTrinia(Material.rock).setUnlocalizedName("goldenKeyHole");
+		goldenPillar = new BlockTrinia(Material.rock).setUnlocalizedName("goldenPillar");
+		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
 		triniaDirt = new BlockTriniaDirt().setUnlocalizedName("triniaDirt");
@@ -100,6 +111,8 @@ public class TriniaBlocks
 		orisoneOre = new BlockTrinia(Material.rock).setUnlocalizedName("orisoneOre");
 		MagicalBed = new BlockMagicalBed().setUnlocalizedName("MagicalBed");
 		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
+		cloud = new BlockCloud().setUnlocalizedName("cloud");
+		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");
 		
 		
 		//Trinia Blocks
@@ -118,6 +131,11 @@ public class TriniaBlocks
 	public static void register()
 	{
 		//Trinia World Gen Blocks
+		GameRegistry.registerBlock(goldenBrick, goldenBrick.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(goldenDoor, goldenDoor.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(goldenKeyHole, goldenKeyHole.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(goldenPillar, goldenPillar.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(silverOre, silverOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
@@ -151,6 +169,8 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(orisoneOre, orisoneOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(MagicalBed, MagicalBed.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone);
 		GameRegistry.registerBlock(CastingBench, CastingBench.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(cloud, cloud.getUnlocalizedName().substring(5)).setHardness(0.5F).setResistance(1.0F).setStepSound(Block.soundTypeCloth).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(bluecloud, bluecloud.getUnlocalizedName().substring(5)).setHardness(0.5F).setResistance(1.0F).setStepSound(Block.soundTypeCloth).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//Trinia Blocks
 		GameRegistry.registerBlock(steelBlock, steelBlock.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
@@ -187,6 +207,13 @@ public class TriniaBlocks
 		RegisterRender(hardenedBucketSilver);
 		RegisterRender(hardenedBucketSteel);
 		RegisterRender(hardenedBucketTin);
+		RegisterRender(cloud);
+		RegisterRender(bluecloud);
+		RegisterRender(goldenBrick);
+		RegisterRender(goldenDoor);
+		RegisterRender(goldenKeyHole);
+		RegisterRender(goldenPillar);
+		
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);
