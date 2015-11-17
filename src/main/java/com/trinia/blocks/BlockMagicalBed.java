@@ -6,6 +6,8 @@ import java.util.Random;
 
 import com.trinia.Reference;
 import com.trinia.items.TriniaItems;
+import com.trinia.world.TriniaTeleporter;
+import com.trinia.world.TriniaTeleporterPlatform;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -43,13 +45,6 @@ public class BlockMagicalBed extends BlockDirectional
         super(Material.cloth);
         this.setDefaultState(this.blockState.getBaseState().withProperty(PART, BlockMagicalBed.EnumPartType.FOOT).withProperty(OCCUPIED, Boolean.valueOf(false)));
         this.setBedBounds();
-    }
-    
-    @SuppressWarnings("unchecked")
-    @SideOnly(Side.CLIENT)
-    public void addInformation(Block stack, EntityPlayer player, List info, boolean p_77624_4_) 
-    {
-    	info.add("Sleep in this bed to drift off to Trinia");
     }
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
@@ -94,15 +89,15 @@ public class BlockMagicalBed extends BlockDirectional
                     state = state.withProperty(OCCUPIED, Boolean.valueOf(true));
                     if (thePlayer.timeUntilPortal > 0)
                     {
-                    	thePlayer.timeUntilPortal = 10;
+                    	thePlayer.timeUntilPortal = 15;
                     }
                     else if (playerIn.dimension != 6)
                     {
-                    	thePlayer.timeUntilPortal = 10;
-                    	thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 6);
+                    	thePlayer.timeUntilPortal = 15;
+                    	 thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 6, new TriniaTeleporterPlatform(thePlayer.mcServer.worldServerForDimension(6)));
                     }
                     else {
-                    	thePlayer.timeUntilPortal = 10;
+                    	thePlayer.timeUntilPortal = 15;
                     	
                     }
                     worldIn.setBlockState(pos, state, 4);
@@ -377,4 +372,5 @@ public class BlockMagicalBed extends BlockDirectional
             return this.name;
         }
     }
+
 }

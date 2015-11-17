@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.world.TriniaTeleporter;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;
@@ -38,7 +39,7 @@ public class ItemAmulet extends ItemArmor {
         
         else {
                 thePlayer.timeUntilPortal = 10;
-                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0);
+                thePlayer.mcServer.getConfigurationManager().transferPlayerToDimension(thePlayer, 0, new TriniaTeleporter(thePlayer.mcServer.worldServerForDimension(0)));
         }
         }
 	return var1;
@@ -86,15 +87,15 @@ public class ItemAmulet extends ItemArmor {
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
     {
-    	info.add("Place this amulet in the ChestPlate Slot.");
+    	//info.add("Place this amulet in the ChestPlate Slot.");
     	info.add("Right Click to teleport back from Trinia");
-    	info.add("§4 *** Abilities ***");
+    	//info.add("§4 *** Abilities ***");
     	info.add("");
-    	info.add("§a * Cloaking Ability");
-    	info.add("§a * Healing Factor");
-    	info.add("");
-    	info.add("§9 +10 Sword Damage");
-    	info.add("§9 +5 Punch Damage");
+    	info.add("§a * Could be a bit of a fall!");
+    	info.add("§a * Could also suffocate you.");
+    	//info.add("");
+    	//info.add("§9 +10 Sword Damage");
+    	//info.add("§9 +5 Punch Damage");
     }
 
 }

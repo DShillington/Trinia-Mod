@@ -1,5 +1,7 @@
 package com.trinia.items;
 
+import java.util.List;
+
 import com.trinia.blocks.BlockMagicalBed;
 import com.trinia.blocks.TriniaBlocks;
 
@@ -14,6 +16,8 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemMagicalBed extends Item
 {
@@ -23,7 +27,14 @@ public class ItemMagicalBed extends Item
     {
         this.setCreativeTab(CreativeTabs.tabDecorations);
     }
-
+    @SuppressWarnings("unchecked")
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer player, List info, boolean p_77624_4_) 
+    {
+    	
+    	info.add("Sleep here to drift off to Trinia");
+    	
+    }
     /**
      * Called when a Block is right-clicked with this Item
      *  
