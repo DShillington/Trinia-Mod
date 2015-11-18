@@ -225,17 +225,17 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
      */
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
-        this.buttonList.add(this.buttonSingle = new GuiButton(1, this.width / 2 - 50, 100, I18n.format("Go alone!", new Object[0])));
-        this.buttonList.add(this.buttonMulti = new GuiButton(2, this.width / 2 - 50, 100 + p_73969_2_ * 1, I18n.format("Go with friends!", new Object[0])));
-        this.buttonList.add(this.buttonOptions = new GuiButton(0, this.width / 2 - 50, 100 + p_73969_2_ * 2, I18n.format("Options!", new Object[0])));
-        this.buttonList.add(this.buttonQuit = new GuiButton(4, this.width / 2 - 50, 100 + p_73969_2_ * 3, I18n.format("Quit Playing :(", new Object[0])));
-        this.buttonList.add(this.buttonCredit = new GuiButton(400, this.width / 2 - 50, 100 + p_73969_2_ * 4, I18n.format("Credits!", new Object[0])));
+        this.buttonList.add(this.buttonSingle = new GuiButton(1, 10, 90, I18n.format("Go alone!", new Object[0])));
+        this.buttonList.add(this.buttonMulti = new GuiButton(2, 10, 90 + p_73969_2_ * 1, I18n.format("Go with friends!", new Object[0])));
+        this.buttonList.add(this.buttonOptions = new GuiButton(0, 10, 90 + p_73969_2_ * 2, I18n.format("Options!", new Object[0])));
+        this.buttonList.add(this.buttonQuit = new GuiButton(4, 10, 90 + p_73969_2_ * 3, I18n.format("Quit Playing :(", new Object[0])));
+        this.buttonList.add(this.buttonCredit = new GuiButton(400, 10, 90 + p_73969_2_ * 4, I18n.format("Credits!", new Object[0])));
         
-        buttonSingle.width = 100;
-        buttonMulti.width = 100;
-        buttonOptions.width = 100;
-        buttonQuit.width = 100;
-        buttonCredit.width = 100;
+        buttonSingle.width = 125;
+        buttonMulti.width = 125;
+        buttonOptions.width = 125;
+        buttonQuit.width = 125;
+        buttonCredit.width = 125;
     }
 
    
@@ -494,7 +494,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         short short1 = 274;
-        int k = this.width / 2 - short1 / 2;
+        int k = -70;
         byte b0 = 30;
         this.drawGradientRect(0, 0, this.width, this.height, -2130706433, 16777215);
         this.drawGradientRect(0, 0, this.width, this.height, 0, Integer.MIN_VALUE);
@@ -518,14 +518,14 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         worldrenderer.setColorOpaque_I(-1);
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)(this.width / 2 + 90), 70.0F, 0.0F);
-        GlStateManager.rotate(-20.0F, 0.0F, 0.0F, 1.0F);
+        GlStateManager.rotate(-1.0F, 0.0F, 0.0F, 0.0F);
         float f1 = 1.8F - MathHelper.abs(MathHelper.sin((float)(Minecraft.getSystemTime() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
-        f1 = f1 * 100.0F / (float)(this.fontRendererObj.getStringWidth(this.splashText) + 32);
+        f1 = f1 * 121.0F / (float)(this.fontRendererObj.getStringWidth(this.splashText) + 52);
         GlStateManager.scale(f1, f1, f1);
-        this.drawCenteredString(this.fontRendererObj, this.splashText, 0, -8, -256);
+        this.drawCenteredString(this.fontRendererObj, this.splashText, -160, -45, -256);
         GlStateManager.popMatrix();
 
-        this.drawCenteredString(this.fontRendererObj, this.versionText, - -60, this.height - 10, 18668501);
+        this.drawCenteredString(this.fontRendererObj, this.versionText, - -60, this.height - 15, 18668501);
         
         if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0)
         {
