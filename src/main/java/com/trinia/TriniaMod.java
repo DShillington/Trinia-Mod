@@ -23,12 +23,14 @@ import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
+import com.trinia.handler.tickHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -43,7 +45,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class TriniaMod {
-	
 	public static Update latestUpdate;
 	//TESTING TRINIA-BETA GITHUB
 	
@@ -83,6 +84,7 @@ public class TriniaMod {
 		FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
 		FMLCommonHandler.instance().bus().register(new EventHandlerCommon());
 		FMLCommonHandler.instance().bus().register(new GuiHandler());
+		FMLCommonHandler.instance().bus().register(new tickHandler(Minecraft.getMinecraft()));
 		FMLCommonHandler.instance().bus().register(new EventUpdate());
 		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		UpdateHandler.init();
@@ -95,12 +97,14 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
-
+		
+		
 	}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{	
+		
 		proxy.register();
 		proxy.registerRenders();
 	}
