@@ -42,7 +42,7 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
     protected String creditPapertazer = "-Papertazer";
     protected String creditOMGitsMiniMe = "-OMGitsMiniMe";
     protected String creditSnurly = "-Snurly";
-    protected String creditMagikModder = "-MagikModder";
+    protected String creditMagikModder = "-MagikModder (help)";
     
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {

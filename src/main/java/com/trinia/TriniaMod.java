@@ -5,7 +5,7 @@
  * Contributors:
  *     papertazer - Codeing/modeling/textures
  *     OMGitsMiniMe -  Codeing/modeling/textures
- *     MagikModder - Coding
+ *     MagikModder - Coding help
  *     Snurly - Textures
  ******************************************************************************/
 
