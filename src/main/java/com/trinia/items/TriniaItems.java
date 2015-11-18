@@ -40,9 +40,15 @@ public class TriniaItems {
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
 	
+	//random shit I didn't know how to put into categories -papertazer
+	public static Item triniaAmulet;
+	public static Item MagicalBedItem;
+	public static Item Chisel;
 	public static Item angelWings;
 	public static Item angelHalo;
 	public static Item goldenKey;
+	public static Item inomite;
+	
 	//Casts
 	public static Item CastBlank;
     public static Item CastPickaxe;
@@ -140,10 +146,7 @@ public class TriniaItems {
 	public static Item triniaTinLeggings;
 	public static Item triniaTinBoots;
 	
-	//random shit I didn't know how to put into categories -papertazer
-	public static Item triniaAmulet;
-	public static Item MagicalBedItem;
-	public static Item Chisel;
+	
 	public static void init()
 	{
 		//-Weapons-
@@ -181,6 +184,7 @@ public class TriniaItems {
 		orca = (new ItemTrinia().setUnlocalizedName("orca")).setCreativeTab(TriniaMod.TriniaMainTab);
 		orisone = (new ItemTrinia().setUnlocalizedName("orisone")).setCreativeTab(TriniaMod.TriniaMainTab);
 		MagicalBedItem = (new ItemMagicalBed().setUnlocalizedName("MagicalBedItem")).setCreativeTab(TriniaMod.TriniaMainTab);
+		inomite = (new ItemTrinia().setUnlocalizedName("inomite")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//-Tools-
 		//Steel
@@ -249,6 +253,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(angelWings = new ItemAngelArmor("angelWings", TriniaAngelArmor, 1, 1), "angelWings");
 		GameRegistry.registerItem(angelHalo = new ItemAngelArmor("angelHalo", TriniaAngelArmor, 1, 0), "angelHalo");
 		
+		
 		//-Weapons-
 		//Steel
 		GameRegistry.registerItem(steelBattleAxe, steelBattleAxe.getUnlocalizedName().substring(5));
@@ -271,6 +276,8 @@ public class TriniaItems {
 		GameRegistry.registerItem(bridroneIngot, bridroneIngot.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(orca, orca.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(orisone, orisone.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(inomite, inomite.getUnlocalizedName().substring(5));
+		
 		//-Tools-
 		//Steel
 		GameRegistry.registerItem(SteelPickaxe, SteelPickaxe.getUnlocalizedName().substring(5));
@@ -327,6 +334,8 @@ public class TriniaItems {
 	
 	public static void registerRenders()
 	{
+		
+		registerRender(inomite);
 		//-Weapons-
 		//Steel
 		registerRender(steelBattleAxe);

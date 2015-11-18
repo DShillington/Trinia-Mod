@@ -9,6 +9,7 @@ entity.reddragon.name=Red Dragon
 entity.townsmen.name=Worker Fella
 entity.townswoman.name=Lady Worker
 
+item.inomite.name=Inomite Shard
 item.goldenKey.name=Dungeon Key
 item.steelingot.name=Steel Ingot
 item.copperIngot.name=Copper Ingot

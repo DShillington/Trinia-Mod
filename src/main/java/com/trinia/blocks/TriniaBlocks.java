@@ -68,6 +68,7 @@ public class TriniaBlocks
 	public static Block bridroneOre;
 	public static Block orcaOre;
 	public static Block orisoneOre;
+	public static Block inomiteTorch;
 	//public static Block rockWheel;
 	
 	public static void init()
@@ -77,6 +78,7 @@ public class TriniaBlocks
 		goldenDoor = new BlockTrinia(Material.rock).setUnlocalizedName("goldenDoor");
 		goldenKeyHole = new BlockTrinia(Material.rock).setUnlocalizedName("goldenKeyHole");
 		goldenPillar = new BlockTrinia(Material.rock).setUnlocalizedName("goldenPillar");
+		inomiteTorch = new BlockInomiteTorch(Material.rock).setLightLevel(1F).setUnlocalizedName("inomiteTorch");
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
@@ -135,6 +137,7 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(goldenDoor, goldenDoor.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(goldenKeyHole, goldenKeyHole.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(goldenPillar, goldenPillar.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(inomiteTorch, inomiteTorch.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
@@ -213,6 +216,7 @@ public class TriniaBlocks
 		RegisterRender(goldenDoor);
 		RegisterRender(goldenKeyHole);
 		RegisterRender(goldenPillar);
+		RegisterRender(inomiteTorch);
 		
 		//Random
 		RegisterRender(redLeaves);
