@@ -81,7 +81,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private static final ResourceLocation splashTexts = new ResourceLocation("not used here");
     private static final ResourceLocation minecraftTitleTextures = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/minecraft.png");
     /** An array of all the paths to the panorama pictures. */
-    private static final ResourceLocation[] titlePanoramaPaths = new ResourceLocation[] {new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_0.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_1.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_2.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_3.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_4.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_5.png")};
+    private static final ResourceLocation[] titlePanoramaPaths = new ResourceLocation[] {new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_0.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_1.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_2.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_3.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_4.png"), new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/panorama_highres_5.png")};
     public static final String field_96138_a = "Please click " + EnumChatFormatting.UNDERLINE + "here" + EnumChatFormatting.RESET + " for more information.";
     private int field_92024_r;
     private int field_92023_s;
@@ -89,6 +89,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private int field_92021_u;
     private int field_92020_v;
     private int field_92019_w;
+    protected String tempText = "(Something awesome will load here)";
+    
     protected String versionText = "Trinia version: " + Reference.MENU_TRINIA_VERSION;
     
     private ResourceLocation field_110351_G;
@@ -225,11 +227,11 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
      */
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
-        this.buttonList.add(this.buttonSingle = new GuiButton(1, 10, 90, I18n.format("Go alone!", new Object[0])));
-        this.buttonList.add(this.buttonMulti = new GuiButton(2, 10, 90 + p_73969_2_ * 1, I18n.format("Go with friends!", new Object[0])));
-        this.buttonList.add(this.buttonOptions = new GuiButton(0, 10, 90 + p_73969_2_ * 2, I18n.format("Options!", new Object[0])));
-        this.buttonList.add(this.buttonQuit = new GuiButton(4, 10, 90 + p_73969_2_ * 3, I18n.format("Quit Playing :(", new Object[0])));
-        this.buttonList.add(this.buttonCredit = new GuiButton(400, 10, 90 + p_73969_2_ * 4, I18n.format("Credits!", new Object[0])));
+        this.buttonList.add(this.buttonSingle = new GuiButton(1, 10, 85, I18n.format("Go alone!", new Object[0])));
+        this.buttonList.add(this.buttonMulti = new GuiButton(2, 10, 85 + p_73969_2_ * 1, I18n.format("Go with friends!", new Object[0])));
+        this.buttonList.add(this.buttonOptions = new GuiButton(0, 10, 85 + p_73969_2_ * 2, I18n.format("Options!", new Object[0])));
+        this.buttonList.add(this.buttonQuit = new GuiButton(4, 10, 85 + p_73969_2_ * 3, I18n.format("Quit Playing :(", new Object[0])));
+        this.buttonList.add(this.buttonCredit = new GuiButton(400, 10, 85 + p_73969_2_ * 4, I18n.format("Credits!", new Object[0])));
         
         buttonSingle.width = 125;
         buttonMulti.width = 125;
@@ -360,7 +362,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
             float f3 = 0.0F;
             GlStateManager.translate(f1, f2, f3);
             GlStateManager.rotate(MathHelper.sin(((float)this.panoramaTimer + p_73970_3_) / 400.0F) * 25.0F + 20.0F, 1.0F, 0.0F, 0.0F);
-            GlStateManager.rotate(-((float)this.panoramaTimer + p_73970_3_) * 0.1F, 0.0F, 1.0F, 0.0F);
+            GlStateManager.rotate(-((float)this.panoramaTimer + p_73970_3_) * 0.9F, 0.1F, 2.0F, 0.0F);
 
             for (int l = 0; l < 6; ++l)
             {
@@ -434,7 +436,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
         worldrenderer.startDrawingQuads();
         GlStateManager.disableAlpha();
-        byte b0 = 3;
+        byte b0 = 0;
 
         for (int i = 0; i < b0; ++i)
         {
@@ -493,15 +495,15 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         GlStateManager.enableAlpha();
         Tessellator tessellator = Tessellator.getInstance();
         WorldRenderer worldrenderer = tessellator.getWorldRenderer();
-        short short1 = 274;
-        int k = -70;
+        short short1 = 74;
+        int k = -25;
         byte b0 = 30;
-        this.drawGradientRect(0, 0, this.width, this.height, -2130706433, 16777215);
-        this.drawGradientRect(0, 0, this.width, this.height, 0, Integer.MIN_VALUE);
+        this.drawGradientRect(9000, 0, this.width, this.height, -2130706433, 16777215);
+        this.drawGradientRect(9000, 0, this.width, this.height, 0, Integer.MIN_VALUE);
         this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         
-        if ((double)this.updateCounter < 1.0E-4D)
+        if ((double)this.updateCounter < 1.0E-1D)
         {
             this.drawTexturedModalRect(k + 0, b0 + 0, 0, 0, 99, 44);
             this.drawTexturedModalRect(k + 99, b0 + 0, 129, 0, 27, 44);
@@ -517,7 +519,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
 
         worldrenderer.setColorOpaque_I(-1);
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)(this.width / 2 + 90), 70.0F, 0.0F);
+        GlStateManager.translate((float)(this.width + -120), 70.0F, 0.0F);
         GlStateManager.rotate(-1.0F, 0.0F, 0.0F, 0.0F);
         float f1 = 1.8F - MathHelper.abs(MathHelper.sin((float)(Minecraft.getSystemTime() % 1000L) / 1000.0F * (float)Math.PI * 2.0F) * 0.1F);
         f1 = f1 * 121.0F / (float)(this.fontRendererObj.getStringWidth(this.splashText) + 52);
@@ -526,7 +528,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         GlStateManager.popMatrix();
 
         this.drawCenteredString(this.fontRendererObj, this.versionText, - -60, this.height - 15, 18668501);
-        
+        this.drawCenteredString(this.fontRendererObj, this.tempText, this.width / 2 + 56, this.height / 2, -256);
+         
         if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0)
         {
             drawRect(this.field_92022_t - 2, this.field_92021_u - 2, this.field_92020_v + 2, this.field_92019_w - 1, 1428160512);
