@@ -51,7 +51,6 @@ import org.lwjgl.util.glu.Project;
 @SideOnly(Side.CLIENT)
 public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
 {
-	 private static final ResourceLocation BUTTON_GUI_TEXTURE = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/MainMenuButtonBackground.png");
 	  
     private static final AtomicInteger field_175373_f = new AtomicInteger(0);
     private static final Logger logger = LogManager.getLogger();
@@ -60,12 +59,12 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private float updateCounter;
     /** The splash message. */
     private String splashText;
-    private GuiButton buttonResetDemo;
-    private GuiButton buttonSingle;
-    private GuiButton buttonMulti;
-    private GuiButton buttonOptions;
-    private GuiButton buttonQuit;
-    private GuiButton buttonCredit;
+    private ButtonCustomGui buttonResetDemo;
+    private ButtonCustomGui buttonSingle;
+    private ButtonCustomGui buttonMulti;
+    private ButtonCustomGui buttonOptions;
+    private ButtonCustomGui buttonQuit;
+    private ButtonCustomGui buttonCredit;
     /** Timer used to rotate the panorama, increases every tick. */
     private int panoramaTimer;
     /** Texture allocated for the current viewport of the main menu's panorama background. */
@@ -227,11 +226,11 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
      */
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
-        this.buttonList.add(this.buttonSingle = new GuiButton(1, 10, 85, I18n.format("Go alone!", new Object[0])));
-        this.buttonList.add(this.buttonMulti = new GuiButton(2, 10, 85 + p_73969_2_ * 1, I18n.format("Go with friends!", new Object[0])));
-        this.buttonList.add(this.buttonOptions = new GuiButton(0, 10, 85 + p_73969_2_ * 2, I18n.format("Options!", new Object[0])));
-        this.buttonList.add(this.buttonQuit = new GuiButton(4, 10, 85 + p_73969_2_ * 3, I18n.format("Quit Playing :(", new Object[0])));
-        this.buttonList.add(this.buttonCredit = new GuiButton(400, 10, 85 + p_73969_2_ * 4, I18n.format("Credits!", new Object[0])));
+        this.buttonList.add(this.buttonSingle = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format("Go alone!", new Object[0])));
+        this.buttonList.add(this.buttonMulti = new ButtonCustomGui(2, 10, 85 + p_73969_2_ * 1, 20, 20, I18n.format("Go with friends!", new Object[0])));
+        this.buttonList.add(this.buttonOptions = new ButtonCustomGui(0, 10, 85 + p_73969_2_ * 2, 20, 20, I18n.format("Options!", new Object[0])));
+        this.buttonList.add(this.buttonQuit = new ButtonCustomGui(4, 10, 85 + p_73969_2_ * 3, 20, 20, I18n.format("Quit Playing :(", new Object[0])));
+        this.buttonList.add(this.buttonCredit = new ButtonCustomGui(400, 10, 85 + p_73969_2_ * 4,  20, 20, I18n.format("Credits!", new Object[0])));
         
         buttonSingle.width = 125;
         buttonMulti.width = 125;
