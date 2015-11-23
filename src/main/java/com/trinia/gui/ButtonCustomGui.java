@@ -12,9 +12,9 @@ import net.minecraft.util.Util;
 
 public class ButtonCustomGui extends GuiButton{
 
-	private String location;
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/minecraft.png");
-	   
+	// private static final ResourceLocation res = new ResourceLocation("textures/environment/end_sky.png");
+	 private static final ResourceLocation res = new ResourceLocation("textures/blocks/wool_colored_light_blue.png");
+
 	public ButtonCustomGui(int buttonId, int x, int y, int widthIn, int heightIn, String location)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
@@ -28,16 +28,16 @@ public class ButtonCustomGui extends GuiButton{
         this.width = widthIn;
         this.height = heightIn;
         this.displayString = "";
-        this.location = location;
+        
     }
 	
-	
+	@Override
 	public void drawButton(Minecraft mc, int mouseX, int mouseY)
     {
         if (this.visible)
         {
             FontRenderer fontrenderer = mc.fontRendererObj;
-            mc.getTextureManager().bindTexture(new ResourceLocation(location));
+            mc.getTextureManager().bindTexture(res);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
             int k = this.getHoverState(this.hovered);
@@ -45,7 +45,7 @@ public class ButtonCustomGui extends GuiButton{
             GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
             GlStateManager.blendFunc(770, 771);
             this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + k * 20, this.width / 2, this.height);
-            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + k * 20, this.width / 2, this.height);
+            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 100, 100, this.width / 2, this.height);
             this.mouseDragged(mc, mouseX, mouseY);
             int l = 14737632;
 
