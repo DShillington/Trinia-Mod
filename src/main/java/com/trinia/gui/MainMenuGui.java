@@ -232,11 +232,11 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
      */
     private void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_)
     {
-        this.buttonList.add(this.buttonSingle = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format("Go alone!", new Object[0])));
-        this.buttonList.add(this.buttonMulti = new ButtonCustomGui(2, 10, 85 + p_73969_2_ * 1, 20, 20, I18n.format("Go with friends!", new Object[0])));
-        this.buttonList.add(this.buttonOptions = new ButtonCustomGui(0, 10, 85 + p_73969_2_ * 2, 20, 20, I18n.format("Options!", new Object[0])));
-        this.buttonList.add(this.buttonQuit = new ButtonCustomGui(4, 10, 85 + p_73969_2_ * 3, 20, 20, I18n.format("Quit Playing :(", new Object[0])));
-        this.buttonList.add(this.buttonCredit = new ButtonCustomGui(400, 10, 85 + p_73969_2_ * 4,  20, 20, I18n.format("Credits!", new Object[0])));
+        this.buttonList.add(this.buttonSingle = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format(Reference.MENU_SINGLEPLAYER, new Object[0])));
+        this.buttonList.add(this.buttonMulti = new ButtonCustomGui(2, 10, 85 + p_73969_2_ * 1, 20, 20, I18n.format(Reference.MENU_MULTIPLAYER, new Object[0])));
+        this.buttonList.add(this.buttonOptions = new ButtonCustomGui(0, 10, 85 + p_73969_2_ * 2, 20, 20, I18n.format(Reference.MENU_OPTIONS, new Object[0])));
+        this.buttonList.add(this.buttonQuit = new ButtonCustomGui(4, 10, 85 + p_73969_2_ * 3, 20, 20, I18n.format(Reference.MENU_QUIT, new Object[0])));
+        this.buttonList.add(this.buttonCredit = new ButtonCustomGui(400, 10, 85 + p_73969_2_ * 4,  20, 20, I18n.format(Reference.MENU_CREDITS, new Object[0])));
         
         buttonSingle.width = 125;
         buttonMulti.width = 125;
@@ -542,7 +542,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
     	super.drawScreen(mouseX, mouseY, partialTicks);
-        this.oldMouseX = (float)mouseX;
+       
+    	this.oldMouseX = (float)mouseX;
         this.oldMouseY = (float)mouseY;
         GlStateManager.disableAlpha();
         this.renderSkybox(mouseX, mouseY, partialTicks);
@@ -552,6 +553,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         short short1 = 74;
         int k = -25;
         byte b0 = 30;
+        
         this.drawGradientRect(9000, 0, this.width, this.height, -2130706433, 16777215);
         this.drawGradientRect(9000, 0, this.width, this.height, 0, Integer.MIN_VALUE);
         this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
@@ -583,14 +585,16 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
 
         this.drawCenteredString(this.fontRendererObj, this.versionText, - -60, this.height - 15, 18668501);
         this.drawCenteredString(this.fontRendererObj, this.tempText, this.width / 2 + 56, this.height / 2, -256);
-         
+       
+        
+          
         if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0)
         {
             drawRect(this.field_92022_t - 2, this.field_92021_u - 2, this.field_92020_v + 2, this.field_92019_w - 1, 1428160512);
             this.drawString(this.fontRendererObj, this.openGLWarning1, this.field_92022_t, this.field_92021_u, -1);
             this.drawString(this.fontRendererObj, this.openGLWarning2, (this.width - this.field_92024_r) / 2, ((GuiButton)this.buttonList.get(0)).yPosition - 12, -1);
         }
-
+        
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 

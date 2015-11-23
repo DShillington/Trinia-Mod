@@ -14,7 +14,7 @@ public class ButtonCustomGui extends GuiButton{
 
 	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/Button.png");
 
-	public ButtonCustomGui(int buttonId, int x, int y, int widthIn, int heightIn, String location)
+	public ButtonCustomGui(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -26,7 +26,7 @@ public class ButtonCustomGui extends GuiButton{
         this.yPosition = y;
         this.width = widthIn;
         this.height = heightIn;
-        this.displayString = "";
+        this.displayString = buttonText;
         
     }
 	
@@ -35,7 +35,7 @@ public class ButtonCustomGui extends GuiButton{
     {
         if (this.visible)
         {
-            FontRenderer fontrenderer = mc.fontRendererObj;
+        	FontRenderer fontrenderer = mc.fontRendererObj;
             mc.getTextureManager().bindTexture(res);
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
             this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
@@ -44,11 +44,10 @@ public class ButtonCustomGui extends GuiButton{
             GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
             GlStateManager.blendFunc(770, 771);
             this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + k * 20, this.width / 2, this.height);
-            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 100, 100, this.width / 2, this.height);
+            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + k * 20, this.width / 2, this.height);
             this.mouseDragged(mc, mouseX, mouseY);
             int l = 14737632;
-
-            if (packedFGColour != 0)
+           if (packedFGColour != 0)
             {
                 l = packedFGColour;
             }
