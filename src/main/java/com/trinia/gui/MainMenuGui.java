@@ -27,10 +27,13 @@ import net.minecraft.client.gui.GuiYesNo;
 import net.minecraft.client.gui.GuiYesNoCallback;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.WorldRenderer;
+import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.realms.RealmsBridge;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
@@ -59,6 +62,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private float updateCounter;
     /** The splash message. */
     private String splashText;
+    private float oldMouseX;
+    /** The old y position of the mouse pointer */
+    private float oldMouseY;
     private ButtonCustomGui buttonResetDemo;
     private ButtonCustomGui buttonSingle;
     private ButtonCustomGui buttonMulti;
@@ -422,6 +428,52 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     /**
      * Rotate and blurs the skybox view in the main menu
      */
+    protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
+    {
+        GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+      
+       
+        drawEntityOnScreen(1 + 51, 1 + 75, 30, (float)(1 + 51) - this.oldMouseX, (float)(1 + 75 - 50) - this.oldMouseY, this.mc.thePlayer);
+    }
+    public static void drawEntityOnScreen(int p_147046_0_, int p_147046_1_, int p_147046_2_, float p_147046_3_, float p_147046_4_, EntityLivingBase p_147046_5_)
+    {
+        GlStateManager.enableColorMaterial();
+        GlStateManager.pushMatrix();
+        GlStateManager.translate((float)p_147046_0_, (float)p_147046_1_, 50.0F);
+        GlStateManager.scale((float)(-p_147046_2_), (float)p_147046_2_, (float)p_147046_2_);
+        GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
+        float f2 = p_147046_5_.renderYawOffset;
+        float f3 = p_147046_5_.rotationYaw;
+        float f4 = p_147046_5_.rotationPitch;
+        float f5 = p_147046_5_.prevRotationYawHead;
+        float f6 = p_147046_5_.rotationYawHead;
+        GlStateManager.rotate(135.0F, 0.0F, 1.0F, 0.0F);
+        RenderHelper.enableStandardItemLighting();
+        GlStateManager.rotate(-135.0F, 0.0F, 1.0F, 0.0F);
+        GlStateManager.rotate(-((float)Math.atan((double)(p_147046_4_ / 40.0F))) * 20.0F, 1.0F, 0.0F, 0.0F);
+        p_147046_5_.renderYawOffset = (float)Math.atan((double)(p_147046_3_ / 40.0F)) * 20.0F;
+        p_147046_5_.rotationYaw = (float)Math.atan((double)(p_147046_3_ / 40.0F)) * 40.0F;
+        p_147046_5_.rotationPitch = -((float)Math.atan((double)(p_147046_4_ / 40.0F))) * 20.0F;
+        p_147046_5_.rotationYawHead = p_147046_5_.rotationYaw;
+        p_147046_5_.prevRotationYawHead = p_147046_5_.rotationYaw;
+        GlStateManager.translate(0.0F, 0.0F, 0.0F);
+        RenderManager rendermanager = Minecraft.getMinecraft().getRenderManager();
+        rendermanager.setPlayerViewY(180.0F);
+        rendermanager.setRenderShadow(false);
+        rendermanager.renderEntityWithPosYaw(p_147046_5_, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
+        rendermanager.setRenderShadow(true);
+        p_147046_5_.renderYawOffset = f2;
+        p_147046_5_.rotationYaw = f3;
+        p_147046_5_.rotationPitch = f4;
+        p_147046_5_.prevRotationYawHead = f5;
+        p_147046_5_.rotationYawHead = f6;
+        GlStateManager.popMatrix();
+        RenderHelper.disableStandardItemLighting();
+        GlStateManager.disableRescaleNormal();
+        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+        GlStateManager.disableTexture2D();
+        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+    }
     private void rotateAndBlurSkybox(float p_73968_1_)
     {
         this.mc.getTextureManager().bindTexture(this.field_110351_G);
@@ -489,6 +541,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
 
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
+    	super.drawScreen(mouseX, mouseY, partialTicks);
+        this.oldMouseX = (float)mouseX;
+        this.oldMouseY = (float)mouseY;
         GlStateManager.disableAlpha();
         this.renderSkybox(mouseX, mouseY, partialTicks);
         GlStateManager.enableAlpha();

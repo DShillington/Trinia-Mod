@@ -12,8 +12,7 @@ import net.minecraft.util.Util;
 
 public class ButtonCustomGui extends GuiButton{
 
-	// private static final ResourceLocation res = new ResourceLocation("textures/environment/end_sky.png");
-	 private static final ResourceLocation res = new ResourceLocation("textures/blocks/wool_colored_light_blue.png");
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/Button.png");
 
 	public ButtonCustomGui(int buttonId, int x, int y, int widthIn, int heightIn, String location)
     {
