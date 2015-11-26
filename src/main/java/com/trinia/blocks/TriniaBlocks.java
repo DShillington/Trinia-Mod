@@ -111,7 +111,7 @@ public class TriniaBlocks
 		bridroneOre = new BlockTrinia(Material.rock).setUnlocalizedName("bridroneOre");
 		orcaOre = new BlockTrinia(Material.rock).setUnlocalizedName("orcaOre");
 		orisoneOre = new BlockTrinia(Material.rock).setUnlocalizedName("orisoneOre");
-		MagicalBed = new BlockMagicalBed().setUnlocalizedName("MagicalBed");
+		MagicalBed = new BlockMagicalBed().setUnlocalizedName("bed");
 		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
 		cloud = new BlockCloud().setUnlocalizedName("cloud");
 		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");

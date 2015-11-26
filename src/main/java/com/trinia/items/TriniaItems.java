@@ -204,7 +204,7 @@ public class TriniaItems {
 		TinSpade = (new ItemSteelSpade(null, TriniaTin).setUnlocalizedName("tinSpade")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
-		Chisel = (new ItemMagicalBed().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaMainTab);
+		Chisel = (new ItemChisel().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaMainTab);
 		goldenKey = (new ItemGoldenKey().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		//Casts
