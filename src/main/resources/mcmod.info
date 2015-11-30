@@ -5,10 +5,10 @@
   "description": "Trinia Beta Mod",
   "version": "2.0",
   "mcversion": "1.8",
-  "url": "",
+  "url": "http://www.planetminecraft.com/mod/125-trinia/",
   "updateUrl": "",
-  "authorList": ["PaperTazer"],
-  "credits": "PaperTazer (Owner, Programmer, Modeller), OMGItsMiniME (Co-Owner, Programmer), and Magik (Programmer)",
+  "authorList": ["Papertazer"],
+  "credits": "Papertazer (Owner, Programmer, Modeller), OMGItsMiniME (Co-Owner, Programmer), and Magik (Programmer)",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
