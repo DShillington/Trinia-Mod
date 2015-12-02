@@ -43,6 +43,7 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
     protected String creditOMGitsMiniMe = "-OMGitsMiniMe";
     protected String creditSnurly = "-Snurly";
     protected String creditMagikModder = "-MagikModder (help)";
+    protected String creditTerreen = "-Terreen";
     
     //Copyright
     protected String creditMojang = "Minecraft is copyright of MOJANG.";
@@ -68,7 +69,8 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
         //Artists
         this.drawCenteredString(this.fontRendererObj, this.creditArtist, this.width / 2, 170, 18668501);
         this.drawCenteredString(this.fontRendererObj, this.creditSnurly, this.width / 2, 180, 561991081);
-       
+        this.drawCenteredString(this.fontRendererObj, this.creditTerreen, this.width / 2, 190, 561991081);
+        
         //Copyright
         this.drawCenteredString(this.fontRendererObj, this.creditMojang, this.width / 2, 230, 18668501);
         

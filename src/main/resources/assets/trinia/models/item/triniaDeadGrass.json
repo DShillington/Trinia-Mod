@@ -1,0 +1,10 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "particle": "trinia:blocks/triniaDirt",
+        "bottom": "trinia:blocks/triniaDirt",
+        "top": "trinia:blocks/triniaDeadGrassTop",
+        "side": "trinia:blocks/triniaDeadGrassSide",
+        "overlay": "trinia:blocks/triniaDeadGrassSideOverlay"
+    }
+}

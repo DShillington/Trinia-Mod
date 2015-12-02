@@ -17,6 +17,7 @@ public class TriniaWorldGen implements IWorldGenerator
 	 private WorldGenerator gen_copper_ore;
 	 private WorldGenerator gen_silver_ore;
 	 private WorldGenerator gen_tin_ore;
+	 private WorldGenerator gen_orca_ore;
 	 
 	 @Override
 	    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) 
@@ -34,6 +35,10 @@ public class TriniaWorldGen implements IWorldGenerator
 		    case 1: //End
 
 		        break;
+		        
+		    case 6: //Trinia
+		        this.runGenerator(this.gen_orca_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		        break;
 		    }
 	 	}
 
@@ -42,8 +47,9 @@ public class TriniaWorldGen implements IWorldGenerator
 	     this.gen_copper_ore = new WorldGenMinable(TriniaBlocks.copperOre.getDefaultState(), 8);
 	     this.gen_silver_ore = new WorldGenMinable(TriniaBlocks.silverOre.getDefaultState(), 8);
 	     this.gen_tin_ore = new WorldGenMinable(TriniaBlocks.tinOre.getDefaultState(), 8);
+	     this.gen_orca_ore = new WorldGenMinable(TriniaBlocks.orcaOre.getDefaultState(), 16);
 	 }
-	 
+	
 	 private void runGenerator(WorldGenerator generator, World world, Random rand, int chunk_X, int chunk_Z, int chancesToSpawn, int minHeight, int maxHeight) {
 		    if (minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)
 		        throw new IllegalArgumentException("Illegal Height Arguments for WorldGenerator");

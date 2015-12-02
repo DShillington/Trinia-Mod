@@ -18,7 +18,7 @@ public class WorldProviderMod extends WorldProvider{
 
     public void registerWorldChunkManager(){
         this.worldChunkMgr = new WorldChunkManagerHell(TriniaBiomes.biomeTrinia, TriniaMod.DIM_TRINIA_ID);
-        this.isHellWorld = true;
+        this.isHellWorld = false;
         this.hasNoSky = false;
         this.dimensionId = TriniaMod.DIM_TRINIA_ID;
     }

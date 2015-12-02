@@ -17,18 +17,17 @@ public class TriniaBiomes {
 	}
 	
 	public static BiomeGenBase biomeTrinia;
-
 	public static void initializeBiome(){
 		
 		biomeTrinia = new BiomeGenTrinia(TriniaMod.DIM_TRINIA_ID, false).setBiomeName("Trinia");
+		
 		}
 	
 	public static void registerBiome(){
 		BiomeDictionary.registerBiomeType(biomeTrinia, Type.MAGICAL);
-
-		
-		BiomeManager.addSpawnBiome(biomeTrinia);
 	
+		BiomeManager.addSpawnBiome(biomeTrinia);
+		
 		
 	}
 	

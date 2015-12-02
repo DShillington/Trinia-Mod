@@ -45,6 +45,7 @@ public class TriniaBlocks
 	public static Block FlowerYellow;
 	public static Block MagicalBed;
 	public static Block CastingBench;
+	public static Block triniaDeadGrass;
 	//Trinia Blocks
 	public static Block steelBlock;
 	public static Block copperBlock;
@@ -79,6 +80,7 @@ public class TriniaBlocks
 		goldenKeyHole = new BlockTrinia(Material.rock).setUnlocalizedName("goldenKeyHole");
 		goldenPillar = new BlockTrinia(Material.rock).setUnlocalizedName("goldenPillar");
 		inomiteTorch = new BlockInomiteTorch(Material.rock).setLightLevel(1F).setUnlocalizedName("inomiteTorch");
+		triniaDeadGrass = new BlockTrinia(Material.rock).setUnlocalizedName("triniaDeadGrass");
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
@@ -138,6 +140,7 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(goldenKeyHole, goldenKeyHole.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(goldenPillar, goldenPillar.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(inomiteTorch, inomiteTorch.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
+		GameRegistry.registerBlock(triniaDeadGrass, triniaDeadGrass.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaMainTab);
@@ -217,7 +220,7 @@ public class TriniaBlocks
 		RegisterRender(goldenKeyHole);
 		RegisterRender(goldenPillar);
 		RegisterRender(inomiteTorch);
-		
+		RegisterRender(triniaDeadGrass);
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);
