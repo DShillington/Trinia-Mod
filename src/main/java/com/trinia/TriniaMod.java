@@ -59,6 +59,8 @@ public class TriniaMod {
 	public static int mobid5 = 4;
 	public static int mobid6 = 6;
 	public static int mobid7 = 7;
+	public static int mobid8 = 8;
+	public static int mobid9 = 9;
 	
 	//Dimension ID
 	public static int DIM_TRINIA_ID = 6;

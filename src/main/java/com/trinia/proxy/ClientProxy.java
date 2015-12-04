@@ -27,6 +27,8 @@ import com.trinia.items.ItemAmulet;
 import com.trinia.items.TriniaItems;
 import com.trinia.mob.Render.RenderAngelBoss;
 import com.trinia.mob.Render.RenderBlemmyae;
+import com.trinia.mob.Render.RenderButterFly;
+import com.trinia.mob.Render.RenderCentaur;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
 import com.trinia.mob.Render.RenderRedDragon;
@@ -34,6 +36,8 @@ import com.trinia.mob.Render.RenderTownsmen;
 import com.trinia.mob.Render.RenderTownswoman;
 import com.trinia.mob.entity.EntityAngelBoss;
 import com.trinia.mob.entity.EntityBlemmyae;
+import com.trinia.mob.entity.EntityButterfly;
+import com.trinia.mob.entity.EntityCentaur;
 import com.trinia.mob.entity.EntityIceDragon;
 import com.trinia.mob.entity.EntityMermaid;
 import com.trinia.mob.entity.EntityRedDragon;
@@ -41,6 +45,8 @@ import com.trinia.mob.entity.EntityTownsmen;
 import com.trinia.mob.entity.EntityTownswoman;
 import com.trinia.mob.model.ModelAngelBoss;
 import com.trinia.mob.model.ModelBlemmyae;
+import com.trinia.mob.model.ModelButterFly;
+import com.trinia.mob.model.ModelCentaur;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
 import com.trinia.mob.model.ModelRedDragon;
@@ -133,5 +139,8 @@ private static final ModelAngelHalo Halo = new ModelAngelHalo(0.5F);
 		RenderingRegistry.registerEntityRenderingHandler(EntityTownsmen.class, new RenderTownsmen(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 4){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/people/townsmen.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityTownswoman.class, new RenderTownswoman(Minecraft.getMinecraft().getRenderManager(), new ModelBiped(), 5){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/people/townswoman.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityAngelBoss.class, new RenderAngelBoss(Minecraft.getMinecraft().getRenderManager(), new ModelAngelBoss(), 6){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/boss/AngelBoss.png");}});
-		}
+		RenderingRegistry.registerEntityRenderingHandler(EntityButterfly.class, new RenderButterFly(Minecraft.getMinecraft().getRenderManager(), new ModelButterFly(), 7){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/butterfly/ButterFly_Orange.png");}});
+		RenderingRegistry.registerEntityRenderingHandler(EntityCentaur.class, new RenderCentaur(Minecraft.getMinecraft().getRenderManager(), new ModelCentaur(), 8){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/centaur/Centaur.png");}});
+		
+	}
 }
