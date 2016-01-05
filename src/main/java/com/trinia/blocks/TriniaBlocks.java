@@ -117,7 +117,6 @@ public class TriniaBlocks
 		cloud = new BlockCloud().setUnlocalizedName("cloud");
 		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");
 		
-		
 		//Trinia Blocks
 		steelBlock = new BlockTrinia(Material.rock).setUnlocalizedName("steelBlock");
 		copperBlock = new BlockTrinia(Material.rock).setUnlocalizedName("copperBlock");
@@ -129,7 +128,6 @@ public class TriniaBlocks
 		hardenedBucketSilver = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketSilver");
 		hardenedBucketSteel = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketSteel");
 		hardenedBucketTin = new BlockHardenedBucket(Material.iron).setUnlocalizedName("hardenedBucketTin");
-		
 	}
 	public static void register()
 	{

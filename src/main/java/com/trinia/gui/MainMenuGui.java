@@ -25,6 +25,7 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiSelectWorld;
 import net.minecraft.client.gui.GuiYesNo;
 import net.minecraft.client.gui.GuiYesNoCallback;
+import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
@@ -34,6 +35,8 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.realms.RealmsBridge;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MathHelper;
@@ -65,6 +68,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private float oldMouseX;
     /** The old y position of the mouse pointer */
     private float oldMouseY;
+    private float mousePosx;
+    private float mousePosY;
+    private EntityPlayer playerEntity;
     private ButtonCustomGui buttonResetDemo;
     private ButtonCustomGui buttonSingle;
     private ButtonCustomGui buttonMulti;
@@ -96,9 +102,12 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private int field_92019_w;
     protected String tempText = "(Something awesome will load here)";
     
+    
     protected String versionText = "Trinia version: " + Reference.MENU_TRINIA_VERSION;
     
     private ResourceLocation field_110351_G;
+	private int xSize;
+	private int ySize;
     /** Minecraft Realms button. */
     private static final String __OBFID = "CL_00001154";
 
@@ -162,6 +171,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
             this.field_104024_v = "https://help.mojang.com/customer/portal/articles/325948?ref=game";
         }
     }
+    
+    
 
     /**
      * Called from the main game loop to update the screen.
@@ -431,9 +442,11 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
     {
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-      
+        int k = (this.width - this.xSize) / 2;
+        int l = (this.height - this.ySize) / 2;
+        this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
        
-        drawEntityOnScreen(1 + 51, 1 + 75, 30, (float)(1 + 51) - this.oldMouseX, (float)(1 + 75 - 50) - this.oldMouseY, this.mc.thePlayer);
+        GuiInventory.drawEntityOnScreen(k + 51, l + 60, 17, (float)(k + 51) - this.mousePosx, (float)(l + 75 - 50) - this.mousePosY, this.playerEntity);
     }
     public static void drawEntityOnScreen(int p_147046_0_, int p_147046_1_, int p_147046_2_, float p_147046_3_, float p_147046_4_, EntityLivingBase p_147046_5_)
     {
@@ -474,6 +487,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         GlStateManager.disableTexture2D();
         GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
     }
+    
+    
+    
     private void rotateAndBlurSkybox(float p_73968_1_)
     {
         this.mc.getTextureManager().bindTexture(this.field_110351_G);
