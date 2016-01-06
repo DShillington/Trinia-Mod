@@ -111,8 +111,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     /** Minecraft Realms button. */
     private static final String __OBFID = "CL_00001154";
 
-    public MainMenuGui()
+    public MainMenuGui(EntityPlayer player)
     {
+    	this.playerEntity = player;
         this.openGLWarning2 = field_96138_a;
         this.splashText = Reference.MENU_SPLASH_TEXT;
         BufferedReader bufferedreader = null;
@@ -338,7 +339,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
                 }
                 catch (Throwable throwable)
                 {
-                    logger.error("Couldn\'t open link", throwable);
+                    logger.error("Couldn't open link", throwable);
                 }
             }
 
@@ -445,50 +446,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
-       
-        GuiInventory.drawEntityOnScreen(k + 51, l + 60, 17, (float)(k + 51) - this.mousePosx, (float)(l + 75 - 50) - this.mousePosY, this.playerEntity);
     }
-    public static void drawEntityOnScreen(int p_147046_0_, int p_147046_1_, int p_147046_2_, float p_147046_3_, float p_147046_4_, EntityLivingBase p_147046_5_)
-    {
-        GlStateManager.enableColorMaterial();
-        GlStateManager.pushMatrix();
-        GlStateManager.translate((float)p_147046_0_, (float)p_147046_1_, 50.0F);
-        GlStateManager.scale((float)(-p_147046_2_), (float)p_147046_2_, (float)p_147046_2_);
-        GlStateManager.rotate(180.0F, 0.0F, 0.0F, 1.0F);
-        float f2 = p_147046_5_.renderYawOffset;
-        float f3 = p_147046_5_.rotationYaw;
-        float f4 = p_147046_5_.rotationPitch;
-        float f5 = p_147046_5_.prevRotationYawHead;
-        float f6 = p_147046_5_.rotationYawHead;
-        GlStateManager.rotate(135.0F, 0.0F, 1.0F, 0.0F);
-        RenderHelper.enableStandardItemLighting();
-        GlStateManager.rotate(-135.0F, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate(-((float)Math.atan((double)(p_147046_4_ / 40.0F))) * 20.0F, 1.0F, 0.0F, 0.0F);
-        p_147046_5_.renderYawOffset = (float)Math.atan((double)(p_147046_3_ / 40.0F)) * 20.0F;
-        p_147046_5_.rotationYaw = (float)Math.atan((double)(p_147046_3_ / 40.0F)) * 40.0F;
-        p_147046_5_.rotationPitch = -((float)Math.atan((double)(p_147046_4_ / 40.0F))) * 20.0F;
-        p_147046_5_.rotationYawHead = p_147046_5_.rotationYaw;
-        p_147046_5_.prevRotationYawHead = p_147046_5_.rotationYaw;
-        GlStateManager.translate(0.0F, 0.0F, 0.0F);
-        RenderManager rendermanager = Minecraft.getMinecraft().getRenderManager();
-        rendermanager.setPlayerViewY(180.0F);
-        rendermanager.setRenderShadow(false);
-        rendermanager.renderEntityWithPosYaw(p_147046_5_, 0.0D, 0.0D, 0.0D, 0.0F, 1.0F);
-        rendermanager.setRenderShadow(true);
-        p_147046_5_.renderYawOffset = f2;
-        p_147046_5_.rotationYaw = f3;
-        p_147046_5_.rotationPitch = f4;
-        p_147046_5_.prevRotationYawHead = f5;
-        p_147046_5_.rotationYawHead = f6;
-        GlStateManager.popMatrix();
-        RenderHelper.disableStandardItemLighting();
-        GlStateManager.disableRescaleNormal();
-        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
-        GlStateManager.disableTexture2D();
-        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
-    }
-    
-    
     
     private void rotateAndBlurSkybox(float p_73968_1_)
     {
@@ -612,6 +570,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         }
         
         super.drawScreen(mouseX, mouseY, partialTicks);
+        
+        
     }
 
     /**

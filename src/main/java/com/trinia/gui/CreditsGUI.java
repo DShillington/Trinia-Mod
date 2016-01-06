@@ -46,7 +46,7 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
     protected String creditTerreen = "-Terreen";
     
     //Copyright
-    protected String creditMojang = "Minecraft is copyright of MOJANG.";
+    protected String creditMojang = "Minecraft is copyright of MOJANG AB.";
     
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {

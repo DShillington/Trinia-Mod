@@ -40,7 +40,7 @@ public class tickHandler {
 		 if (mc.currentScreen != null && mc.currentScreen.getClass() == GuiMainMenu.class){
 				//fontRender.drawStringWithShadow("Mainmenu", x, y, color);
 			 Minecraft.getMinecraft().displayGuiScreen(
-			new MainMenuGui());         
+			new MainMenuGui(null));
 			}
 		 
 		
