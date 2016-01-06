@@ -12,7 +12,7 @@ public class Reference {
 	public static final String MENU_TRINIA_VERSION = "BETA";
 	public static final String MENU_SPLASH_TEXT = "Thanks! -Trinia Team";
 	public static final String MENU_SINGLEPLAYER = "Go alone!";
-	public static final String MENU_MULTIPLAYER = "Go with friends!";
+	public static final String MENU_MULTIPLAYER = "Friends??";
 	public static final String MENU_OPTIONS = "Options!";
 	public static final String MENU_QUIT = "Quit :(";
 	public static final String MENU_CREDITS = "Credits!";
