@@ -533,20 +533,9 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
         GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
         
-        if ((double)this.updateCounter < 1.0E-1D)
-        {
-            this.drawTexturedModalRect(k + 0, b0 + 0, 0, 0, 99, 44);
-            this.drawTexturedModalRect(k + 99, b0 + 0, 129, 0, 27, 44);
-            this.drawTexturedModalRect(k + 99 + 26, b0 + 0, 126, 0, 3, 44);
-            this.drawTexturedModalRect(k + 99 + 26 + 3, b0 + 0, 99, 0, 26, 44);
-            this.drawTexturedModalRect(k + 155, b0 + 0, 0, 45, 155, 44);
-        }
-        else
-        {
-            this.drawTexturedModalRect(k + 0, b0 + 0, 0, 0, 155, 44);
-            this.drawTexturedModalRect(k + 155, b0 + 0, 0, 45, 155, 44);
-        }
-
+        this.drawTexturedModalRect(k + 0, b0 + 0, 0, 0, 155, 44);
+        this.drawTexturedModalRect(k + 155, b0 + 0, 0, 45, 155, 44);
+       
         worldrenderer.setColorOpaque_I(-1);
         GlStateManager.pushMatrix();
         GlStateManager.translate((float)(this.width + -120), 70.0F, 0.0F);
