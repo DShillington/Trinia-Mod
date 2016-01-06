@@ -6,9 +6,7 @@ import java.util.logging.Logger;
 import net.minecraft.client.Minecraft;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
-/**
- * @author Magik
- */
+
 public final class ChatHandler
 {
     public static Logger log;

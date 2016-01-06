@@ -2,14 +2,21 @@ package com.trinia.gui;
 
 import java.io.IOException;
 
+import com.trinia.Reference;
+
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.client.audio.SoundEventAccessorComposite;
 import net.minecraft.client.audio.SoundHandler;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiLanguage;
+import net.minecraft.client.gui.GuiMainMenu;
+import net.minecraft.client.gui.GuiMultiplayer;
 import net.minecraft.client.gui.GuiOptionButton;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiSelectWorld;
+import net.minecraft.client.gui.GuiYesNo;
 import net.minecraft.client.gui.GuiYesNoCallback;
 import net.minecraft.client.gui.stream.GuiStreamOptions;
 import net.minecraft.client.gui.stream.GuiStreamUnavailable;
@@ -19,13 +26,17 @@ import net.minecraft.client.stream.IStream;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.EnumDifficulty;
+import net.minecraft.world.demo.DemoWorldServer;
+import net.minecraft.world.storage.ISaveFormat;
+import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
 {
-    protected void actionPerformed(GuiButton button) throws IOException{} 
+	 private ButtonCustomGui buttonBack;
+   // protected void actionPerformed(GuiButton button) throws IOException{} 
     public CreditsGUI(GuiScreen p_i1046_1_, GameSettings p_i1046_2_){}
     public void initGui(int p_73969_1_, int p_73969_2_){}
     public void confirmClicked(boolean result, int id){}
@@ -47,6 +58,24 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
     
     //Copyright
     protected String creditMojang = "Minecraft is copyright of MOJANG AB.";
+    
+    @Override
+    public void initGui()
+    {
+     super.initGui();
+
+     //The parameters of GuiButton are(id, x, y, width, height, text);
+     this.buttonList.add(this.buttonBack = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format(Reference.CREDITS_BACK, new Object[0])));
+
+    }
+    
+    protected void actionPerformed(GuiButton button) throws IOException
+    {
+        if (button.id == 1)
+        {
+        	 this.mc.displayGuiScreen(new GuiMainMenu());
+        }
+    }
     
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {

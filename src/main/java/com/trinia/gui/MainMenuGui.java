@@ -3,6 +3,7 @@ package com.trinia.gui;
 import com.google.common.collect.Lists;
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.handler.tickHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -34,6 +35,7 @@ import net.minecraft.client.renderer.WorldRenderer;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.settings.GameSettings;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
@@ -70,7 +72,6 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private float oldMouseY;
     private float mousePosx;
     private float mousePosY;
-    private EntityPlayer playerEntity;
     private ButtonCustomGui buttonResetDemo;
     private ButtonCustomGui buttonSingle;
     private ButtonCustomGui buttonMulti;
@@ -113,7 +114,6 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
 
     public MainMenuGui(EntityPlayer player)
     {
-    	this.playerEntity = player;
         this.openGLWarning2 = field_96138_a;
         this.splashText = Reference.MENU_SPLASH_TEXT;
         BufferedReader bufferedreader = null;
@@ -175,7 +175,19 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     
     
 
-    /**
+    public MainMenuGui(CreditsGUI creditsGUI, GameSettings gameSettings) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public MainMenuGui(tickHandler tickHandler, GameSettings gameSettings) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	/**
      * Called from the main game loop to update the screen.
      */
     public void updateScreen()
@@ -516,7 +528,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     public void drawScreen(int mouseX, int mouseY, float partialTicks)
     {
     	super.drawScreen(mouseX, mouseY, partialTicks);
-       
+        
     	this.oldMouseX = (float)mouseX;
         this.oldMouseY = (float)mouseY;
         GlStateManager.disableAlpha();
