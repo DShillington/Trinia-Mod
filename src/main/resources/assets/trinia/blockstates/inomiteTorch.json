@@ -1,5 +1,9 @@
 {
     "variants": {
-        "normal": { "model": "trinia:inomiteTorch" }
+        "facing=up": { "model": "trinia:inomiteTorch" },
+        "facing=north": { "model": "trinia:inomiteTorchWall", "y": 270 },
+        "facing=east": { "model": "trinia:inomiteTorchWall"},
+        "facing=south": { "model": "trinia:inomiteTorchWall", "y": 90 },
+        "facing=west": { "model": "trinia:inomiteTorchWall", "y": 180 }
     }
 }
