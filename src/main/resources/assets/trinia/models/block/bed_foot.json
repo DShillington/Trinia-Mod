@@ -1,10 +1,10 @@
 {
     "textures": {
-        "particle": "blocks/bed_feet_top",
-        "top": "blocks/bed_feet_top",
-        "bottom": "blocks/planks_oak",
-        "end": "blocks/bed_feet_end",
-        "side": "blocks/bed_feet_side"
+        "particle": "trinia:blocks/BlueCloud",
+        "top": "trinia:blocks/BlueCloud",
+        "bottom": "trinia:blocks/BlueCloud",
+        "end": "trinia:blocks/BlueCloud",
+        "side": "trinia:blocks/BlueCloud"
     },
     "elements": [
         {   "from": [ 0, 0, 0 ],

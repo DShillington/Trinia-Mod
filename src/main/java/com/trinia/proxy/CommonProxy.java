@@ -55,7 +55,6 @@ public class CommonProxy implements ProxyInterface
 
 	public void init(FMLInitializationEvent event)
 	{
-
 		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance, new GuiHandler());
 		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 0);
 	}
@@ -77,6 +76,7 @@ public void register(){
 		blockInventoryAdvanced = new BlockTriniaSmelter().setUnlocalizedName("mbe31_block_inventory_furnace");
 		GameRegistry.registerBlock(blockInventoryAdvanced, "mbe31_block_inventory_furnace");
 		}
+	
 	 public void registerNetworkStuff(){
 		  }
 

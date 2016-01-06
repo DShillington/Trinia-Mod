@@ -39,7 +39,6 @@ public class TriniaItems {
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
-	
 	//random shit I didn't know how to put into categories -papertazer
 	public static Item triniaAmulet;
 	public static Item MagicalBedItem;
