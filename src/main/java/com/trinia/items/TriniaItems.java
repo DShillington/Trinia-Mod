@@ -47,7 +47,7 @@ public class TriniaItems {
 	public static Item angelHalo;
 	public static Item goldenKey;
 	public static Item inomite;
-	
+	public static Item compressed_inomite;
 	//Casts
 	public static Item CastBlank;
     public static Item CastPickaxe;
@@ -174,16 +174,17 @@ public class TriniaItems {
 		Maul = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Maul").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Halberd = (new ItemSteelSword(null, TriniaHalberd).setUnlocalizedName("Halberd").setCreativeTab(TriniaMod.TriniaToolsTab));
 		//Random Items
-		SteelIngot = (new ItemTrinia().setUnlocalizedName("steelingot")).setCreativeTab(TriniaMod.TriniaMainTab);
-		copperIngot = (new ItemTrinia().setUnlocalizedName("copperIngot")).setCreativeTab(TriniaMod.TriniaMainTab);
-		silverIngot = (new ItemTrinia().setUnlocalizedName("silverIngot")).setCreativeTab(TriniaMod.TriniaMainTab);
-		tinIngot = (new ItemTrinia().setUnlocalizedName("tinIngot")).setCreativeTab(TriniaMod.TriniaMainTab);
-		adimite = (new ItemTrinia().setUnlocalizedName("adimite")).setCreativeTab(TriniaMod.TriniaMainTab);
-		bridroneIngot = (new ItemTrinia().setUnlocalizedName("bridroneIngot")).setCreativeTab(TriniaMod.TriniaMainTab);
-		orca = (new ItemTrinia().setUnlocalizedName("orca")).setCreativeTab(TriniaMod.TriniaMainTab);
-		orisone = (new ItemTrinia().setUnlocalizedName("orisone")).setCreativeTab(TriniaMod.TriniaMainTab);
-		MagicalBedItem = (new ItemMagicalBed().setUnlocalizedName("MagicalBedItem")).setCreativeTab(TriniaMod.TriniaMainTab);
-		inomite = (new ItemTrinia().setUnlocalizedName("inomite")).setCreativeTab(TriniaMod.TriniaMainTab);
+		SteelIngot = (new ItemTrinia().setUnlocalizedName("steelingot")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		copperIngot = (new ItemTrinia().setUnlocalizedName("copperIngot")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		silverIngot = (new ItemTrinia().setUnlocalizedName("silverIngot")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		tinIngot = (new ItemTrinia().setUnlocalizedName("tinIngot")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		adimite = (new ItemTrinia().setUnlocalizedName("adimite")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		bridroneIngot = (new ItemTrinia().setUnlocalizedName("bridroneIngot")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		orca = (new ItemTrinia().setUnlocalizedName("orca")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		orisone = (new ItemTrinia().setUnlocalizedName("orisone")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		MagicalBedItem = (new ItemMagicalBed().setUnlocalizedName("MagicalBedItem")).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		inomite = (new ItemTrinia().setUnlocalizedName("inomite")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		compressed_inomite = (new ItemTrinia().setUnlocalizedName("compressed_inomite")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		
 		//-Tools-
 		//Steel
@@ -203,8 +204,8 @@ public class TriniaItems {
 		TinSpade = (new ItemSteelSpade(null, TriniaTin).setUnlocalizedName("tinSpade")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
-		Chisel = (new ItemChisel().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaMainTab);
-		goldenKey = (new ItemGoldenKey().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaMainTab);
+		Chisel = (new ItemChisel().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		goldenKey = (new ItemGoldenKey().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		
 		//Casts
 		CastBlank = (new ItemTrinia().setUnlocalizedName("castBlank")).setCreativeTab(TriniaMod.TriniaToolsTab);
@@ -235,14 +236,14 @@ public class TriniaItems {
 		
 		//-Armor-
 		//Steel
-		triniaSteelHelmet = (new ItemSteelArmor("triniaHelmet", TriniaSteelArmor, 1, 0).setUnlocalizedName("steelHelmet")).setCreativeTab(TriniaMod.TriniaToolsTab);
-		triniaSteelChestplate = (new ItemSteelArmor("triniaChestplate", TriniaSteelArmor, 1, 1).setUnlocalizedName("steelChestplate")).setCreativeTab(TriniaMod.TriniaToolsTab);
-		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaToolsTab);
-		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		triniaSteelHelmet = (new ItemSteelArmor("triniaHelmet", TriniaSteelArmor, 1, 0).setUnlocalizedName("steelHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSteelChestplate = (new ItemSteelArmor("triniaChestplate", TriniaSteelArmor, 1, 1).setUnlocalizedName("steelChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
 	
-		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaMainTab);
-		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaMainTab);
-		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaMainTab);
+		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		
 	}
 	
@@ -276,6 +277,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(orca, orca.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(orisone, orisone.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(inomite, inomite.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(compressed_inomite, compressed_inomite.getUnlocalizedName().substring(5));
 		
 		//-Tools-
 		//Steel
@@ -335,6 +337,7 @@ public class TriniaItems {
 	{
 		
 		registerRender(inomite);
+		registerRender(compressed_inomite);
 		//-Weapons-
 		//Steel
 		registerRender(steelBattleAxe);

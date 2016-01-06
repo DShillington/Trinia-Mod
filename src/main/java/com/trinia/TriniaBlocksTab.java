@@ -7,15 +7,15 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 
-public class TriniaModTab extends CreativeTabs {
+public class TriniaBlocksTab extends CreativeTabs {
 
-	public TriniaModTab(String label) {
+	public TriniaBlocksTab(String label) {
 		super(label);
 	}
 
 	@Override
 	public Item getTabIconItem() {
-		return TriniaItems.orca;
+		return TriniaItems.goldenKey;
 	}
 
 }

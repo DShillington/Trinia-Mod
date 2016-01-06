@@ -31,7 +31,7 @@ public class BlockAdimiteOre extends Block
     {
         super(Material.rock);
         this.setDefaultState(this.blockState.getBaseState());
-        this.setCreativeTab(TriniaMod.TriniaMainTab);
+        this.setCreativeTab(TriniaMod.TriniaBlocksTab);
     }
     
     public Item getItemDropped(IBlockState state, Random rand, int fortune)

@@ -24,7 +24,7 @@ public class ItemAngelArmor extends ItemArmor {
     public ItemAngelArmor(String unlocalizedName, ArmorMaterial material, int renderIndex, int armorType) {
         super(material, renderIndex, armorType);
         this.setUnlocalizedName(unlocalizedName);
-        this.setCreativeTab(TriniaMod.TriniaMainTab);
+        this.setCreativeTab(TriniaMod.TriniaArmorTab);
     }
 
 	@Override
