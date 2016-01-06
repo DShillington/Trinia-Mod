@@ -1,6 +1,7 @@
 package com.trinia.blocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockTorch;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -79,8 +80,12 @@ public class TriniaBlocks
 		goldenDoor = new BlockTrinia(Material.rock).setUnlocalizedName("goldenDoor");
 		goldenKeyHole = new BlockTrinia(Material.rock).setUnlocalizedName("goldenKeyHole");
 		goldenPillar = new BlockTrinia(Material.rock).setUnlocalizedName("goldenPillar");
-		inomiteTorch = new BlockInomiteTorch(Material.rock).setLightLevel(1F).setUnlocalizedName("inomiteTorch");
+
+		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
 		triniaDeadGrass = new BlockTrinia(Material.rock).setUnlocalizedName("triniaDeadGrass");
+
+		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
+
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
@@ -113,7 +118,7 @@ public class TriniaBlocks
 		bridroneOre = new BlockTrinia(Material.rock).setUnlocalizedName("bridroneOre");
 		orcaOre = new BlockTrinia(Material.rock).setUnlocalizedName("orcaOre");
 		orisoneOre = new BlockTrinia(Material.rock).setUnlocalizedName("orisoneOre");
-		MagicalBed = new BlockMagicalBed().setUnlocalizedName("MagicalBed");
+		MagicalBed = new BlockMagicalBed().setUnlocalizedName("bed");
 		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
 		cloud = new BlockCloud().setUnlocalizedName("cloud");
 		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");
