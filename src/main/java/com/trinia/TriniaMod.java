@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright (c) 2015 papertazer.
+ * Copyright (c) 2015 papertazer;
  * All rights reserved.
  *
  * Contributors:
