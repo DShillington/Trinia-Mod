@@ -37,6 +37,10 @@ public class TriniaItems {
 	public static ToolMaterial TriniaHalberd = EnumHelper.addToolMaterial("TriniaHalberd", 3, 2500, 15.0F, 3.0F, 20);
 	//Armor
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaSilverArmor = EnumHelper.addArmorMaterial("Silver", "trinia:Silver", 30, new int[] {3, 8, 6, 3}, 20);
+	
+	
+	//Other
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
 	//random shit I didn't know how to put into categories -papertazer
@@ -92,6 +96,12 @@ public class TriniaItems {
 	public static Item bridroneIngot;
 	public static Item orca;
 	public static Item orisone;
+	
+	//Animated Icons
+	public static Item toolsAnimated;
+	public static Item armorAnimated;
+	public static Item itemsAnimated;
+	
 		//-Tools-
 	//Steel
 	public static Item SteelPickaxe;
@@ -157,10 +167,10 @@ public class TriniaItems {
 		Wand = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Wand").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Sickle = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Sickle").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Parasol = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Parasol").setCreativeTab(TriniaMod.TriniaToolsTab));
-		Bastard_Sword = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Bastard_Sword").setCreativeTab(TriniaMod.TriniaToolsTab));
+		//Bastard_Sword = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Bastard_Sword").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Quivver = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Quivver").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Staff = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Staff").setCreativeTab(TriniaMod.TriniaToolsTab));
-		Battle_Axe = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Battle_Axe").setCreativeTab(TriniaMod.TriniaToolsTab));
+		//Battle_Axe = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Battle_Axe").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Mace = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Mace").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Ring_Sword = (new ItemSteelPickaxe(null, TriniaSteel).setUnlocalizedName("Ring_Sword").setCreativeTab(TriniaMod.TriniaToolsTab));
 		Dagger = (new ItemSteelSword(null, TriniaDagger).setUnlocalizedName("Dagger").setCreativeTab(TriniaMod.TriniaToolsTab));
@@ -241,9 +251,19 @@ public class TriniaItems {
 		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
 	
+		triniaSilverHelmet = (new ItemSilverArmor("triniaSilverHelmet", TriniaSilverArmor, 1, 0).setUnlocalizedName("silverHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSilverChestplate = (new ItemSilverArmor("triniaSilverChestplate", TriniaSilverArmor, 1, 1).setUnlocalizedName("silverChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSilverLeggings = (new ItemSilverArmor("triniaSilverLeggings", TriniaSilverArmor, 2, 2).setUnlocalizedName("silverLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaSilverBoots = (new ItemSilverArmor("triniaSilverBoots", TriniaSilverArmor, 1, 3).setUnlocalizedName("silverBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+	
 		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		//Icons Animated
+		toolsAnimated = (new ItemTrinia().setUnlocalizedName("toolsAnimated"));
+		armorAnimated = (new ItemTrinia().setUnlocalizedName("armorAnimated"));
+		itemsAnimated = (new ItemTrinia().setUnlocalizedName("itemsAnimated"));
 		
 	}
 	
@@ -266,6 +286,11 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSteelChestplate = new ItemSteelArmor("steelChestplate", TriniaSteelArmor, 1, 1), "steelChestplate");
 		GameRegistry.registerItem(triniaSteelLeggings = new ItemSteelArmor("steelLeggings", TriniaSteelArmor, 2, 2), "steelLeggings");
 		GameRegistry.registerItem(triniaSteelBoots = new ItemSteelArmor("steelBoots", TriniaSteelArmor, 1, 3), "steelBoots");       
+		
+		GameRegistry.registerItem(triniaSilverHelmet = new ItemSilverArmor("silverHelmet", TriniaSilverArmor, 1, 0), "silverHelmet");
+		GameRegistry.registerItem(triniaSilverChestplate = new ItemSilverArmor("silverChestplate", TriniaSilverArmor, 1, 1), "silverChestplate");
+		GameRegistry.registerItem(triniaSilverLeggings = new ItemSilverArmor("silverLeggings", TriniaSilverArmor, 2, 2), "silverLeggings");
+		GameRegistry.registerItem(triniaSilverBoots = new ItemSilverArmor("silverBoots", TriniaSilverArmor, 1, 3), "silverBoots");       
 		
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
@@ -329,12 +354,21 @@ public class TriniaItems {
 		GameRegistry.registerItem(TinSwordHandle, TinSwordHandle.getUnlocalizedName().substring(5));
 		
 		
+		//Icons Animated
+		GameRegistry.registerItem(toolsAnimated, toolsAnimated.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(armorAnimated, armorAnimated.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(itemsAnimated, itemsAnimated.getUnlocalizedName().substring(5));
+
 		GameRegistry.registerItem(MagicalBedItem, MagicalBedItem.getUnlocalizedName().substring(5));
 		
 	}
 	
 	public static void registerRenders()
 	{
+		//Tools Animated
+		registerRender(toolsAnimated);
+		registerRender(armorAnimated);
+		registerRender(itemsAnimated);
 		
 		registerRender(inomite);
 		registerRender(compressed_inomite);
@@ -387,6 +421,13 @@ public class TriniaItems {
 		registerRender(triniaSteelChestplate);
 		registerRender(triniaSteelLeggings);
 		registerRender(triniaSteelBoots);
+		
+		registerRender(triniaSilverHelmet);
+		registerRender(triniaSilverChestplate);
+		registerRender(triniaSilverLeggings);
+		registerRender(triniaSilverBoots);
+		
+		//Other
 		registerRender(triniaAmulet);
 		
 		//-Tool Parts-

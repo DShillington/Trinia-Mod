@@ -11,11 +11,13 @@ public class TriniaItemsTab extends CreativeTabs {
 
 	public TriniaItemsTab(String label) {
 		super(label);
+		this.setBackgroundImageName("Trinia.png");
+		this.setNoScrollbar();
 	}
 
 	@Override
 	public Item getTabIconItem() {
-		return TriniaItems.orca;
+		return TriniaItems.itemsAnimated;
 	}
 
 }

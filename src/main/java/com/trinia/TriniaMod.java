@@ -72,13 +72,14 @@ public class TriniaMod {
 	
 	public static CommonProxy proxy;
     
-	public static CreativeTabs TriniaBlocksTab = new TriniaItemsTab("tabTriniaBlocks");
+	public static CreativeTabs TriniaBlocksTab = new TriniaBlocksTab("tabTriniaBlocks");
 	public static CreativeTabs TriniaItemsTab = new TriniaItemsTab("tabTriniaItems");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
-	public static CreativeTabs TriniaArmorTab = new TriniaToolsTab("tabTriniaArmor");
+	public static CreativeTabs TriniaArmorTab = new TriniaArmorTab("tabTriniaArmor");
 	
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
+    public static String TEXTURE_PREFIX2 = TriniaMod.ASSET_PREFIX + ":" + "textures/gui/tabTrinia.png";
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)

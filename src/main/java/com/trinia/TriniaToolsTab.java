@@ -12,10 +12,12 @@ public class TriniaToolsTab extends CreativeTabs {
 
 	public TriniaToolsTab(String label) {
 		super(label);
+		this.setBackgroundImageName("Trinia.png");
+		this.setNoScrollbar();
 	}
 	@Override
 	public Item getTabIconItem() {
-		return TriniaItems.SteelPickaxe;
+		return TriniaItems.toolsAnimated;
 	}
 
 }

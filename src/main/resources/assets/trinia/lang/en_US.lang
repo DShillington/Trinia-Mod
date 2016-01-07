@@ -71,6 +71,10 @@ item.steelHelmet.name=Steel Helmet
 item.steelChestplate.name=Steel Chestplate
 item.steelLeggings.name=Steel Leggings
 item.steelBoots.name=Steel Boots
+item.silverHelmet.name=Silver Helmet
+item.silverChestplate.name=Silver Chestplate
+item.silverLeggings.name=Silver Leggings
+item.silverBoots.name=Silver Boots
 item.triniaAmulet.name=Trinia Amulet
 
 tile.cloud.name=High Elevation Cloud
