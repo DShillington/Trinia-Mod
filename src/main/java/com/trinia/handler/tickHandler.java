@@ -3,10 +3,12 @@ package com.trinia.handler;
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.gui.ButtonCustomGui;
+import com.trinia.gui.GameOverGUI;
 import com.trinia.gui.MainMenuGui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiGameOver;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
@@ -44,12 +46,14 @@ public class tickHandler {
 	 public void onClientTick(TickEvent.ClientTickEvent event) {
 		
 		 if (mc.currentScreen != null && mc.currentScreen.getClass() == GuiMainMenu.class){
-				//fontRender.drawStringWithShadow("Mainmenu", x, y, color);
 			 Minecraft.getMinecraft().displayGuiScreen(
 			new MainMenuGui(null));
 			}
 		 
-		 
+		 if (mc.currentScreen != null && mc.currentScreen.getClass() == GuiGameOver.class){
+			 Minecraft.getMinecraft().displayGuiScreen(
+			new GameOverGUI());
+			}
 		
 	}
 	 
