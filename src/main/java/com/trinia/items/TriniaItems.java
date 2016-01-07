@@ -35,14 +35,19 @@ public class TriniaItems {
 	public static ToolMaterial TriniaDagger = EnumHelper.addToolMaterial("TriniaDagger", 3, 400, 15.0F, 3.0F, 20);
 	public static ToolMaterial TriniaKatar = EnumHelper.addToolMaterial("TriniaKatar", 3, 2000, 20.0F, 4.0F, 20);
 	public static ToolMaterial TriniaHalberd = EnumHelper.addToolMaterial("TriniaHalberd", 3, 2500, 15.0F, 3.0F, 20);
+	
 	//Armor
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaSilverArmor = EnumHelper.addArmorMaterial("Silver", "trinia:Silver", 30, new int[] {3, 8, 6, 3}, 20);
-	
-	
-	//Other
+	public static ArmorMaterial TriniaBridroneArmor = EnumHelper.addArmorMaterial("Bridrone", "trinia:Bridrone", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaAdimiteArmor = EnumHelper.addArmorMaterial("Adimite", "trinia:Adimite", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaCopperArmor = EnumHelper.addArmorMaterial("Copper", "trinia:Copper", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaInomiteArmor = EnumHelper.addArmorMaterial("Inomite", "trinia:Inomite", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaOrcaArmor = EnumHelper.addArmorMaterial("Orca", "trinia:Orca", 30, new int[] {3, 8, 6, 3}, 20);
+	public static ArmorMaterial TriniaOrisoneArmor = EnumHelper.addArmorMaterial("Orisone", "trinia:Orisone", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
+	
 	//random shit I didn't know how to put into categories -papertazer
 	public static Item triniaAmulet;
 	public static Item MagicalBedItem;
@@ -154,7 +159,36 @@ public class TriniaItems {
 	public static Item triniaTinChestplate;
 	public static Item triniaTinLeggings;
 	public static Item triniaTinBoots;
-	
+	//Bridrone
+	public static Item triniaBridroneHelmet;
+	public static Item triniaBridroneChestplate;
+	public static Item triniaBridroneLeggings;
+	public static Item triniaBridroneBoots;
+	//Adimite
+	public static Item triniaAdimiteHelmet;
+	public static Item triniaAdimiteChestplate;
+	public static Item triniaAdimiteLeggings;
+	public static Item triniaAdimiteBoots;	
+	//Copper
+	public static Item triniaCopperHelmet;
+	public static Item triniaCopperChestplate;
+	public static Item triniaCopperLeggings;
+	public static Item triniaCopperBoots;
+	//Inomite
+	public static Item triniaInomiteHelmet;
+	public static Item triniaInomiteChestplate;
+	public static Item triniaInomiteLeggings;
+	public static Item triniaInomiteBoots;
+	//Orca
+	public static Item triniaOrcaHelmet;
+	public static Item triniaOrcaChestplate;
+	public static Item triniaOrcaLeggings;
+	public static Item triniaOrcaBoots;
+	//Orisone
+	public static Item triniaOrisoneHelmet;
+	public static Item triniaOrisoneChestplate;
+	public static Item triniaOrisoneLeggings;
+	public static Item triniaOrisoneBoots;
 	
 	public static void init()
 	{
@@ -245,17 +279,46 @@ public class TriniaItems {
 		TinSwordHandle = (new ItemTrinia().setUnlocalizedName("tinSwordHandle")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
 		//-Armor-
-		//Steel
 		triniaSteelHelmet = (new ItemSteelArmor("triniaHelmet", TriniaSteelArmor, 1, 0).setUnlocalizedName("steelHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSteelChestplate = (new ItemSteelArmor("triniaChestplate", TriniaSteelArmor, 1, 1).setUnlocalizedName("steelChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSteelLeggings = (new ItemSteelArmor("triniaLeggings", TriniaSteelArmor, 2, 2).setUnlocalizedName("steelLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSteelBoots = (new ItemSteelArmor("triniaBoots", TriniaSteelArmor, 1, 3).setUnlocalizedName("steelBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
-	
+		
 		triniaSilverHelmet = (new ItemSilverArmor("triniaSilverHelmet", TriniaSilverArmor, 1, 0).setUnlocalizedName("silverHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSilverChestplate = (new ItemSilverArmor("triniaSilverChestplate", TriniaSilverArmor, 1, 1).setUnlocalizedName("silverChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSilverLeggings = (new ItemSilverArmor("triniaSilverLeggings", TriniaSilverArmor, 2, 2).setUnlocalizedName("silverLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		triniaSilverBoots = (new ItemSilverArmor("triniaSilverBoots", TriniaSilverArmor, 1, 3).setUnlocalizedName("silverBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
-	
+		
+		triniaBridroneHelmet = (new ItemBridroneArmor("triniaBridroneHelmet", TriniaBridroneArmor, 1, 0).setUnlocalizedName("bridroneHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaBridroneChestplate = (new ItemBridroneArmor("triniaBridroneChestplate", TriniaBridroneArmor, 1, 1).setUnlocalizedName("bridroneChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaBridroneLeggings = (new ItemBridroneArmor("triniaBridroneLeggings", TriniaBridroneArmor, 2, 2).setUnlocalizedName("bridroneLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaBridroneBoots = (new ItemBridroneArmor("triniaBridroneBoots", TriniaBridroneArmor, 1, 3).setUnlocalizedName("bridroneBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		triniaAdimiteHelmet = (new ItemAdimiteArmor("triniaAdimiteHelmet", TriniaAdimiteArmor, 1, 0).setUnlocalizedName("adimiteHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaAdimiteChestplate = (new ItemAdimiteArmor("triniaAdimiteChestplate", TriniaAdimiteArmor, 1, 1).setUnlocalizedName("adimiteChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaAdimiteLeggings = (new ItemAdimiteArmor("triniaAdimiteLeggings", TriniaAdimiteArmor, 2, 2).setUnlocalizedName("adimiteLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaAdimiteBoots = (new ItemAdimiteArmor("triniaAdimiteBoots", TriniaAdimiteArmor, 1, 3).setUnlocalizedName("adimiteBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		triniaCopperHelmet = (new ItemCopperArmor("triniaCopperHelmet", TriniaCopperArmor, 1, 0).setUnlocalizedName("copperHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaCopperChestplate = (new ItemCopperArmor("triniaCopperChestplate", TriniaCopperArmor, 1, 1).setUnlocalizedName("copperChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaCopperLeggings = (new ItemCopperArmor("triniaCopperLeggings", TriniaCopperArmor, 2, 2).setUnlocalizedName("copperLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaCopperBoots = (new ItemCopperArmor("triniaCopperBoots", TriniaCopperArmor, 1, 3).setUnlocalizedName("copperBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		triniaInomiteHelmet = (new ItemInomiteArmor("triniaInomiteHelmet", TriniaInomiteArmor, 1, 0).setUnlocalizedName("InomiteHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaInomiteChestplate = (new ItemInomiteArmor("triniaInomiteChestplate", TriniaInomiteArmor, 1, 1).setUnlocalizedName("InomiteChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaInomiteLeggings = (new ItemInomiteArmor("triniaInomiteLeggings", TriniaInomiteArmor, 2, 2).setUnlocalizedName("InomiteLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaInomiteBoots = (new ItemInomiteArmor("triniaInomiteBoots", TriniaInomiteArmor, 1, 3).setUnlocalizedName("InomiteBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		triniaOrcaHelmet = (new ItemOrcaArmor("triniaOrcaHelmet", TriniaOrcaArmor, 1, 0).setUnlocalizedName("orcaHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrcaChestplate = (new ItemOrcaArmor("triniaOrcaChestplate", TriniaOrcaArmor, 1, 1).setUnlocalizedName("orcaChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrcaLeggings = (new ItemOrcaArmor("triniaOrcaLeggings", TriniaOrcaArmor, 2, 2).setUnlocalizedName("orcaLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrcaBoots = (new ItemOrcaArmor("triniaOrcaBoots", TriniaOrcaArmor, 1, 3).setUnlocalizedName("orcaBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
+		triniaOrisoneHelmet = (new ItemOrisoneArmor("triniaOrisoneHelmet", TriniaOrisoneArmor, 1, 0).setUnlocalizedName("orisoneHelmet")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrisoneChestplate = (new ItemOrisoneArmor("triniaOrisoneChestplate", TriniaOrisoneArmor, 1, 1).setUnlocalizedName("orisoneChestplate")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrisoneLeggings = (new ItemOrisoneArmor("triniaOrisoneLeggings", TriniaOrisoneArmor, 2, 2).setUnlocalizedName("orisoneLeggings")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaOrisoneBoots = (new ItemOrisoneArmor("triniaOrisoneBoots", TriniaOrisoneArmor, 1, 3).setUnlocalizedName("orisoneBoots")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		
 		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaArmorTab);
@@ -272,7 +335,6 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1), "triniaAmulet");
 		GameRegistry.registerItem(angelWings = new ItemAngelArmor("angelWings", TriniaAngelArmor, 1, 1), "angelWings");
 		GameRegistry.registerItem(angelHalo = new ItemAngelArmor("angelHalo", TriniaAngelArmor, 1, 0), "angelHalo");
-		
 		
 		//-Weapons-
 		//Steel
@@ -291,6 +353,36 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaSilverChestplate = new ItemSilverArmor("silverChestplate", TriniaSilverArmor, 1, 1), "silverChestplate");
 		GameRegistry.registerItem(triniaSilverLeggings = new ItemSilverArmor("silverLeggings", TriniaSilverArmor, 2, 2), "silverLeggings");
 		GameRegistry.registerItem(triniaSilverBoots = new ItemSilverArmor("silverBoots", TriniaSilverArmor, 1, 3), "silverBoots");       
+		
+		GameRegistry.registerItem(triniaBridroneHelmet = new ItemBridroneArmor("bridroneHelmet", TriniaBridroneArmor, 1, 0), "bridroneHelmet");
+		GameRegistry.registerItem(triniaBridroneChestplate = new ItemBridroneArmor("bridroneChestplate", TriniaBridroneArmor, 1, 1), "bridroneChestplate");
+		GameRegistry.registerItem(triniaBridroneLeggings = new ItemBridroneArmor("bridroneLeggings", TriniaBridroneArmor, 2, 2), "bridroneLeggings");
+		GameRegistry.registerItem(triniaBridroneBoots = new ItemBridroneArmor("bridroneBoots", TriniaBridroneArmor, 1, 3), "bridroneBoots"); 
+		
+		GameRegistry.registerItem(triniaAdimiteHelmet = new ItemAdimiteArmor("adimiteHelmet", TriniaAdimiteArmor, 1, 0), "adimiteHelmet");
+		GameRegistry.registerItem(triniaAdimiteChestplate = new ItemAdimiteArmor("adimiteChestplate", TriniaAdimiteArmor, 1, 1), "adimiteChestplate");
+		GameRegistry.registerItem(triniaAdimiteLeggings = new ItemAdimiteArmor("adimiteLeggings", TriniaAdimiteArmor, 2, 2), "adimiteLeggings");
+		GameRegistry.registerItem(triniaAdimiteBoots = new ItemAdimiteArmor("adimiteBoots", TriniaAdimiteArmor, 1, 3), "adimiteBoots"); 
+		
+		GameRegistry.registerItem(triniaCopperHelmet = new ItemCopperArmor("copperHelmet", TriniaCopperArmor, 1, 0), "copperHelmet");
+		GameRegistry.registerItem(triniaCopperChestplate = new ItemCopperArmor("copperChestplate", TriniaCopperArmor, 1, 1), "copperChestplate");
+		GameRegistry.registerItem(triniaCopperLeggings = new ItemCopperArmor("copperLeggings", TriniaCopperArmor, 2, 2), "copperLeggings");
+		GameRegistry.registerItem(triniaCopperBoots = new ItemCopperArmor("copperBoots", TriniaCopperArmor, 1, 3), "copperBoots"); 
+		
+		GameRegistry.registerItem(triniaInomiteHelmet = new ItemInomiteArmor("inomiteHelmet", TriniaInomiteArmor, 1, 0), "inomiteHelmet");
+		GameRegistry.registerItem(triniaInomiteChestplate = new ItemInomiteArmor("inomiteChestplate", TriniaInomiteArmor, 1, 1), "inomiteChestplate");
+		GameRegistry.registerItem(triniaInomiteLeggings = new ItemInomiteArmor("inomiteLeggings", TriniaInomiteArmor, 2, 2), "inomiteLeggings");
+		GameRegistry.registerItem(triniaInomiteBoots = new ItemInomiteArmor("inomiteBoots", TriniaInomiteArmor, 1, 3), "inomiteBoots"); 
+		
+		GameRegistry.registerItem(triniaOrcaHelmet = new ItemOrcaArmor("orcaHelmet", TriniaOrcaArmor, 1, 0), "orcaHelmet");
+		GameRegistry.registerItem(triniaOrcaChestplate = new ItemOrcaArmor("orcaChestplate", TriniaOrcaArmor, 1, 1), "orcaChestplate");
+		GameRegistry.registerItem(triniaOrcaLeggings = new ItemOrcaArmor("orcaLeggings", TriniaOrcaArmor, 2, 2), "orcaLeggings");
+		GameRegistry.registerItem(triniaOrcaBoots = new ItemOrcaArmor("orcaBoots", TriniaOrcaArmor, 1, 3), "orcaBoots"); 
+		
+		GameRegistry.registerItem(triniaOrisoneHelmet = new ItemOrisoneArmor("orisoneHelmet", TriniaOrisoneArmor, 1, 0), "orisoneHelmet");
+		GameRegistry.registerItem(triniaOrisoneChestplate = new ItemOrisoneArmor("orisoneChestplate", TriniaOrisoneArmor, 1, 1), "orisoneChestplate");
+		GameRegistry.registerItem(triniaOrisoneLeggings = new ItemOrisoneArmor("orisoneLeggings", TriniaOrisoneArmor, 2, 2), "orisoneLeggings");
+		GameRegistry.registerItem(triniaOrisoneBoots = new ItemOrisoneArmor("orisoneBoots", TriniaOrisoneArmor, 1, 3), "orisoneBoots"); 
 		
 		//Ingots
 		GameRegistry.registerItem(SteelIngot, SteelIngot.getUnlocalizedName().substring(5));
@@ -427,7 +519,36 @@ public class TriniaItems {
 		registerRender(triniaSilverLeggings);
 		registerRender(triniaSilverBoots);
 		
-		//Other
+		registerRender(triniaBridroneHelmet);
+		registerRender(triniaBridroneChestplate);
+		registerRender(triniaBridroneLeggings);
+		registerRender(triniaBridroneBoots);
+		
+		registerRender(triniaAdimiteHelmet);
+		registerRender(triniaAdimiteChestplate);
+		registerRender(triniaAdimiteLeggings);
+		registerRender(triniaAdimiteBoots);
+		
+		registerRender(triniaCopperHelmet);
+		registerRender(triniaCopperChestplate);
+		registerRender(triniaCopperLeggings);
+		registerRender(triniaCopperBoots);
+		
+		registerRender(triniaInomiteHelmet);
+		registerRender(triniaInomiteChestplate);
+		registerRender(triniaInomiteLeggings);
+		registerRender(triniaInomiteBoots);
+		
+		registerRender(triniaOrcaHelmet);
+		registerRender(triniaOrcaChestplate);
+		registerRender(triniaOrcaLeggings);
+		registerRender(triniaOrcaBoots);
+		
+		registerRender(triniaOrisoneHelmet);
+		registerRender(triniaOrisoneChestplate);
+		registerRender(triniaOrisoneLeggings);
+		registerRender(triniaOrisoneBoots);
+
 		registerRender(triniaAmulet);
 		
 		//-Tool Parts-
