@@ -5,10 +5,12 @@ import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.handler.tickHandler;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -78,6 +80,11 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private ButtonCustomGui buttonOptions;
     private ButtonCustomGui buttonQuit;
     private ButtonCustomGui buttonCredit;
+    private ButtonPMC mediaButtonPMC;
+    private ButtonTwitter mediaButtonTwitter;
+    private ButtonFacebook mediaButtonFacebook;
+    private ButtonYoutube mediaButtonYouTube;
+    
     /** Timer used to rotate the panorama, increases every tick. */
     private int panoramaTimer;
     /** Texture allocated for the current viewport of the main menu's panorama background. */
@@ -172,21 +179,6 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
             this.field_104024_v = "https://help.mojang.com/customer/portal/articles/325948?ref=game";
         }
     }
-    
-    
-
-    public MainMenuGui(CreditsGUI creditsGUI, GameSettings gameSettings) {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
-	public MainMenuGui(tickHandler tickHandler, GameSettings gameSettings) {
-		// TODO Auto-generated constructor stub
-	}
-
-
-
 	/**
      * Called from the main game loop to update the screen.
      */
@@ -259,21 +251,33 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         this.buttonList.add(this.buttonSingle = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format(Reference.MENU_SINGLEPLAYER, new Object[0])));
         this.buttonList.add(this.buttonMulti = new ButtonCustomGui(2, 10, 85 + p_73969_2_ * 1, 20, 20, I18n.format(Reference.MENU_MULTIPLAYER, new Object[0])));
         this.buttonList.add(this.buttonOptions = new ButtonCustomGui(0, 10, 85 + p_73969_2_ * 2, 20, 20, I18n.format(Reference.MENU_OPTIONS, new Object[0])));
-        this.buttonList.add(this.buttonQuit = new ButtonCustomGui(4, 10, 85 + p_73969_2_ * 3, 20, 20, I18n.format(Reference.MENU_QUIT, new Object[0])));
-        this.buttonList.add(this.buttonCredit = new ButtonCustomGui(400, 10, 85 + p_73969_2_ * 4,  20, 20, I18n.format(Reference.MENU_CREDITS, new Object[0])));
+        this.buttonList.add(this.buttonCredit = new ButtonCustomGui(400, 10, 85 + p_73969_2_ * 3,  20, 20, I18n.format(Reference.MENU_CREDITS, new Object[0])));
+        this.buttonList.add(this.buttonQuit = new ButtonCustomGui(4, 10, 85 + p_73969_2_ * 4, 20, 20, I18n.format(Reference.MENU_QUIT, new Object[0])));
         
-        buttonSingle.width = 125;
-        buttonMulti.width = 125;
-        buttonOptions.width = 125;
-        buttonQuit.width = 125;
-        buttonCredit.width = 125;
+        this.buttonList.add(this.mediaButtonTwitter = new ButtonTwitter(405, this.width - 35, 85 + p_73969_2_ * 2,  20, 20, I18n.format("PMC", new Object[0])));
+        this.buttonList.add(this.mediaButtonFacebook = new ButtonFacebook(407, this.width - 35, 85 + p_73969_2_ * 3,  20, 20, I18n.format("PMC", new Object[0])));
+        this.buttonList.add(this.mediaButtonYouTube = new ButtonYoutube(406, this.width - 35, 85 + p_73969_2_ * 4,  20, 20, I18n.format("PMC", new Object[0])));
+        this.buttonList.add(this.mediaButtonPMC = new ButtonPMC(404, this.width - 35, 85 + p_73969_2_ * 5,  20, 20, I18n.format("PMC", new Object[0])));
+        
+        buttonSingle.width = 130;
+        buttonMulti.width = 130;
+        buttonOptions.width = 130;
+        buttonQuit.width = 130;
+        buttonCredit.width = 130;
+        mediaButtonPMC.width = 20;
+        mediaButtonTwitter.width = 20;
+        mediaButtonYouTube.width = 20;
+        mediaButtonFacebook.width = 20;
         
         buttonSingle.packedFGColour = 16777215;
         buttonMulti.packedFGColour = 16777215;
         buttonOptions.packedFGColour = 16777215;
         buttonQuit.packedFGColour = 16777215;
         buttonCredit.packedFGColour = 16777215;
-        
+        mediaButtonPMC.packedFGColour = 16777215;
+        mediaButtonTwitter.packedFGColour = 16777215;
+        mediaButtonYouTube.packedFGColour = 16777215;
+        mediaButtonFacebook.packedFGColour = 16777215;
     }
 
    
@@ -287,7 +291,30 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         {
             this.mc.displayGuiScreen(new CreditsGUI(this, this.mc.gameSettings));
         }
-
+        if (button.id == 404)
+        {
+        	try {
+        	    Desktop.getDesktop().browse(new URL("http://www.planetminecraft.com/mod/125-trinia/").toURI());
+        	} catch (Exception e) {}
+        }
+        if (button.id == 405)
+        {
+        	try {
+        	    Desktop.getDesktop().browse(new URL("https://twitter.com/D_Shillington").toURI());
+        	} catch (Exception e) {}
+        }
+        if (button.id == 406)
+        {
+        	try {
+        	    Desktop.getDesktop().browse(new URL("https://www.youtube.com/channel/UCyKpQFIpIIDMolrZ7iAW84w").toURI());
+        	} catch (Exception e) {}
+        }
+        if (button.id == 407)
+        {
+        	try {
+        	    Desktop.getDesktop().browse(new URL("http://www.facebook.com").toURI());
+        	} catch (Exception e) {}
+        }
         if (button.id == 5)
         {
             this.mc.displayGuiScreen(new GuiLanguage(this, this.mc.gameSettings, this.mc.getLanguageManager()));
