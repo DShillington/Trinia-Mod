@@ -267,6 +267,13 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         buttonOptions.width = 125;
         buttonQuit.width = 125;
         buttonCredit.width = 125;
+        
+        buttonSingle.packedFGColour = 16777215;
+        buttonMulti.packedFGColour = 16777215;
+        buttonOptions.packedFGColour = 16777215;
+        buttonQuit.packedFGColour = 16777215;
+        buttonCredit.packedFGColour = 16777215;
+        
     }
 
    

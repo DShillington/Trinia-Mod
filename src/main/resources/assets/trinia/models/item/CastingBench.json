@@ -7,6 +7,13 @@
         "3": "trinia:blocks/CastingBench_Top",
         "4": "trinia:blocks/CastingBench_Bottom"
     },
+"display": {
+        "thirdperson": {
+            "rotation": [ 10, -45, 170 ],
+            "translation": [ 0, 1.5, -2.75 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    }, 
     "elements": [
         {
             "name": "Cube",

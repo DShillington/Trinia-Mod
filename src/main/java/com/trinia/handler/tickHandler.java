@@ -1,11 +1,16 @@
 package com.trinia.handler;
 
+import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.gui.ButtonCustomGui;
 import com.trinia.gui.MainMenuGui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
+import net.minecraft.client.gui.GuiOptions;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.GuiOpenEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -15,6 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class tickHandler {
 	private Minecraft mc;
+	private ButtonCustomGui buttonSingle;
 
 	// create a constructor that takes a Minecraft argument; now we have it whenever we need it
 	public tickHandler(Minecraft mc) {
@@ -42,6 +48,7 @@ public class tickHandler {
 			 Minecraft.getMinecraft().displayGuiScreen(
 			new MainMenuGui(null));
 			}
+		 
 		 
 		
 	}

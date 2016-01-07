@@ -1,6 +1,13 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
-    "textures": {
+"display": {
+        "thirdperson": {
+            "rotation": [ 10, -45, 170 ],
+            "translation": [ 0, 1.5, -2.75 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },   
+ "textures": {
         "0": "trinia:blocks/triniaCobblestone",
         "1": "trinia:blocks/craftingTableSides",
         "2": "trinia:blocks/craftingTable",

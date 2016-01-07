@@ -29,6 +29,7 @@ import net.minecraft.world.EnumDifficulty;
 import net.minecraft.world.demo.DemoWorldServer;
 import net.minecraft.world.storage.ISaveFormat;
 import net.minecraft.world.storage.WorldInfo;
+import net.minecraftforge.fml.client.GuiModList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -36,6 +37,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
 {
 	 private ButtonCustomGui buttonBack;
+	 private ButtonCustomGui buttonMods;
    // protected void actionPerformed(GuiButton button) throws IOException{} 
     public CreditsGUI(GuiScreen p_i1046_1_, GameSettings p_i1046_2_){}
     public void initGui(int p_73969_1_, int p_73969_2_){}
@@ -65,8 +67,15 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
      super.initGui();
 
      //The parameters of GuiButton are(id, x, y, width, height, text);
-     this.buttonList.add(this.buttonBack = new ButtonCustomGui(1, 10, 85, 20, 20, I18n.format(Reference.CREDITS_BACK, new Object[0])));
+     this.buttonList.add(this.buttonBack = new ButtonCustomGui(1, 10, 10, 20, 20, I18n.format(Reference.CREDITS_BACK, new Object[0])));
+     this.buttonList.add(this.buttonMods = new ButtonCustomGui(2, 10, 40, 20, 20, I18n.format(Reference.CREDITS_MODS, new Object[0])));
 
+     buttonBack.width = 90;
+     buttonMods.width = 90;
+     
+     buttonBack.packedFGColour = 16777215;
+     buttonMods.packedFGColour = 16777215;
+     
     }
     
     protected void actionPerformed(GuiButton button) throws IOException
@@ -74,6 +83,10 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
         if (button.id == 1)
         {
         	 this.mc.displayGuiScreen(new GuiMainMenu());
+        }
+        if (button.id == 2)
+        {
+        	 this.mc.displayGuiScreen(new GuiModList(null));
         }
     }
     
