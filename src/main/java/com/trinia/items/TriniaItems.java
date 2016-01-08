@@ -35,7 +35,10 @@ public class TriniaItems {
 	public static ToolMaterial TriniaDagger = EnumHelper.addToolMaterial("TriniaDagger", 3, 400, 15.0F, 3.0F, 20);
 	public static ToolMaterial TriniaKatar = EnumHelper.addToolMaterial("TriniaKatar", 3, 2000, 20.0F, 4.0F, 20);
 	public static ToolMaterial TriniaHalberd = EnumHelper.addToolMaterial("TriniaHalberd", 3, 2500, 15.0F, 3.0F, 20);
-	
+	public static ToolMaterial TriniaOrca = EnumHelper.addToolMaterial("Orca", 3, 5000, 15.0F, 4.0F, 20);
+	public static ToolMaterial TriniaOrisone = EnumHelper.addToolMaterial("Orisone", 3, 5000, 15.0F, 4.0F, 20);
+	public static ToolMaterial TriniaAdimite = EnumHelper.addToolMaterial("Adimite", 3, 5000, 15.0F, 4.0F, 20);
+	public static ToolMaterial TriniaSlingshot = EnumHelper.addToolMaterial("Slingshot", 3, 5000, 15.0F, 4.0F, 20);
 	//Armor
 	public static ArmorMaterial TriniaSteelArmor = EnumHelper.addArmorMaterial("Steel", "trinia:Steel", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaSilverArmor = EnumHelper.addArmorMaterial("Silver", "trinia:Silver", 30, new int[] {3, 8, 6, 3}, 20);
@@ -58,6 +61,7 @@ public class TriniaItems {
 	public static Item angelHalo;
 	public static Item goldenKey;
 	public static Item inomite;
+	public static Item Slingshot;
 	public static Item compressed_inomite;
 	//Casts
 	public static Item CastBlank;
@@ -126,6 +130,11 @@ public class TriniaItems {
 	public static Item TinAxe;
 	public static Item TinSword;
 	public static Item TinSpade;
+	
+	public static Item AdimiteSword;
+	public static Item OrcaSword;
+	public static Item OrisoneSword;
+	public static Item OrisoneFatSword;
 	//-Tool Parts-
 	//Steel
 	public static Item SteelPickaxeHead;
@@ -249,6 +258,13 @@ public class TriniaItems {
 		TinAxe = (new ItemSteelAxe(null, TriniaTin).setUnlocalizedName("tinAxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSpade = (new ItemSteelSpade(null, TriniaTin).setUnlocalizedName("tinSpade")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		TinSword = (new ItemSteelSword(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		
+		AdimiteSword = (new ItemAdimiteSword(null, TriniaAdimite).setUnlocalizedName("adimiteSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrcaSword = (new ItemOrcaSword(null, TriniaOrca).setUnlocalizedName("orcaSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrisoneSword = (new ItemOrisoneSword(null, TriniaOrisone).setUnlocalizedName("orisoneSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrisoneFatSword = (new ItemOrisoneFatSword(null, TriniaOrisone).setUnlocalizedName("orisoneFatSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		Slingshot = (new ItemSlingshot(null, TriniaSlingshot).setUnlocalizedName("slingshot")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		
 		
 		Chisel = (new ItemChisel().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		goldenKey = (new ItemGoldenKey().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaItemsTab);
@@ -457,6 +473,13 @@ public class TriniaItems {
 
 		GameRegistry.registerItem(MagicalBedItem, MagicalBedItem.getUnlocalizedName().substring(5));
 		
+		
+		GameRegistry.registerItem(OrcaSword, OrcaSword.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(AdimiteSword, AdimiteSword.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrisoneSword, OrisoneSword.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(OrisoneFatSword, OrisoneFatSword.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(Slingshot, Slingshot.getUnlocalizedName().substring(5));
+		
 	}
 	
 	public static void registerRenders()
@@ -486,6 +509,10 @@ public class TriniaItems {
 		registerRender(orisone);
 		
 			//-Tools-
+		registerRender(OrisoneSword);
+		registerRender(OrisoneFatSword);
+		registerRender(OrcaSword);
+		registerRender(AdimiteSword);
 		//Steel
 		registerRender(SteelPickaxe);
 		registerRender(SteelAxe);
@@ -575,7 +602,8 @@ public class TriniaItems {
 		registerRender(TinSpadeHead);
 		registerRender(TinSwordHead);
 		registerRender(TinSwordHandle);
-
+		
+		registerRender(Slingshot);
 		registerRender(MagicalBedItem);
 		registerRender(angelWings);
 		registerRender(angelHalo);
