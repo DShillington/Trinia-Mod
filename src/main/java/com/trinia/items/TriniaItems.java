@@ -47,9 +47,11 @@ public class TriniaItems {
 	public static ArmorMaterial TriniaOrisoneArmor = EnumHelper.addArmorMaterial("Orisone", "trinia:Orisone", 30, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAmuletArmor = EnumHelper.addArmorMaterial("amulet", "trinia:amulet", 26, new int[] {3, 8, 6, 3}, 20);
 	public static ArmorMaterial TriniaAngelArmor = EnumHelper.addArmorMaterial("angel", "trinia:angel", 25, new int[] {3, 8, 6, 3}, 20);
-	
+	public static ArmorMaterial TriniaCapeArmor = EnumHelper.addArmorMaterial("cape", "trinia:cape", 26, new int[] {3, 8, 6, 3}, 20);
+		
 	//random shit I didn't know how to put into categories -papertazer
 	public static Item triniaAmulet;
+	public static Item triniaCape;
 	public static Item MagicalBedItem;
 	public static Item Chisel;
 	public static Item angelWings;
@@ -322,6 +324,7 @@ public class TriniaItems {
 		triniaAmulet = (new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1).setUnlocalizedName("triniaAmulet")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelWings = (new ItemAmulet("angelWings", TriniaAngelArmor, 1, 1).setUnlocalizedName("angelWings")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		angelHalo = (new ItemAmulet("angelHalo", TriniaAmuletArmor, 1, 0).setUnlocalizedName("angelHalo")).setCreativeTab(TriniaMod.TriniaArmorTab);
+		triniaCape = (new ItemTriniaCape("triniaCape", TriniaCapeArmor, 1, 1).setUnlocalizedName("triniaCape")).setCreativeTab(TriniaMod.TriniaArmorTab);
 		
 		//Icons Animated
 		toolsAnimated = (new ItemTrinia().setUnlocalizedName("toolsAnimated"));
@@ -335,6 +338,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(triniaAmulet = new ItemAmulet("triniaAmulet", TriniaAmuletArmor, 1, 1), "triniaAmulet");
 		GameRegistry.registerItem(angelWings = new ItemAngelArmor("angelWings", TriniaAngelArmor, 1, 1), "angelWings");
 		GameRegistry.registerItem(angelHalo = new ItemAngelArmor("angelHalo", TriniaAngelArmor, 1, 0), "angelHalo");
+		GameRegistry.registerItem(triniaCape = new ItemTriniaCape("triniaCape", TriniaCapeArmor, 1, 1), "triniaCape");
 		
 		//-Weapons-
 		//Steel
@@ -550,6 +554,7 @@ public class TriniaItems {
 		registerRender(triniaOrisoneBoots);
 
 		registerRender(triniaAmulet);
+		registerRender(triniaCape);
 		
 		//-Tool Parts-
 		//Steel

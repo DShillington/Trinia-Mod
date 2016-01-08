@@ -53,6 +53,7 @@ import com.trinia.mob.model.ModelRedDragon;
 import com.trinia.model.ModelAmulet;
 import com.trinia.model.ModelAngelHalo;
 import com.trinia.model.ModelAngelWings;
+import com.trinia.model.ModelTriniaCape;
 import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
@@ -60,6 +61,7 @@ public class ClientProxy extends CommonProxy{
 private static final ModelAmulet masque_loup = new ModelAmulet(0.5F);
 private static final ModelAngelWings Wings = new ModelAngelWings(0.5F);
 private static final ModelAngelHalo Halo = new ModelAngelHalo(0.5F);
+private static final ModelTriniaCape Cape = new ModelTriniaCape(0.5F);
 	
 	public ModelBiped getArmorModel(){
 		return masque_loup;
@@ -70,13 +72,16 @@ private static final ModelAngelHalo Halo = new ModelAngelHalo(0.5F);
 	public ModelBiped getArmorModelHalo(){
 			return Halo;
 			}
+	public ModelBiped getArmorModelTriniaCape(){
+		return Cape;
+		}
 	
 	public void register() {
     	RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
 		  renderItem.getItemModelMesher().register(TriniaItems.triniaAmulet, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/Amulet.png"));
 		  renderItem.getItemModelMesher().register(TriniaItems.angelWings, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/AngelWings.png"));
 		  renderItem.getItemModelMesher().register(TriniaItems.angelHalo, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/angelHalo.png"));
-			
+		  renderItem.getItemModelMesher().register(TriniaItems.triniaCape, 0, new ModelResourceLocation(TriniaMod.ASSET_PREFIX, "textures/models/armor/TriniaCape.png"));
 	}
 	
 	@Override

@@ -116,5 +116,10 @@ public void register(){
 				
 				return null;
 			}
+
+			public ModelBiped getArmorModelTriniaCape() {
+				
+				return null;
+			}
 			
 }
