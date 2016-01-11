@@ -200,7 +200,7 @@ public class TriniaItems {
 	public static Item triniaOrisoneChestplate;
 	public static Item triniaOrisoneLeggings;
 	public static Item triniaOrisoneBoots;
-	
+	public static Item coin;
 	public static void init()
 	{
 		//-Weapons-
@@ -346,7 +346,7 @@ public class TriniaItems {
 		toolsAnimated = (new ItemTrinia().setUnlocalizedName("toolsAnimated"));
 		armorAnimated = (new ItemTrinia().setUnlocalizedName("armorAnimated"));
 		itemsAnimated = (new ItemTrinia().setUnlocalizedName("itemsAnimated"));
-		
+		coin = (new ItemTrinia().setUnlocalizedName("coin")).setCreativeTab(TriniaMod.TriniaItemsTab);
 	}
 	
 	public static void register()
@@ -472,6 +472,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(itemsAnimated, itemsAnimated.getUnlocalizedName().substring(5));
 
 		GameRegistry.registerItem(MagicalBedItem, MagicalBedItem.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(coin, coin.getUnlocalizedName().substring(5));
 		
 		
 		GameRegistry.registerItem(OrcaSword, OrcaSword.getUnlocalizedName().substring(5));
@@ -608,6 +609,7 @@ public class TriniaItems {
 		registerRender(angelWings);
 		registerRender(angelHalo);
 		registerRender(goldenKey);
+		registerRender(coin);
 	}
 	
 	public static void registerRender(Item item)
