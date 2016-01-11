@@ -12,7 +12,7 @@ import net.minecraft.util.Util;
 
 public class ButtonTwitter extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/ButtonMedia.png");
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonMedia.png");
 
 	public ButtonTwitter(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {

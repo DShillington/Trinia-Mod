@@ -108,7 +108,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
     private int field_92021_u;
     private int field_92020_v;
     private int field_92019_w;
-    protected String tempText = "(Something awesome will load here)";
+    protected String tempText = "(Somebody write something clever here)";
     
     
     protected String versionText = "Trinia version: " + Reference.MENU_TRINIA_VERSION;

@@ -64,6 +64,7 @@ public class TriniaBlocks
 	public static Block goldenDoor;
 	public static Block goldenKeyHole;
 	public static Block goldenPillar;
+	public static Block sunDial;
 	
 	//World Gen Blocks Medeival World
 	public static Block adimiteOre;
@@ -85,7 +86,8 @@ public class TriniaBlocks
 		triniaDeadGrass = new BlockTrinia(Material.rock).setUnlocalizedName("triniaDeadGrass");
 
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
-
+		sunDial = new BlockTriniaDirt().setUnlocalizedName("sunDial");
+		
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
@@ -144,6 +146,7 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(goldenPillar, goldenPillar.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(inomiteTorch, inomiteTorch.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaDeadGrass, triniaDeadGrass.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(sunDial, sunDial.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
@@ -256,6 +259,7 @@ public class TriniaBlocks
 		RegisterRender(copperBlock);
 		RegisterRender(silverBlock);
 		RegisterRender(tinBlock);
+		RegisterRender(sunDial);
 	}
 	
 	public static void RegisterRender(Block block)
