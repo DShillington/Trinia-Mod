@@ -86,7 +86,7 @@ public class TriniaBlocks
 		triniaDeadGrass = new BlockTrinia(Material.rock).setUnlocalizedName("triniaDeadGrass");
 
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
-		sunDial = new BlockTriniaDirt().setUnlocalizedName("sunDial");
+		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial");
 		
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
