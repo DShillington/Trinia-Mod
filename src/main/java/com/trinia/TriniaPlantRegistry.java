@@ -9,7 +9,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.trinia.blocks.gui.GuiHandler;
-import com.trinia.blocks.gui.TileInventorySmelter;
 import com.trinia.plants.WorldGenRedTree;
 import com.trinia.world.WorldProviderMod;
 

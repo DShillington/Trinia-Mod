@@ -274,10 +274,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback
         buttonOptions.packedFGColour = 16777215;
         buttonQuit.packedFGColour = 16777215;
         buttonCredit.packedFGColour = 16777215;
-        mediaButtonPMC.packedFGColour = 16777215;
-        mediaButtonTwitter.packedFGColour = 16777215;
-        mediaButtonYouTube.packedFGColour = 16777215;
-        mediaButtonFacebook.packedFGColour = 16777215;
+        
     }
 
    

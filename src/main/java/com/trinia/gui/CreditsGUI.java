@@ -1,13 +1,17 @@
 package com.trinia.gui;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
+import com.sun.prism.paint.Color;
 import com.trinia.Reference;
 
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundCategory;
 import net.minecraft.client.audio.SoundEventAccessorComposite;
 import net.minecraft.client.audio.SoundHandler;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiLanguage;
 import net.minecraft.client.gui.GuiMainMenu;
@@ -23,6 +27,8 @@ import net.minecraft.client.gui.stream.GuiStreamUnavailable;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.GameSettings;
 import net.minecraft.client.stream.IStream;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.world.EnumDifficulty;
@@ -30,14 +36,20 @@ import net.minecraft.world.demo.DemoWorldServer;
 import net.minecraft.world.storage.ISaveFormat;
 import net.minecraft.world.storage.WorldInfo;
 import net.minecraftforge.fml.client.GuiModList;
+import net.minecraftforge.fml.client.config.HoverChecker;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
 {
-	 private ButtonCustomGui buttonBack;
-	 private ButtonCustomGui buttonMods;
+	 private ButtonBack buttonBack;
+	 private ButtonMods buttonMods;
+	 
+	 public HoverChecker undoHoverChecker;
+	 public HoverChecker resetHoverChecker;
+	 public HoverChecker checkBoxHoverChecker;
+	    
    // protected void actionPerformed(GuiButton button) throws IOException{} 
     public CreditsGUI(GuiScreen p_i1046_1_, GameSettings p_i1046_2_){}
     public void initGui(int p_73969_1_, int p_73969_2_){}
@@ -60,23 +72,34 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
     
     //Copyright
     protected String creditMojang = "Minecraft is copyright of MOJANG AB.";
+	private int xSize;
+	private int ySize;
     
-    @Override
+    public void drawGuiForgroundLayer(int par1, int par2){
+    	
+    }
+    
     public void initGui()
     {
-     super.initGui();
-
-     //The parameters of GuiButton are(id, x, y, width, height, text);
-     this.buttonList.add(this.buttonBack = new ButtonCustomGui(1, 10, 10, 20, 20, I18n.format(Reference.CREDITS_BACK, new Object[0])));
-     this.buttonList.add(this.buttonMods = new ButtonCustomGui(2, 10, 40, 20, 20, I18n.format(Reference.CREDITS_MODS, new Object[0])));
-
-     buttonBack.width = 90;
-     buttonMods.width = 90;
-     
-     buttonBack.packedFGColour = 16777215;
-     buttonMods.packedFGColour = 16777215;
+    	int i = this.height / 4 + 48;
+    	this.addSingleplayerMultiplayerButtons(i, 24);
      
     }
+    
+    public void addSingleplayerMultiplayerButtons(int p_73969_1_, int p_73969_2_){
+    	//The parameters of GuiButton are(id, x, y, width, height, text);
+    	this.buttonList.add(this.buttonBack = new ButtonBack(1, 10, 10, 20, 20, I18n.format("PMC", new Object[0])));
+        this.buttonList.add(this.buttonMods = new ButtonMods(2, 10, 40, 20, 20, I18n.format("PMC", new Object[0])));
+       
+        buttonBack.width = 20;
+        buttonMods.width = 20;
+     
+        buttonBack.packedFGColour = 16777215;
+        buttonMods.packedFGColour = 16777215;
+     
+    }
+    
+    
     
     protected void actionPerformed(GuiButton button) throws IOException
     {
@@ -117,5 +140,18 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback
         this.drawCenteredString(this.fontRendererObj, this.creditMojang, this.width / 2, 230, 18668501);
         
         super.drawScreen(mouseX, mouseY, partialTicks);
+        
+        
+        
     }
+	private void drawCenteredString(FontRenderer fontRendererObj,
+			String format, int x, int y, float red) {
+		// TODO Auto-generated method stub
+		
+	}
+	private void drawRect(int left, int top, int right, int bottom, Object rgb) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

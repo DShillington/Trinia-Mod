@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.tabs;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.items.TriniaItems;
@@ -13,8 +13,8 @@ public class TriniaToolsTab extends CreativeTabs {
 	public TriniaToolsTab(String label) {
 		super(label);
 		this.setBackgroundImageName("Trinia.png");
-		this.setNoScrollbar();
 	}
+	
 	@Override
 	public Item getTabIconItem() {
 		return TriniaItems.toolsAnimated;

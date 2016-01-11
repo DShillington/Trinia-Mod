@@ -19,14 +19,19 @@ import java.util.Random;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
-import com.trinia.events.ConfigurationHandler;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
+import com.trinia.handler.ConfigurationHandler;
 import com.trinia.handler.tickHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
+import com.trinia.tabs.TriniaArmorTab;
+import com.trinia.tabs.TriniaBlocksTab;
+import com.trinia.tabs.TriniaItemsTab;
+import com.trinia.tabs.TriniaTabs;
+import com.trinia.tabs.TriniaToolsTab;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
 
@@ -34,6 +39,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -79,7 +85,6 @@ public class TriniaMod {
 	
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
-    public static String TEXTURE_PREFIX2 = TriniaMod.ASSET_PREFIX + ":" + "textures/gui/tabTrinia.png";
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
@@ -91,7 +96,6 @@ public class TriniaMod {
 		FMLCommonHandler.instance().bus().register(new GuiHandler());
 		FMLCommonHandler.instance().bus().register(new tickHandler(Minecraft.getMinecraft()));
 		FMLCommonHandler.instance().bus().register(new EventUpdate());
-		ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 		UpdateHandler.init();
 		TriniaBlocks.init();
 		TriniaBlocks.register();
@@ -103,8 +107,8 @@ public class TriniaMod {
 		TriniaEntities.loadEntities();	
 		TriniaRenderRegistry.loadEntities();
 		
-		
-	}
+		// load config
+		}
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event)

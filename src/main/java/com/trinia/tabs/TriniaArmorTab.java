@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.tabs;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.items.TriniaItems;
@@ -13,7 +13,7 @@ public class TriniaArmorTab extends CreativeTabs {
 
 	public TriniaArmorTab(String label) {
 		super(label);
-		this.setBackgroundImageName("Trinia.png");
+		this.setBackgroundImageName("TriniaNoScroll.png");
 		this.setNoScrollbar();
 		}
 	@Override
