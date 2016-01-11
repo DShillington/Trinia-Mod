@@ -12,7 +12,7 @@ import net.minecraft.util.Util;
 
 public class ButtonBack extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/title/background/ButtonsCredits.png");
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonsCredits.png");
 
 	public ButtonBack(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
