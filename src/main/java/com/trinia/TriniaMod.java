@@ -107,7 +107,7 @@ public class TriniaMod {
 		TriniaTileEntities.register();
 		TriniaBiomes.init();
 		TriniaRecipes.loadRecipes();
-		TriniaEntities.loadEntities();	
+		TriniaEntities.loadEntities();
 		TriniaRenderRegistry.loadEntities();
 		GameRegistry.registerTileEntity(TileEntitySunDial.class, "Sun Dial");
 		// load config
@@ -140,7 +140,7 @@ public class TriniaMod {
 			(new WorldGenCastleOne()).generate(world, rand, RandPosX, j1, RandPosZ);
 		}
 	}
-	
+
 	public static BiomeGenBase[] clean(final BiomeGenBase[] v) {
 		List<BiomeGenBase> list = new ArrayList<BiomeGenBase>(Arrays.asList(v));
 		list.removeAll(Collections.singleton(null));

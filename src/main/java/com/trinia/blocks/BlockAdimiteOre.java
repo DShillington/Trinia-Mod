@@ -34,7 +34,7 @@ public class BlockAdimiteOre extends Block
         this.setCreativeTab(TriniaMod.TriniaBlocksTab);
     }
     
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
+	public Item getItemDropped(IBlockState state, Random rand, int fortune)
     {
         return TriniaItems.adimite;
     }

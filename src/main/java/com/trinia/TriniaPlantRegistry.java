@@ -13,12 +13,8 @@ import com.trinia.plants.WorldGenRedTree;
 import com.trinia.world.WorldProviderMod;
 
 public class TriniaPlantRegistry {
-	public static void loadEntities()
-	{
-		
-		
-		
+	public static void loadEntities() {
+
 	}
 
-	
 }
