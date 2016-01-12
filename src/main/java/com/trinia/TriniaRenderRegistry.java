@@ -13,16 +13,16 @@ import com.trinia.blocks.gui.TileInventorySmelter;
 import com.trinia.world.WorldProviderMod;
 
 public class TriniaRenderRegistry {
-	public static void loadEntities()
-	{
-		
-		//Medieval Dimension
-		DimensionManager.registerProviderType(TriniaMod.DIM_TRINIA_ID, WorldProviderMod.class, false);
-		DimensionManager.registerDimension(TriniaMod.DIM_TRINIA_ID, TriniaMod.DIM_TRINIA_ID);
-		
+	public static void loadEntities() {
+
+		// Medieval Dimension
+		DimensionManager.registerProviderType(TriniaMod.DIM_TRINIA_ID,
+				WorldProviderMod.class, false);
+		DimensionManager.registerDimension(TriniaMod.DIM_TRINIA_ID,
+				TriniaMod.DIM_TRINIA_ID);
+
 		GameRegistry.registerTileEntity(TileInventorySmelter.class, "smelter");
-		
+
 	}
 
-	
 }

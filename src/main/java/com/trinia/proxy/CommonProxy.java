@@ -17,6 +17,7 @@ import com.trinia.events.UpdateHandler;
 import com.trinia.handler.ChatHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.model.ModelAmulet;
+import com.trinia.world.SteelGeneration;
 import com.trinia.world.gen.TriniaBiomes;
 import com.trinia.world.gen.TriniaWorldGen;
 
@@ -47,16 +48,13 @@ public class CommonProxy implements ProxyInterface
     }
 
     public void postInit(FMLPostInitializationEvent event) {   
-    		if (Loader.isModLoaded("TwilightForest"))
-           {
-               ChatHandler.logException(Level.SEVERE, "TwilightForest Mod is not compatible with Trinia, Trinia has it's own Dimension system. Remove the TwilightForest Mod to fix this error.");
-           }  
+    		
     }
 
 	public void init(FMLInitializationEvent event)
 	{
 		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance, new GuiHandler());
-		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 0);
+		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 2);
 	}
 
 	public void registerRenders() 

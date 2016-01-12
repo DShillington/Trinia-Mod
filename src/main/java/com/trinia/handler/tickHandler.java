@@ -41,7 +41,7 @@ public class tickHandler {
 
 	}
 
-	 //Called when the client ticks. 
+	 //Called when the client ticks.
 	 @SubscribeEvent
 	 public void onClientTick(TickEvent.ClientTickEvent event) {
 		
