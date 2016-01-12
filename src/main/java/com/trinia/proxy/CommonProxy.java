@@ -38,86 +38,83 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class CommonProxy implements ProxyInterface
-{
+public class CommonProxy implements ProxyInterface {
 
 	public void preInit(FMLPreInitializationEvent event) {
-	
+
 		MinecraftForge.EVENT_BUS.register(new EventHandlerCommon());
 
-    }
+	}
 
-    public void postInit(FMLPostInitializationEvent event) {   
-    		
-    }
+	public void postInit(FMLPostInitializationEvent event) {
 
-	public void init(FMLInitializationEvent event)
-	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance, new GuiHandler());
+	}
+
+	public void init(FMLInitializationEvent event) {
+		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance,
+				new GuiHandler());
 		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 2);
 	}
 
-	public void registerRenders() 
-	{
-		
+	public void registerRenders() {
+
 	}
 
-public void register(){
-	
+	public void register() {
+
 	}
+
 	public static Block blockInventoryAdvanced;
 
-	
 	public static void preInitCommon()
-	 
+
 	{
-		blockInventoryAdvanced = new BlockTriniaSmelter().setUnlocalizedName("mbe31_block_inventory_furnace");
-		GameRegistry.registerBlock(blockInventoryAdvanced, "mbe31_block_inventory_furnace");
-		}
-	
-	 public void registerNetworkStuff(){
-		  }
+		blockInventoryAdvanced = new BlockTriniaSmelter()
+				.setUnlocalizedName("mbe31_block_inventory_furnace");
+		GameRegistry.registerBlock(blockInventoryAdvanced,
+				"mbe31_block_inventory_furnace");
+	}
 
-		 public void registerTileEntities(){
-		 }
-		 public World getClientWorld()
-			{
-				return null;
-			}
+	public void registerNetworkStuff() {
+	}
 
-			public EntityPlayer getClientPlayer()
-			{
-				return null;
-			}
+	public void registerTileEntities() {
+	}
 
-			@Override
-			public boolean isSinglePlayer()
-			{
-				return false;
-			}
+	public World getClientWorld() {
+		return null;
+	}
 
-			@Override
-			public boolean isDedicatedServer()
-			{
-				return MinecraftServer.getServer().isDedicatedServer();
-			}
-    
-			public ModelBiped getArmorModelHalo(){
-				return null;
-				}
-			
-			public ModelBiped getArmorModel(){
-				return null;
-				}
+	public EntityPlayer getClientPlayer() {
+		return null;
+	}
 
-			public ModelBiped getArmorModelWings() {
-				
-				return null;
-			}
+	@Override
+	public boolean isSinglePlayer() {
+		return false;
+	}
 
-			public ModelBiped getArmorModelTriniaCape() {
-				
-				return null;
-			}
-			
+	@Override
+	public boolean isDedicatedServer() {
+		return MinecraftServer.getServer().isDedicatedServer();
+	}
+
+	public ModelBiped getArmorModelHalo() {
+		return null;
+	}
+
+	public ModelBiped getArmorModel() {
+		return null;
+	}
+
+	public ModelBiped getArmorModelWings() {
+
+		return null;
+	}
+
+	public ModelBiped getArmorModelTriniaCape() {
+
+		return null;
+	}
+
 }

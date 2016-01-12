@@ -1,5 +1,5 @@
 package com.trinia.events;
- 
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,15 +12,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 
- 
-	public class EventUpdate
-	{
-		@SubscribeEvent
-		public void onPlayerLogin(PlayerLoggedInEvent e)
-		{
-			EntityPlayer player = (EntityPlayer) e.player;
-			if(UpdateHandler.show)
-			{
-			}
+public class EventUpdate {
+	@SubscribeEvent
+	public void onPlayerLogin(PlayerLoggedInEvent e) {
+		EntityPlayer player = (EntityPlayer) e.player;
+		if (UpdateHandler.show) {
+			player.addChatMessage(new ChatComponentText(
+					UpdateHandler.updateStatus));
 		}
+	}
 }
