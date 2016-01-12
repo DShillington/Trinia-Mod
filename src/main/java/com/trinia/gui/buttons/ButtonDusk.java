@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonNight extends GuiButton{
+public class ButtonDusk extends GuiButton{
 
 	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/SunDial.png");
 
-	public ButtonNight(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	public ButtonDusk(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -58,7 +58,7 @@ public class ButtonNight extends GuiButton{
                 l = 16777120;
             }
 
-           this.drawTexturedModalRect(this.xPosition, this.yPosition, 145, 219, 22, 23);
+           this.drawTexturedModalRect(this.xPosition, this.yPosition, 123, 219, 22, 23);
         }
     }
 }
