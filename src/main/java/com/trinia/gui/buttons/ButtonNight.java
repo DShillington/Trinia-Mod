@@ -1,4 +1,4 @@
-package com.trinia.gui;
+package com.trinia.gui.buttons;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonBack extends GuiButton{
+public class ButtonNight extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonsCredits.png");
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/SunDial.png");
 
-	public ButtonBack(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	public ButtonNight(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;

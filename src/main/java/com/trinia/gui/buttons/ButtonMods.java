@@ -1,4 +1,4 @@
-package com.trinia.gui;
+package com.trinia.gui.buttons;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonCustomGui extends GuiButton{
+public class ButtonMods extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/Button.png");
-
-	public ButtonCustomGui(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonsCredits.png");
+	 
+	public ButtonMods(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -43,8 +43,6 @@ public class ButtonCustomGui extends GuiButton{
             GlStateManager.enableBlend();
             GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
             GlStateManager.blendFunc(770, 771);
-            this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 46 + k * 20, this.width / 2, this.height);
-            this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 200 - this.width / 2, 46 + k * 20, this.width / 2, this.height);
             this.mouseDragged(mc, mouseX, mouseY);
             int l = 14737632;
            if (packedFGColour != 0)
@@ -60,7 +58,7 @@ public class ButtonCustomGui extends GuiButton{
                 l = 16777120;
             }
 
-            this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, l);
+           this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 0, 25, 26);
         }
     }
 }

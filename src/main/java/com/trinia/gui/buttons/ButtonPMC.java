@@ -1,4 +1,8 @@
-package com.trinia.gui;
+package com.trinia.gui.buttons;
+
+import java.awt.Desktop;
+import java.net.URI;
+import java.net.URL;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
@@ -10,11 +14,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonMods extends GuiButton{
+public class ButtonPMC extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonsCredits.png");
-	 
-	public ButtonMods(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonMedia.png");
+
+	public ButtonPMC(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -58,7 +62,7 @@ public class ButtonMods extends GuiButton{
                 l = 16777120;
             }
 
-           this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 0, 25, 26);
+           this.drawTexturedModalRect(this.xPosition, this.yPosition, 61, 0, 19, 20);
         }
     }
 }

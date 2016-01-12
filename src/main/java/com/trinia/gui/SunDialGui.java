@@ -64,16 +64,7 @@ import com.trinia.tileentity.TileEntitySunDial;
           
           Iterator iterator = this.buttonList.iterator();
 
-          while (iterator.hasNext())
-          {
-              GuiButton guibutton = (GuiButton)iterator.next();
-
-              if (guibutton.isMouseOver())
-              {
-                  guibutton.drawButtonForegroundLayer(mouseX - this.guiLeft, mouseY - this.guiTop);
-                  break;
-              }
-          }
+          
 
           RenderHelper.enableGUIStandardItemLighting();
       }
@@ -89,66 +80,8 @@ import com.trinia.tileentity.TileEntitySunDial;
          this.itemRender.zLevel = 0.0F;
       }
 
-      @SideOnly(Side.CLIENT)
-      static class Button extends GuiButton
-          {
-              private final ResourceLocation field_146145_o;
-              private final int field_146144_p;
-              private final int field_146143_q;
-              private boolean field_146142_r;
-              private static final String __OBFID = "CL_00000743";
+    
 
-              protected Button(int p_i1077_1_, int p_i1077_2_, int p_i1077_3_, ResourceLocation p_i1077_4_, int p_i1077_5_, int p_i1077_6_)
-              {
-                  super(p_i1077_1_, p_i1077_2_, p_i1077_3_, 22, 22, "");
-                  this.field_146145_o = p_i1077_4_;
-                  this.field_146144_p = p_i1077_5_;
-                  this.field_146143_q = p_i1077_6_;
-              }
-
-              public void drawButton(Minecraft mc, int mouseX, int mouseY)
-              {
-                  if (this.visible)
-                  {
-                      mc.getTextureManager().bindTexture(SunDialGui.beaconGuiTextures);
-                      GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-                      this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
-                      short short1 = 219;
-                      int k = 0;
-
-                      if (!this.enabled)
-                      {
-                          k += this.width * 2;
-                      }
-                      else if (this.field_146142_r)
-                      {
-                          k += this.width * 1;
-                      }
-                      else if (this.hovered)
-                      {
-                          k += this.width * 3;
-                      }
-
-                      this.drawTexturedModalRect(this.xPosition, this.yPosition, k, short1, this.width, this.height);
-
-                      if (!SunDialGui.beaconGuiTextures.equals(this.field_146145_o))
-                      {
-                          mc.getTextureManager().bindTexture(this.field_146145_o);
-                      }
-
-                      this.drawTexturedModalRect(this.xPosition + 2, this.yPosition + 2, this.field_146144_p, this.field_146143_q, 38, 18);
-                  }
-              }
-
-              public boolean func_146141_c()
-              {
-                  return this.field_146142_r;
-              }
-
-              public void func_146140_b(boolean p_146140_1_)
-              {
-                  this.field_146142_r = p_146140_1_;
-              }
-          }
+          
 
   }

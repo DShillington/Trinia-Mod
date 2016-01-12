@@ -3,6 +3,11 @@ package com.trinia.gui;
 import com.google.common.collect.Lists;
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.gui.buttons.ButtonCustomGui;
+import com.trinia.gui.buttons.ButtonFacebook;
+import com.trinia.gui.buttons.ButtonPMC;
+import com.trinia.gui.buttons.ButtonTwitter;
+import com.trinia.gui.buttons.ButtonYoutube;
 import com.trinia.handler.tickHandler;
 
 import java.awt.Desktop;

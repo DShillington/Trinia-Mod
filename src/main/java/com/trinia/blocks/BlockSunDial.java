@@ -38,7 +38,6 @@ public class BlockSunDial extends BlockContainer {
 		super(Material.iron);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.isActive = isActive;
-
 		this.setHardness(5.0F);
 
 	}

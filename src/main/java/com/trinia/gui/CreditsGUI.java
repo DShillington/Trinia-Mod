@@ -6,6 +6,8 @@ import java.util.List;
 
 import com.sun.prism.paint.Color;
 import com.trinia.Reference;
+import com.trinia.gui.buttons.ButtonBack;
+import com.trinia.gui.buttons.ButtonMods;
 
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.audio.SoundCategory;

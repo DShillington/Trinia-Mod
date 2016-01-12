@@ -1,4 +1,4 @@
-package com.trinia.gui;
+package com.trinia.gui.buttons;
 
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonYoutube extends GuiButton{
+public class ButtonFacebook extends GuiButton{
 
 	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonMedia.png");
 
-	public ButtonYoutube(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	public ButtonFacebook(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -58,7 +58,7 @@ public class ButtonYoutube extends GuiButton{
                 l = 16777120;
             }
 
-           this.drawTexturedModalRect(this.xPosition, this.yPosition, 21, 0, 19, 20);
+           this.drawTexturedModalRect(this.xPosition, this.yPosition, 42, 0, 19, 20);
         }
     }
 }
