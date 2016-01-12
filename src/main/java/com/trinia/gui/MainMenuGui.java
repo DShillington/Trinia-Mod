@@ -11,9 +11,11 @@ import com.trinia.gui.buttons.ButtonYoutube;
 import com.trinia.handler.tickHandler;
 
 import java.awt.Desktop;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,6 +23,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
+
+import javax.imageio.ImageIO;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -43,6 +47,7 @@ import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.GameSettings;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.player.EntityPlayer;
@@ -78,7 +83,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	private float oldMouseY;
 	private float mousePosx;
 	private float mousePosY;
-	private ButtonCustomGui buttonResetDemo;
+		private ButtonCustomGui buttonResetDemo;
 	private ButtonCustomGui buttonSingle;
 	private ButtonCustomGui buttonMulti;
 	private ButtonCustomGui buttonOptions;
@@ -88,7 +93,6 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	private ButtonTwitter mediaButtonTwitter;
 	private ButtonFacebook mediaButtonFacebook;
 	private ButtonYoutube mediaButtonYouTube;
-
 	/** Timer used to rotate the panorama, increases every tick. */
 	private int panoramaTimer;
 	/**
@@ -125,6 +129,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 					"textures/gui/title/background/panorama_highres_4.png"),
 			new ResourceLocation(TriniaMod.ASSET_PREFIX,
 					"textures/gui/title/background/panorama_highres_5.png") };
+	
+	
 	public static final String field_96138_a = "Please click "
 			+ EnumChatFormatting.UNDERLINE + "here" + EnumChatFormatting.RESET
 			+ " for more information.";
@@ -416,10 +422,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 			this.mc.displayGuiScreen(this);
 		}
 	}
-
-	/**
-	 * Draws the main menu panorama
-	 */
+	
 	private void drawPanorama(int p_73970_1_, int p_73970_2_, float p_73970_3_) {
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer worldrenderer = tessellator.getWorldRenderer();

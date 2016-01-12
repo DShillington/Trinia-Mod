@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-import com.sun.prism.paint.Color;
 import com.trinia.Reference;
 import com.trinia.gui.buttons.ButtonBack;
 import com.trinia.gui.buttons.ButtonMods;

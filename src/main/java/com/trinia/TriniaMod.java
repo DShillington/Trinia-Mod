@@ -11,11 +11,22 @@
 
 package com.trinia;
 
+import java.awt.Image;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
+import javax.imageio.ImageIO;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
@@ -111,6 +122,8 @@ public class TriniaMod {
 		TriniaRenderRegistry.loadEntities();
 		GameRegistry.registerTileEntity(TileEntitySunDial.class, "Sun Dial");
 		// load config
+		
+		
 		}
 	
 	@EventHandler
