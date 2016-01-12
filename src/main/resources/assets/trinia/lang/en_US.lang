@@ -10,6 +10,7 @@ entity.reddragon.name=Red Dragon
 entity.townsmen.name=Worker Fella
 entity.townswoman.name=Lady Worker
 
+item.coin.name=Trinia Coin
 item.inomite.name=Inomite Shard
 item.goldenKey.name=Dungeon Key
 item.steelingot.name=Steel Ingot
@@ -109,7 +110,7 @@ item.adimiteSword.name=Adimite Sword
 item.triniaCape.name=Trinia Cape
 item.compressed_inomite.name=Compressed Inomite
 
-tile.cloud.name=High Elevation Cloud
+tile.sunDial.name=Sun Dial
 tile.bluecloud.name=Blue High Elevation Cloud
 tile.goldenBrick.name=Golden Brick
 tile.goldenDoor.name=Dungeon Door Block
