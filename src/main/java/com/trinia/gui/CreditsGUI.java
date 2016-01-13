@@ -146,6 +146,7 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 			this.mc.displayGuiScreen(new GuiModList(null));
 		}
 	}
+	//Test
 
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		this.drawDefaultBackground();
