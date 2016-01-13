@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import org.lwjgl.opengl.GL11;
+
 import com.trinia.Reference;
 import com.trinia.gui.buttons.ButtonBack;
 import com.trinia.gui.buttons.ButtonMods;
@@ -52,8 +54,11 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 	private ButtonBack buttonBack;
 	private ButtonMods buttonMods;
 
+	private static final ResourceLocation minecraftTitleTextures = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/title/minecraft.png");
+	
 	private static final ResourceLocation CreditsOverlay = new ResourceLocation(
-			TriniaMod.ASSET_PREFIX, "textures/gui/overlay.png");
+			TriniaMod.ASSET_PREFIX, "textures/gui/Black.png");
 
 	private static final ResourceLocation test = new ResourceLocation(
 			TriniaMod.ASSET_PREFIX, "textures/blocks/triniagrassSide.png");
@@ -152,12 +157,16 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 				16777215);
 		this.drawGradientRect(9000, 0, this.width, this.height, 0,
 				Integer.MIN_VALUE);
+		
 		this.mc.getTextureManager().bindTexture(CreditsOverlay);
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glColor4f(1, 1, 1, 0.6f);
+		this.drawTexturedModalRect(this.width / 2 - 95, 0, 0, 0, 187, 1000);
+		this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
-		this.drawTexturedModalRect(115, 10, 0, 0, 255, 260);
-		// this.drawTexturedModalRect(k + 10, b0 + 0, 0, 45, 155, 44);
-
+		this.drawTexturedModalRect(this.width / 2 - 95, 10, 0, 0, 187, 44);
+		
 		// title
 		this.drawCenteredString(this.fontRendererObj, this.creditPageName,
 				this.width / 2, 60, 16777215);
@@ -166,31 +175,31 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 		this.drawCenteredString(this.fontRendererObj, this.creditLeader,
 				this.width / 2, 75, 18668501);
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-				this.width / 2, 85, 561991081);
+				this.width / 2, 85, 18668801);
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
-				this.width / 2, 95, 561991081);
+				this.width / 2, 95, 18668801);
 
 		// Developers
 		this.drawCenteredString(this.fontRendererObj, this.creditDeveloper,
 				this.width / 2, 110, 18668501);
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-				this.width / 2, 120, 561991081);
+				this.width / 2, 120, 18668801);
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
-				this.width / 2, 130, 561991081);
+				this.width / 2, 130, 18668801);
 		this.drawCenteredString(this.fontRendererObj, this.creditMagikModder,
-				this.width / 2, 140, 561991081);
+				this.width / 2, 140, 18668801);
 
 		// Artists
 		this.drawCenteredString(this.fontRendererObj, this.creditArtist,
 				this.width / 2, 155, 18668501);
 		this.drawCenteredString(this.fontRendererObj, this.creditSnurly,
-				this.width / 2, 165, 561991081);
+				this.width / 2, 165, 18668801);
 		this.drawCenteredString(this.fontRendererObj, this.creditTerreen,
-				this.width / 2, 175, 561991081);
+				this.width / 2, 175, 18668801);
 
 		// Copyright
 		this.drawCenteredString(this.fontRendererObj, this.creditMojang,
-				this.width / 2, 235, 18668501);
+				this.width / 2, 225, 18668501);
 
 		super.drawScreen(mouseX, mouseY, partialTicks);
 	}
