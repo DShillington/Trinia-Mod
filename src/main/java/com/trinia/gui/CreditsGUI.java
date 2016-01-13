@@ -52,8 +52,11 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 	private ButtonBack buttonBack;
 	private ButtonMods buttonMods;
 
-	private static final ResourceLocation CreditsOverlay = new ResourceLocation(
-			TriniaMod.ASSET_PREFIX, "textures/gui/overlay.png");
+	private static final ResourceLocation logoBackground = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/title/Background.png");
+	
+	private static final ResourceLocation minecraftTitleTextures = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/title/minecraft.png");
 
 	private static final ResourceLocation test = new ResourceLocation(
 			TriniaMod.ASSET_PREFIX, "textures/blocks/triniagrassSide.png");
@@ -145,52 +148,65 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 		this.drawDefaultBackground();
 
-		int k = 0;
-		byte b0 = 0;
+		int k = 10;
+		byte b0 = 30;
 
 		this.drawGradientRect(9000, 0, this.width, this.height, -2130706433,
-				16777215);
+			    16777215);
 		this.drawGradientRect(9000, 0, this.width, this.height, 0,
 				Integer.MIN_VALUE);
-		this.mc.getTextureManager().bindTexture(CreditsOverlay);
+		this.mc.getTextureManager().bindTexture(logoBackground);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
-		this.drawTexturedModalRect(115, 10, 0, 0, 255, 260);
-		// this.drawTexturedModalRect(k + 10, b0 + 0, 0, 45, 155, 44);
+		this.drawTexturedModalRect(this.width / 2 -98, b0 + -10, 0, 0, 155, 44);
+		this.drawTexturedModalRect(k + 155, b0 + 0, 0, 45, 155, 44);
+		
+		int k1 = -10;
+		byte b01 = 30;
 
+		this.drawGradientRect(9000, 0, this.width, this.height, -2130706433,
+			    16777215);
+		this.drawGradientRect(9000, 0, this.width, this.height, 0,
+				Integer.MIN_VALUE);
+		this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
+		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+
+		this.drawTexturedModalRect(this.width / 2 -98, b01 + -10, 0, 0, 155, 44);
+		this.drawTexturedModalRect(k1 + 155, b01 + 0, 0, 45, 155, 44);
+
+		
 		// title
 		this.drawCenteredString(this.fontRendererObj, this.creditPageName,
-				this.width / 2, 60, 16777215);
+				this.width / 2, 53, 16777215);
 
 		// Leaders
 		this.drawCenteredString(this.fontRendererObj, this.creditLeader,
-				this.width / 2, 75, 18668501);
+				this.width / 2, 70, 16777215);//18668501
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-				this.width / 2, 85, 561991081);
+				this.width / 2, 80, 65407);
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
-				this.width / 2, 95, 561991081);
+				this.width / 2, 90, 65407);
 
 		// Developers
 		this.drawCenteredString(this.fontRendererObj, this.creditDeveloper,
-				this.width / 2, 110, 18668501);
+				this.width / 2, 105, 16777215);
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-				this.width / 2, 120, 561991081);
+				this.width / 2, 115, 65407);
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
-				this.width / 2, 130, 561991081);
-		this.drawCenteredString(this.fontRendererObj, this.creditMagikModder,
-				this.width / 2, 140, 561991081);
+				this.width / 2, 125, 65407);
+		
 
 		// Artists
 		this.drawCenteredString(this.fontRendererObj, this.creditArtist,
-				this.width / 2, 155, 18668501);
+				this.width / 2, 140, 16777215);
 		this.drawCenteredString(this.fontRendererObj, this.creditSnurly,
-				this.width / 2, 165, 561991081);
+				this.width / 2, 150, 65407);
 		this.drawCenteredString(this.fontRendererObj, this.creditTerreen,
-				this.width / 2, 175, 561991081);
+				this.width / 2, 160, 65407);
 
 		// Copyright
 		this.drawCenteredString(this.fontRendererObj, this.creditMojang,
-				this.width / 2, 235, 18668501);
+				this.width / 2, 235, 65407);
 
 		super.drawScreen(mouseX, mouseY, partialTicks);
 	}

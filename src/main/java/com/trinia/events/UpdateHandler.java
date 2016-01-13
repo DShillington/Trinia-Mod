@@ -54,12 +54,11 @@ public class UpdateHandler {
 		// We use a try/catch incase something goes wrong AKA server is down, or
 		// no internet connection
 		try {
-			URL url = new URL("http://triniamod.weebly.com/version.html");
+			URL url = new URL("https://raw.githubusercontent.com/papertazer/Trinia-Mod-BETA/master/src/main/java/com/trinia/web/version.txt");
 			Scanner s = new Scanner(url.openStream());
 			// The way I did this, well I have a space in my version so that why
 			// I add a space in and get the next
 			newestVersion = s.next();
-			newestVersion = newestVersion + " " + s.next();
 			// Close your connection!
 			s.close();
 		} catch (IOException ex) {
