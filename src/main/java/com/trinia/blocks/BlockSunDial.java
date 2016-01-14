@@ -29,7 +29,7 @@ import net.minecraftforge.fml.common.network.internal.FMLNetworkHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockSunDial extends BlockContainer {
+public class BlockSunDial extends BlockTrinia {
 
 	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 	private final boolean isActive;
@@ -110,7 +110,6 @@ public class BlockSunDial extends BlockContainer {
 		return Item.getItemFromBlock(TriniaBlocks.sunDial);
 	}
 
-	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntitySunDial();
 	}

@@ -120,9 +120,8 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();
 		TriniaRenderRegistry.loadEntities();
-		GameRegistry.registerTileEntity(TileEntitySunDial.class, "Sun Dial");
+		GameRegistry.registerTileEntity(TileEntitySunDial.class, "sunDial");
 		// load config
-		
 		
 		}
 	

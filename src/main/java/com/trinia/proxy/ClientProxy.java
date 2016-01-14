@@ -16,6 +16,7 @@ import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.trinia.TriniaEntities;
 import com.trinia.TriniaMod;
@@ -54,6 +55,7 @@ import com.trinia.model.ModelAmulet;
 import com.trinia.model.ModelAngelHalo;
 import com.trinia.model.ModelAngelWings;
 import com.trinia.model.ModelTriniaCape;
+import com.trinia.tileentity.TileEntitySunDial;
 import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
@@ -146,6 +148,5 @@ private static final ModelTriniaCape Cape = new ModelTriniaCape(0.5F);
 		RenderingRegistry.registerEntityRenderingHandler(EntityAngelBoss.class, new RenderAngelBoss(Minecraft.getMinecraft().getRenderManager(), new ModelAngelBoss(), 6){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/boss/AngelBoss.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityButterfly.class, new RenderButterFly(Minecraft.getMinecraft().getRenderManager(), new ModelButterFly(), 7){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/butterfly/ButterFly_Orange.png");}});
 		RenderingRegistry.registerEntityRenderingHandler(EntityCentaur.class, new RenderCentaur(Minecraft.getMinecraft().getRenderManager(), new ModelCentaur(), 8){protected ResourceLocation getEntityTexture(Entity par1Entity){return new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/entity/centaur/Centaur.png");}});
-		
 	}
 }
