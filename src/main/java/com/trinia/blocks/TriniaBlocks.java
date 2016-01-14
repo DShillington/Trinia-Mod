@@ -89,7 +89,7 @@ public class TriniaBlocks
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
 		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial");
 		
-		pipeLine = new BlockPipe(Material.rock).setUnlocalizedName("pipe");
+		pipeLine = new BlockPipe().setUnlocalizedName("pipe");
 		
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
