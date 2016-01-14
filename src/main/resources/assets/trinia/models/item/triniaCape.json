@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "trinia:items/TriniaCape"
+        "layer0": "trinia:items/Cape_Trinia"
     },
     "display": {
         "thirdperson": {

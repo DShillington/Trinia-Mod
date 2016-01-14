@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.gui.buttons.ButtonCustomGui;
+import com.trinia.gui.buttons.ButtonDonate;
 import com.trinia.gui.buttons.ButtonFacebook;
 import com.trinia.gui.buttons.ButtonPMC;
 import com.trinia.gui.buttons.ButtonTwitter;
@@ -11,6 +12,7 @@ import com.trinia.gui.buttons.ButtonYoutube;
 import com.trinia.handler.tickHandler;
 
 import java.awt.Desktop;
+import java.awt.List;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -68,6 +70,8 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GLContext;
 import org.lwjgl.util.glu.Project;
 
+import scala.actors.threadpool.Arrays;
+
 @SideOnly(Side.CLIENT)
 public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 
@@ -93,6 +97,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	private ButtonTwitter mediaButtonTwitter;
 	private ButtonFacebook mediaButtonFacebook;
 	private ButtonYoutube mediaButtonYouTube;
+	private ButtonDonate mediaButtonDonate;
 	/** Timer used to rotate the panorama, increases every tick. */
 	private int panoramaTimer;
 	/**
@@ -281,7 +286,10 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 			this.field_92019_w = this.field_92021_u + 24;
 		}
 	}
-
+	public void drawButtonForegroundLayer(int mouseX, int mouseY)
+    {
+        MainMenuGui.this.drawCreativeTabHoveringText(I18n.format("Donate", new Object[0]), 20, 20);
+    }
 	/**
 	 * Adds Singleplayer and Multiplayer buttons on Main Menu for players who
 	 * have bought the game.
@@ -316,7 +324,10 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 		this.buttonList.add(this.mediaButtonPMC = new ButtonPMC(404,
 				this.width - 25, this.height - 25, 20, 20, I18n.format(
 						"PMC", new Object[0])));
-
+		this.buttonList.add(this.mediaButtonDonate = new ButtonDonate(408,
+				this.width - 125, this.height - 25, 20, 20, I18n.format(
+						"Donate", new Object[0])));
+		 
 		buttonSingle.width = 126;
 		buttonMulti.width = 126;
 		buttonOptions.width = 126;
@@ -326,7 +337,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 		mediaButtonTwitter.width = 20;
 		mediaButtonYouTube.width = 20;
 		mediaButtonFacebook.width = 20;
-
+		mediaButtonDonate.width = 20;
+		
 		buttonSingle.packedFGColour = 16777215;
 		buttonMulti.packedFGColour = 16777215;
 		buttonOptions.packedFGColour = 16777215;
@@ -371,6 +383,15 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 			try {
 				Desktop.getDesktop().browse(
 						new URL("http://www.facebook.com").toURI());
+			} catch (Exception e) {
+			}
+		}
+		if (button.id == 408) {
+			try {
+				Desktop.getDesktop()
+						.browse(new URL(
+								"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KDDUJTVJG26D2")
+								.toURI());
 			} catch (Exception e) {
 			}
 		}
@@ -620,6 +641,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	}
 
 	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+		
 		super.drawScreen(mouseX, mouseY, partialTicks);
 
 		this.oldMouseX = (float) mouseX;
@@ -710,9 +732,50 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 					(this.width - this.field_92024_r) / 2,
 					((GuiButton) this.buttonList.get(0)).yPosition - 12, -1);
 		}
-
+		
 		super.drawScreen(mouseX, mouseY, partialTicks);
-
+		for (int i = 0; i < buttonList.size(); i++) {
+	        if (buttonList.get(i) instanceof ButtonDonate) {
+	        	ButtonDonate btn = (ButtonDonate) buttonList.get(i);
+	                if (btn.isMouseOver()) {
+	                        String[] desc = { "Donate" };
+	                        java.util.List temp = Arrays.asList(desc);
+	                        drawHoveringText(temp, mouseX, mouseY, fontRendererObj);
+	                }
+	        }
+	        if (buttonList.get(i) instanceof ButtonTwitter) {
+	        	ButtonTwitter btn = (ButtonTwitter) buttonList.get(i);
+	                if (btn.isMouseOver()) {
+	                        String[] desc = { "Twitter: Papertazer" };
+	                        java.util.List temp = Arrays.asList(desc);
+	                        drawHoveringText(temp, mouseX, mouseY, fontRendererObj);
+	                }
+	        }
+	        if (buttonList.get(i) instanceof ButtonFacebook) {
+	        	ButtonFacebook btn = (ButtonFacebook) buttonList.get(i);
+	                if (btn.isMouseOver()) {
+	                        String[] desc = { "SOON: Trinia" };
+	                        java.util.List temp = Arrays.asList(desc);
+	                        drawHoveringText(temp, mouseX, mouseY, fontRendererObj);
+	                }
+	        }
+	        if (buttonList.get(i) instanceof ButtonYoutube) {
+	        	ButtonYoutube btn = (ButtonYoutube) buttonList.get(i);
+	                if (btn.isMouseOver()) {
+	                        String[] desc = { "Youtube: OMGitsMiniMe" };
+	                        java.util.List temp = Arrays.asList(desc);
+	                        drawHoveringText(temp, mouseX, mouseY, fontRendererObj);
+	                }
+	        }
+	        if (buttonList.get(i) instanceof ButtonPMC) {
+	        	ButtonPMC btn = (ButtonPMC) buttonList.get(i);
+	                if (btn.isMouseOver()) {
+	                        String[] desc = { "Mod Page" };
+	                        java.util.List temp = Arrays.asList(desc);
+	                        drawHoveringText(temp, mouseX, mouseY, fontRendererObj);
+	                }
+	        }
+	}
 	}
 
 	/**
