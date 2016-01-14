@@ -328,6 +328,20 @@ public class TriniaItems {
 		Chisel = (new ItemTrinia().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		goldenKey = (new ItemTrinia().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		Rock = (new ItemTrinia().setUnlocalizedName("Rock")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		TinPickaxe = (new MaterialTool(null, TriniaTin).setUnlocalizedName("tinPickaxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		TinAxe = (new MaterialTool(null, TriniaTin).setUnlocalizedName("tinAxe")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		TinSpade = (new MaterialTool(null, TriniaTin).setUnlocalizedName("tinSpade")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		TinSword = (new MaterialTool(null, TriniaTin).setUnlocalizedName("tinSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		
+		AdimiteSword = (new MaterialTool(null, TriniaAdimite).setUnlocalizedName("adimiteSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrcaSword = (new MaterialTool(null, TriniaOrca).setUnlocalizedName("orcaSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrisoneSword = (new MaterialTool(null, TriniaOrisone).setUnlocalizedName("orisoneSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		OrisoneFatSword = (new MaterialTool(null, TriniaOrisone).setUnlocalizedName("orisoneFatSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		Slingshot = (new ItemSlingshot(null, TriniaSlingshot).setUnlocalizedName("Slingshot")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		
+		
+		Chisel = (new ItemTrinia().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		goldenKey = (new ItemTrinia().setUnlocalizedName("goldenKey")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		
 		//Casts
 		CastBlank = (new ItemTrinia().setUnlocalizedName("castBlank")).setCreativeTab(TriniaMod.TriniaToolsTab);
