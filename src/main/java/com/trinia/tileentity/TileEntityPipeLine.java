@@ -33,7 +33,7 @@ public class TileEntityPipeLine extends TileEntityLockable implements IHopper, I
 	
 	private ItemStack[] inventory = new ItemStack[1];
     private String customName;
-    private int transferCooldown = 0;
+    private int transferCooldown = -1;
     private static final String __OBFID = "CL_00000359";
 
     public void readFromNBT(NBTTagCompound compound)
