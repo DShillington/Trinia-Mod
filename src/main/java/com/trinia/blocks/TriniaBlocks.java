@@ -65,6 +65,7 @@ public class TriniaBlocks
 	public static Block goldenKeyHole;
 	public static Block goldenPillar;
 	public static Block sunDial;
+	public static Block pipeLine;
 	
 	//World Gen Blocks Medeival World
 	public static Block adimiteOre;
@@ -88,15 +89,17 @@ public class TriniaBlocks
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
 		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial");
 		
+		pipeLine = new BlockPipe(Material.rock).setUnlocalizedName("pipe");
+		
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
 		triniaDirt = new BlockTriniaDirt().setUnlocalizedName("triniaDirt");
 		triniaStone = new BlockTriniaStone(Material.rock).setUnlocalizedName("triniaStone");
-		triniaStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniaStoneBrick");
-		triniaMossyStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniaMossyStoneBrick");
-		triniaChiseledStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniaChiseledStoneBrick");
-		triniaCrackedStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCrackedStoneBrick");
+		triniaStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniastonebrick");
+		triniaMossyStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniamossystonebrick");
+		triniaChiseledStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniachiseledstonebrick");
+		triniaCrackedStoneBrick = new BlockTrinia(Material.rock).setUnlocalizedName("triniacrackedstonebrick");
 		triniaMossyCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaMossyCobblestone");
 		triniaGravel = new BlockTriniaGravel().setUnlocalizedName("triniaGravel");
 		redLeaves = new BlockTriniaLeavesBase(Material.leaves, true).setUnlocalizedName("redLeaves").setLightOpacity(0);
@@ -147,14 +150,16 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(inomiteTorch, inomiteTorch.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaDeadGrass, triniaDeadGrass.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(sunDial, sunDial.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(pipeLine, pipeLine.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(silverOre, silverOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(tinOre, tinOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaCobblestone, triniaCobblestone.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
-		GameRegistry.registerBlock(triniaGrass, triniaGrass.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
-		GameRegistry.registerBlock(triniaDirt, triniaDirt.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(triniaGrass, triniaGrass.getUnlocalizedName().substring(5)).setHardness(0.6F).setResistance(3.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(triniaDirt, triniaDirt.getUnlocalizedName().substring(5)).setHardness(0.6F).setResistance(3.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaStone, triniaStone.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaStoneBrick, triniaStoneBrick.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(triniaMossyStoneBrick, triniaMossyStoneBrick.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
@@ -227,6 +232,7 @@ public class TriniaBlocks
 		RegisterRender(goldenPillar);
 		RegisterRender(inomiteTorch);
 		RegisterRender(triniaDeadGrass);
+		RegisterRender(pipeLine);
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);

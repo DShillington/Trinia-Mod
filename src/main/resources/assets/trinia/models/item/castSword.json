@@ -2,7 +2,7 @@
     "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
     "textures": {
         "0": "trinia:items/Cast_Side",
-        "1": "trinia:items/cast_Sword",
+        "1": "trinia:items/Cast_Sword",
         "2": "trinia:items/Cast_Bottom"
     },
     "elements": [

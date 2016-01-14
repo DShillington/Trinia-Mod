@@ -1,7 +1,7 @@
 {
     "parent": "builtin/generated",
     "textures": {
-        "layer0": "trinia:items/Chisel"
+        "layer0": "trinia:items/chisel"
     },
     "display": {
         "thirdperson": {

@@ -63,11 +63,8 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 	private static final ResourceLocation minecraftTitleTextures = new ResourceLocation(
 			TriniaMod.ASSET_PREFIX, "textures/gui/title/minecraft.png");
 
-	private static final ResourceLocation test = new ResourceLocation(
-			TriniaMod.ASSET_PREFIX, "textures/blocks/triniagrassSide.png");
-
 	private static final ResourceLocation res = new ResourceLocation(
-			TriniaMod.ASSET_PREFIX, "textures/blocks/triniagrassTop.png");
+			TriniaMod.ASSET_PREFIX, "textures/blocks/triniaGrassTop.png");
 
 	public void drawBackground(int tint) {
 		GlStateManager.disableLighting();
@@ -194,8 +191,8 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 		// Leaders
 		this.drawCenteredString(this.fontRendererObj, this.creditLeader,
 				this.width / 2, 70, 16777215);// 18668501
+		
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-
 		this.width / 2, 80, 18668801);
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
 				this.width / 2, 90, 18668801);
@@ -203,12 +200,12 @@ public class CreditsGUI extends GuiScreen implements GuiYesNoCallback {
 		// Developers
 		this.drawCenteredString(this.fontRendererObj, this.creditDeveloper,
 				this.width / 2, 105, 16777215);
+		
 		this.drawCenteredString(this.fontRendererObj, this.creditPapertazer,
-
 		this.width / 2, 115, 18668801);
+		
 		this.drawCenteredString(this.fontRendererObj, this.creditOMGitsMiniMe,
-
-		this.width / 2, 125, 65407);
+				this.width / 2, 125, 18668801);
 
 		// Artists
 		this.drawCenteredString(this.fontRendererObj, this.creditArtist,

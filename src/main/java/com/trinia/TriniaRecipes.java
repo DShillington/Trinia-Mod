@@ -49,6 +49,14 @@ public class TriniaRecipes {
 				"SSS", "S S", "S S", 'S', TriniaItems.SteelIngot);
 		GameRegistry.addRecipe(new ItemStack(TriniaItems.triniaSteelBoots),
 				"S S", "S S", 'S', TriniaItems.SteelIngot);
+		//Tools
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.Chisel),
+				" II"," II", "S  ", 'S', Items.stick, 'I', TriniaItems.SteelIngot);
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.OrcaSword),
+				"O O","IO ", "SIO", 'S', Items.stick, 'I', TriniaItems.SteelIngot, 'O', TriniaItems.orca);
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.earthAmulat),
+				"#I#","IGI", " I ", '#', TriniaItems.silverIngot, 'I', TriniaItems.inomite, 'G', TriniaBlocks.triniaGrass);
+		
 		// Templates
 		GameRegistry.addRecipe(new ItemStack(TriniaItems.CastPickaxe), "SSP",
 				"PSS", "PPS", 'S', Items.stick, 'P', Blocks.planks);

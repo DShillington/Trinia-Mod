@@ -264,7 +264,7 @@ public class TriniaItems {
 		OrcaSword = (new ItemOrcaSword(null, TriniaOrca).setUnlocalizedName("orcaSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		OrisoneSword = (new ItemOrisoneSword(null, TriniaOrisone).setUnlocalizedName("orisoneSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		OrisoneFatSword = (new ItemOrisoneFatSword(null, TriniaOrisone).setUnlocalizedName("orisoneFatSword")).setCreativeTab(TriniaMod.TriniaToolsTab);
-		Slingshot = (new ItemSlingshot(null, TriniaSlingshot).setUnlocalizedName("slingshot")).setCreativeTab(TriniaMod.TriniaToolsTab);
+		Slingshot = (new ItemSlingshot(null, TriniaSlingshot).setUnlocalizedName("Slingshot")).setCreativeTab(TriniaMod.TriniaToolsTab);
 		
 		
 		Chisel = (new ItemChisel().setUnlocalizedName("Chisel")).setCreativeTab(TriniaMod.TriniaItemsTab);
