@@ -152,7 +152,6 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(sunDial, sunDial.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(pipeLine, pipeLine.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		
-		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(silverOre, silverOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
