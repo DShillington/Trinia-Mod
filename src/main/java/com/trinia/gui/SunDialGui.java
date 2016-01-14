@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
@@ -100,11 +101,10 @@ public class SunDialGui extends GuiContainer {
 		buttonDusk.packedFGColour = 16777215;
 	}
 
-	protected void actionPerformed(GuiButton button) throws IOException {
+	protected void actionPerformed(GuiButton button, World world) throws IOException {
 		if (button.id == 1) {
 			System.out.println("Sun Dial: Changed Time To Mid Day");
 			this.sendChatMessage("has set the sun dial to Day.");
-
 		}
 		if (button.id == 2) {
 			System.out.println("Sun Dial: Changed Time To Midnight");

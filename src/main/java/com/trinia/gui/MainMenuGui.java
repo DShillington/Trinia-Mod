@@ -83,7 +83,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	private float oldMouseY;
 	private float mousePosx;
 	private float mousePosY;
-		private ButtonCustomGui buttonResetDemo;
+	private ButtonCustomGui buttonResetDemo;
 	private ButtonCustomGui buttonSingle;
 	private ButtonCustomGui buttonMulti;
 	private ButtonCustomGui buttonOptions;
@@ -111,6 +111,10 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	/** OpenGL graphics card warning. */
 	private String openGLWarning2;
 	private String field_104024_v;
+	private static final ResourceLocation transBlack = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/Blue.png");
+	private static final ResourceLocation transBlack2 = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/Blue.png");
 	private static final ResourceLocation splashTexts = new ResourceLocation(
 			"not used here");
 	private static final ResourceLocation minecraftTitleTextures = new ResourceLocation(
@@ -130,7 +134,22 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 			new ResourceLocation(TriniaMod.ASSET_PREFIX,
 					"textures/gui/title/background/panorama_highres_5.png") };
 	
-	
+	//Player Skin and Name
+	private static final ResourceLocation playerBackground = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/Blue.png");
+	private static final ResourceLocation playerHead = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+	private static final ResourceLocation playerBody = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+	private static final ResourceLocation playerLeftArm = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+	private static final ResourceLocation playerRightArm = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+	private static final ResourceLocation playerLeftLeg = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+	private static final ResourceLocation playerRightLeg = new ResourceLocation(
+			TriniaMod.ASSET_PREFIX, "textures/gui/temp.png");
+			
 	public static final String field_96138_a = "Please click "
 			+ EnumChatFormatting.UNDERLINE + "here" + EnumChatFormatting.RESET
 			+ " for more information.";
@@ -140,7 +159,8 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	private int field_92021_u;
 	private int field_92020_v;
 	private int field_92019_w;
-	protected String tempText = "(Sorry... Nothing Here yet!)";
+	protected String tempText = "";
+	protected String TopText = Reference.MENU_TOP_TEXT;
 	// "(Somebody write something clever here)"
 
 	protected String versionText = "Trinia version: "
@@ -154,7 +174,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 
 	public MainMenuGui(EntityPlayer player) {
 		this.openGLWarning2 = field_96138_a;
-		this.splashText = Reference.MENU_SPLASH_TEXT;
+
 		BufferedReader bufferedreader = null;
 
 		try {
@@ -285,23 +305,23 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 						new Object[0])));
 
 		this.buttonList.add(this.mediaButtonTwitter = new ButtonTwitter(405,
-				this.width - 35, 85 + p_73969_2_ * 2, 20, 20, I18n.format(
+				this.width - 100, this.height - 25, 20, 20, I18n.format(
 						"PMC", new Object[0])));
 		this.buttonList.add(this.mediaButtonFacebook = new ButtonFacebook(407,
-				this.width - 35, 85 + p_73969_2_ * 3, 20, 20, I18n.format(
+				this.width - 75, this.height - 25, 20, 20, I18n.format(
 						"PMC", new Object[0])));
 		this.buttonList.add(this.mediaButtonYouTube = new ButtonYoutube(406,
-				this.width - 35, 85 + p_73969_2_ * 4, 20, 20, I18n.format(
+				this.width - 50, this.height - 25, 20, 20, I18n.format(
 						"PMC", new Object[0])));
 		this.buttonList.add(this.mediaButtonPMC = new ButtonPMC(404,
-				this.width - 35, 85 + p_73969_2_ * 5, 20, 20, I18n.format(
+				this.width - 25, this.height - 25, 20, 20, I18n.format(
 						"PMC", new Object[0])));
 
-		buttonSingle.width = 130;
-		buttonMulti.width = 130;
-		buttonOptions.width = 130;
-		buttonQuit.width = 130;
-		buttonCredit.width = 130;
+		buttonSingle.width = 126;
+		buttonMulti.width = 126;
+		buttonOptions.width = 126;
+		buttonQuit.width = 126;
+		buttonCredit.width = 126;
 		mediaButtonPMC.width = 20;
 		mediaButtonTwitter.width = 20;
 		mediaButtonYouTube.width = 20;
@@ -422,7 +442,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 			this.mc.displayGuiScreen(this);
 		}
 	}
-	
+
 	private void drawPanorama(int p_73970_1_, int p_73970_2_, float p_73970_3_) {
 		Tessellator tessellator = Tessellator.getInstance();
 		WorldRenderer worldrenderer = tessellator.getWorldRenderer();
@@ -516,6 +536,7 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 	 */
 	protected void drawGuiContainerBackgroundLayer(float partialTicks,
 			int mouseX, int mouseY) {
+
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 		int k = (this.width - this.xSize) / 2;
 		int l = (this.height - this.ySize) / 2;
@@ -616,6 +637,41 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 				16777215);
 		this.drawGradientRect(9000, 0, this.width, this.height, 0,
 				Integer.MIN_VALUE);
+		
+		this.mc.getTextureManager().bindTexture(playerBackground);
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glColor4f(1, 1, 1, 0.2f);
+		this.drawTexturedModalRect(this.width - 850, 10, 10, 75, 76, 140);
+		GL11.glDisable(GL11.GL_BLEND);
+		
+		this.mc.getTextureManager().bindTexture(playerHead);
+		this.drawTexturedModalRect(this.width - 62, 15, 32, 32, 32, 32);
+
+		this.mc.getTextureManager().bindTexture(playerBody);
+		this.drawTexturedModalRect(this.width - 62, 47, 80, 80, 32, 48);
+		
+		this.mc.getTextureManager().bindTexture(playerLeftArm);
+		this.drawTexturedModalRect(this.width - 78, 47, 176, 80, 16, 48);
+		
+		this.mc.getTextureManager().bindTexture(playerRightArm);
+		this.drawTexturedModalRect(this.width - 30, 47, 176, 80, 16, 48);
+		
+		this.mc.getTextureManager().bindTexture(playerLeftLeg);
+		this.drawTexturedModalRect(this.width - 62, 95, 16, 80, 16, 48);
+
+		this.mc.getTextureManager().bindTexture(playerRightLeg);
+		this.drawTexturedModalRect(this.width - 46, 95, 16, 80, 16, 48);
+		
+		this.mc.getTextureManager().bindTexture(transBlack);
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glColor4f(1, 1, 1, 0.6f);
+		this.drawTexturedModalRect(8, 0, 5, 0, 125, 300);
+
+		this.mc.getTextureManager().bindTexture(transBlack2);
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glColor4f(1, 1, 1, 0.6f);
+		this.drawTexturedModalRect(8, 300, 140, 0, 125, 1000);
+
 		this.mc.getTextureManager().bindTexture(minecraftTitleTextures);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 
@@ -637,10 +693,13 @@ public class MainMenuGui extends GuiScreen implements GuiYesNoCallback {
 				-45, -256);
 		GlStateManager.popMatrix();
 
-		this.drawCenteredString(this.fontRendererObj, this.versionText, - -60,
+		this.drawCenteredString(this.fontRendererObj, this.versionText, - -70,
 				this.height - 15, 18668501);
 		this.drawCenteredString(this.fontRendererObj, this.tempText,
 				this.width / 2 + 56, this.height / 2, -256);
+
+		this.drawCenteredString(this.fontRendererObj, this.TopText, this.width
+				/ this.width + 70, this.height / this.height + 10, -256);
 
 		if (this.openGLWarning1 != null && this.openGLWarning1.length() > 0) {
 			drawRect(this.field_92022_t - 2, this.field_92021_u - 2,
