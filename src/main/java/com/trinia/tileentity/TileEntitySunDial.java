@@ -23,15 +23,13 @@ import net.minecraft.item.crafting.FurnaceRecipes;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.server.gui.IUpdatePlayerListBox;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.IChatComponent;
 import net.minecraft.util.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class TileEntitySunDial extends TileEntity implements IUpdatePlayerListBox, ISidedInventory
+public class TileEntitySunDial extends TileEntityLockable implements IUpdatePlayerListBox, ISidedInventory
 {
     private static final int[] slotsTop = new int[] {0};
     private static final int[] slotsBottom = new int[] {2, 1};
@@ -361,11 +359,5 @@ public class TileEntitySunDial extends TileEntity implements IUpdatePlayerListBo
 	public void update() {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public IChatComponent getDisplayName() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

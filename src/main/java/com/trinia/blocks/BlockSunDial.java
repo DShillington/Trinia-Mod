@@ -109,6 +109,7 @@ public class BlockSunDial extends BlockContainer {
 	public Item getItemDropped(int i, Random random, int j) {
 		return Item.getItemFromBlock(TriniaBlocks.sunDial);
 	}
+
 	@Override
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntitySunDial();
