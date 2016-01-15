@@ -101,7 +101,7 @@ public class SunDialGui extends GuiContainer {
 		buttonDusk.packedFGColour = 16777215;
 	}
 
-	protected void actionPerformed(GuiButton button, World world) throws IOException {
+	protected void actionPerformed(GuiButton button) throws IOException {
 		if (button.id == 1) {
 			System.out.println("Sun Dial: Changed Time To Mid Day");
 			this.sendChatMessage("has set the sun dial to Day.");
