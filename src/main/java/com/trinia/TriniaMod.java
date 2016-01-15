@@ -44,6 +44,7 @@ import com.trinia.tabs.TriniaBlocksTab;
 import com.trinia.tabs.TriniaItemsTab;
 import com.trinia.tabs.TriniaTabs;
 import com.trinia.tabs.TriniaToolsTab;
+import com.trinia.tileentity.TileEntityPipeLine;
 import com.trinia.tileentity.TileEntitySunDial;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
@@ -97,6 +98,7 @@ public class TriniaMod {
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
 	public static CreativeTabs TriniaArmorTab = new TriniaArmorTab("tabTriniaArmor");
 	public static int SunDialGui;
+	public static int Compressor;
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
 	
@@ -120,7 +122,9 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();
 		TriniaRenderRegistry.loadEntities();
-		GameRegistry.registerTileEntity(TileEntitySunDial.class, "Sun Dial");
+
+		GameRegistry.registerTileEntity(TileEntitySunDial.class, "sunDial");
+		GameRegistry.registerTileEntity(TileEntityPipeLine.class, "pipe");
 		// load config
 		
 		

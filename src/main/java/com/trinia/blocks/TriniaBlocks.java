@@ -66,6 +66,7 @@ public class TriniaBlocks
 	public static Block goldenPillar;
 	public static Block sunDial;
 	public static Block pipeLine;
+	public static Block compressor;
 	
 	//World Gen Blocks Medeival World
 	public static Block adimiteOre;
@@ -89,8 +90,8 @@ public class TriniaBlocks
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
 		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial");
 		
-		pipeLine = new BlockPipe(Material.rock).setUnlocalizedName("pipe");
-		
+		pipeLine = new BlockPipe().setUnlocalizedName("pipe");
+		compressor = new BlockCompressor(false).setUnlocalizedName("compressor");
 		
 		triniaCobblestone = new BlockTrinia(Material.rock).setUnlocalizedName("triniaCobblestone");
 		triniaGrass = new BlockTriniaGrass().setUnlocalizedName("triniaGrass");
@@ -151,6 +152,7 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(triniaDeadGrass, triniaDeadGrass.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(sunDial, sunDial.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(pipeLine, pipeLine.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
@@ -232,6 +234,7 @@ public class TriniaBlocks
 		RegisterRender(inomiteTorch);
 		RegisterRender(triniaDeadGrass);
 		RegisterRender(pipeLine);
+		RegisterRender(compressor);
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);
