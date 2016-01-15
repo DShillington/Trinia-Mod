@@ -56,7 +56,7 @@ public class tickHandler {
 			new GameOverGUI());
 			}
 	}
-
+/**
 	 @SubscribeEvent
 	   public void firstJoin(PlayerLoggedInEvent event) {
 	      EntityPlayer player = event.player;
@@ -66,6 +66,7 @@ public class tickHandler {
 	         player.inventory.addItemStackToInventory(new ItemStack(TriniaItems.scroll));
 	      }
 	   }
+*/
 	 //Called when the server ticks. Usually 20 ticks a second. 
 	 @SubscribeEvent
 	 public void onServerTick(TickEvent.ServerTickEvent event) {

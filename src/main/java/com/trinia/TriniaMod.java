@@ -27,6 +27,7 @@ import java.util.List;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
+import javax.swing.text.JTextComponent.KeyBinding;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
@@ -35,6 +36,8 @@ import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
 import com.trinia.handler.ConfigurationHandler;
 import com.trinia.handler.GuiHandlerTrinia;
+import com.trinia.handler.KeyBindings;
+import com.trinia.handler.keyboardHandler;
 import com.trinia.handler.tickHandler;
 import com.trinia.items.TriniaItems;
 import com.trinia.proxy.ClientProxy;
@@ -45,10 +48,12 @@ import com.trinia.tabs.TriniaItemsTab;
 import com.trinia.tabs.TriniaTabs;
 import com.trinia.tabs.TriniaToolsTab;
 import com.trinia.tileentity.TileEntityPipeLine;
+import com.trinia.tileentity.TileEntityScroll;
 import com.trinia.tileentity.TileEntitySunDial;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
 
+import net.java.games.input.Keyboard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.World;
@@ -62,6 +67,8 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -98,6 +105,7 @@ public class TriniaMod {
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
 	public static CreativeTabs TriniaArmorTab = new TriniaArmorTab("tabTriniaArmor");
 	public static int SunDialGui;
+	public static int ScrollGui;
 	public static int Compressor;
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
@@ -122,20 +130,25 @@ public class TriniaMod {
 		TriniaRecipes.loadRecipes();
 		TriniaEntities.loadEntities();
 		TriniaRenderRegistry.loadEntities();
-
+		 FMLCommonHandler.instance().bus().register(new keyboardHandler());
+		 KeyBindings.init();
 		GameRegistry.registerTileEntity(TileEntitySunDial.class, "sunDial");
+		GameRegistry.registerTileEntity(TileEntityScroll.class, "scroll");
 		GameRegistry.registerTileEntity(TileEntityPipeLine.class, "pipe");
 		// load config
 		
 		
 		}
-	
+
+	 
 	@EventHandler
 	public void Init(FMLInitializationEvent event)
 	{	
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandlerTrinia());
 		proxy.register();
 		proxy.registerRenders();
+		
+		
 	}
 	
 	@EventHandler

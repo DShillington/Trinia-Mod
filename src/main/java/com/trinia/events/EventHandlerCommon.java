@@ -19,11 +19,8 @@ public class EventHandlerCommon {
 		if (ConfigurationHandler.canDisplay) {
 			if (!player.worldObj.isRemote) {
 				if (!ConfigurationHandler.hasDisplayedOnce) {
-					player.addChatMessage(new ChatComponentText(
-							EnumChatFormatting.AQUA
-									+ "Thank you for downloading Trinia 2.0."));
-					player.addChatMessage(new ChatComponentText(
-							"Make sure you check out the PMC Page! http://www.planetminecraft.com/mod/125-trinia/"));
+					player.addChatMessage(new ChatComponentText(EnumChatFormatting.AQUA + "Press Z to Open the Trinia Guide"));
+					
 					ConfigurationHandler.hasDisplayedOnce = true;
 				}
 			}

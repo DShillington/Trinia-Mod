@@ -2,6 +2,7 @@ package com.trinia.handler;
 
 import com.trinia.gui.SunDialGui;
 import com.trinia.gui.container.ContainerSunDial;
+import com.trinia.tileentity.TileEntityScroll;
 import com.trinia.tileentity.TileEntitySunDial;
 
 import net.minecraft.entity.player.EntityPlayer;

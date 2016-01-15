@@ -10,11 +10,11 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Util;
 
-public class ButtonMods extends GuiButton{
+public class ButtonInfo extends GuiButton{
 
-	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/ButtonsCredits.png");
+	 private static final ResourceLocation res = new ResourceLocation(TriniaMod.ASSET_PREFIX, "textures/gui/GuideGui.png");
 	 
-	public ButtonMods(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
+	public ButtonInfo(int buttonId, int x, int y, int widthIn, int heightIn, String buttonText)
     {
 	super(buttonId, x, y, widthIn, heightIn, "");
         this.width = 200;
@@ -58,7 +58,7 @@ public class ButtonMods extends GuiButton{
                 l = 16777120;
             }
 
-           this.drawTexturedModalRect(this.xPosition, this.yPosition, 0, 0, 20, 20);
+           this.drawTexturedModalRect(this.xPosition, this.yPosition, 101, 219, 22, 23);
         }
     }
 }
