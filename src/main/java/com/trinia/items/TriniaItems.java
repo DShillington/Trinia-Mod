@@ -118,6 +118,7 @@ public class TriniaItems {
 	public static Item orca;
 	public static Item orisone;
 	public static Item rock;
+	public static Item scroll;
 	
 	//Animated Icons
 	public static Item toolsAnimated;
@@ -431,7 +432,8 @@ public class TriniaItems {
 		earthAmulat = (new ItemTrinia().setUnlocalizedName("earthAmulat")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		waterAmulat = (new ItemTrinia().setUnlocalizedName("waterAmulat")).setCreativeTab(TriniaMod.TriniaItemsTab);
 		fireAmulat = (new ItemTrinia().setUnlocalizedName("fireAmulat")).setCreativeTab(TriniaMod.TriniaItemsTab);
-	
+		scroll = (new ItemScroll().setUnlocalizedName("scroll")).setCreativeTab(TriniaMod.TriniaItemsTab);
+		
 	}
 	
 	public static void register()
@@ -602,6 +604,7 @@ public class TriniaItems {
 		GameRegistry.registerItem(earthAmulat, earthAmulat.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(waterAmulat, waterAmulat.getUnlocalizedName().substring(5));
 		GameRegistry.registerItem(fireAmulat, fireAmulat.getUnlocalizedName().substring(5));
+		GameRegistry.registerItem(scroll, scroll.getUnlocalizedName().substring(5));
 		
 	}
 	
@@ -677,6 +680,7 @@ public class TriniaItems {
 		
 		registerRender(Chisel);
 		registerRender(Rock);
+		registerRender(scroll);
 		registerRender(MaceBase);
 		registerRender(CrossbowBolt);
 		//Casts

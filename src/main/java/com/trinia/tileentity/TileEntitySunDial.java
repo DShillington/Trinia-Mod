@@ -135,7 +135,6 @@ public class TileEntitySunDial extends TileEntity implements IUpdatePlayerListBo
             this.markDirty();
         }
     }
-
     /**
      * Gets the name of this command sender (usually username, but possibly "Rcon")
      */
