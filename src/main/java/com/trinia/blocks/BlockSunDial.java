@@ -76,7 +76,15 @@ public class BlockSunDial extends BlockContainer {
 
 		return this.getDefaultState().withProperty(FACING, enumFacing);
 	}
-
+	@Override
+	 public boolean isOpaqueCube() {
+	  return false;
+	 }
+	 
+	 @Override
+	 public boolean isFullCube() {
+	  return true;
+	 }
 	@Override
 	public int getMetaFromState(IBlockState state) {
 		return ((EnumFacing) state.getValue(FACING)).getIndex();

@@ -46,7 +46,7 @@ public class BlockMagicalBed extends BlockDirectional
         this.setDefaultState(this.blockState.getBaseState().withProperty(PART, BlockMagicalBed.EnumPartType.FOOT).withProperty(OCCUPIED, Boolean.valueOf(false)));
         this.setBedBounds();
     }
-    
+
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (worldIn.isRemote)
@@ -154,7 +154,7 @@ public class BlockMagicalBed extends BlockDirectional
 
     public boolean isFullCube()
     {
-        return false;
+        return true;
     }
 
     public boolean isOpaqueCube()

@@ -88,7 +88,7 @@ public class TriniaBlocks
 		triniaDeadGrass = new BlockTrinia(Material.rock).setUnlocalizedName("triniaDeadGrass");
 
 		inomiteTorch = new BlockInomiteTorch().setLightLevel(1F).setUnlocalizedName("inomiteTorch");
-		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial");
+		sunDial = new BlockSunDial(false).setUnlocalizedName("sunDial").setLightOpacity(0);
 		
 		pipeLine = new BlockPipe().setUnlocalizedName("pipe");
 		compressor = new BlockCompressor(false).setUnlocalizedName("compressor");
@@ -124,7 +124,7 @@ public class TriniaBlocks
 		bridroneOre = new BlockOre().setUnlocalizedName("bridroneOre");
 		orcaOre = new BlockOre().setUnlocalizedName("orcaOre");
 		orisoneOre = new BlockOre().setUnlocalizedName("orisoneOre");
-		MagicalBed = new BlockMagicalBed().setUnlocalizedName("bed");
+		MagicalBed = new BlockMagicalBed().setUnlocalizedName("bed").setLightOpacity(0);
 		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
 		cloud = new BlockCloud().setUnlocalizedName("cloud");
 		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");

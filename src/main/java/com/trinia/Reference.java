@@ -18,6 +18,7 @@ public class Reference {
 	public static final String MENU_CREDITS = "Credits";
 	public static final String CREDITS_BACK = "Back";
 	public static final String CREDITS_MODS = "Mods";
+	public static final String PLAYER_USER_NAME = "null username";
 	
 	//Magical Bed
 	public static final String MAGIC_BED_DAYTIME = "You may only drift off to Trinia at night!";

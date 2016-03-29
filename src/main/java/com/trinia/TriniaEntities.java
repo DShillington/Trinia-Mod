@@ -68,23 +68,23 @@ public class TriniaEntities {
 				entityID9);
 
 		EntityRegistry.registerModEntity(EntityMermaid.class, "mermaid",
-				entityID, TriniaMod.instance, 64, 1, true);
+				entityID, TriniaMod.instance, 5, 1, true);
 		EntityRegistry.registerModEntity(EntityBlemmyae.class, "blemmyae",
-				entityID2, TriniaMod.instance, 65, 2, true);
+				entityID2, TriniaMod.instance, 5, 2, true);
 		EntityRegistry.registerModEntity(EntityIceDragon.class, "icedragon",
-				entityID3, TriniaMod.instance, 66, 3, true);
+				entityID3, TriniaMod.instance, 5, 3, true);
 		EntityRegistry.registerModEntity(EntityRedDragon.class, "reddragon",
-				entityID4, TriniaMod.instance, 67, 4, true);
+				entityID4, TriniaMod.instance, 5, 4, true);
 		EntityRegistry.registerModEntity(EntityTownsmen.class, "townsmen",
-				entityID5, TriniaMod.instance, 68, 5, true);
+				entityID5, TriniaMod.instance, 5, 5, true);
 		EntityRegistry.registerModEntity(EntityTownswoman.class, "townswoman",
-				entityID6, TriniaMod.instance, 69, 6, true);
+				entityID6, TriniaMod.instance, 5, 6, true);
 		EntityRegistry.registerModEntity(EntityAngelBoss.class, "angelboss",
-				entityID7, TriniaMod.instance, 70, 7, true);
+				entityID7, TriniaMod.instance, 5, 7, true);
 		EntityRegistry.registerModEntity(EntityButterfly.class, "butterfly",
-				entityID8, TriniaMod.instance, 71, 8, true);
+				entityID8, TriniaMod.instance, 5, 8, true);
 		EntityRegistry.registerModEntity(EntityCentaur.class, "centaur",
-				entityID9, TriniaMod.instance, 72, 9, true);
+				entityID9, TriniaMod.instance, 5, 9, true);
 
 		EntityList.entityEggs.put(Integer.valueOf(entityID),
 				new EntityList.EntityEggInfo(entityID, (0 << 16) + (255 << 8)
@@ -114,23 +114,23 @@ public class TriniaEntities {
 				new EntityList.EntityEggInfo(entityID9, (0 << 16) + (255 << 8)
 						+ 255, (0 << 16) + (0 << 8) + 204));
 
-		EntityRegistry.addSpawn(EntityMermaid.class, 30, 1, 3,
+		EntityRegistry.addSpawn(EntityMermaid.class, 5, 1, 3,
 				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityBlemmyae.class, 31, 2, 4,
+		EntityRegistry.addSpawn(EntityBlemmyae.class, 5, 2, 4,
 				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityIceDragon.class, 20, 1, 1,
+		EntityRegistry.addSpawn(EntityIceDragon.class, 5, 1, 1,
 				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityRedDragon.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityRedDragon.class, 5, 1, 2,
 				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityTownsmen.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityTownsmen.class, 5, 1, 2,
 				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityTownswoman.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityTownswoman.class, 5, 1, 2,
 				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityAngelBoss.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityAngelBoss.class, 5, 1, 2,
 				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityButterfly.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityButterfly.class, 5, 1, 2,
 				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
-		EntityRegistry.addSpawn(EntityCentaur.class, 21, 1, 2,
+		EntityRegistry.addSpawn(EntityCentaur.class, 5, 1, 2,
 				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
 
 	}
