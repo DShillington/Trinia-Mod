@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import com.trinia.Reference;
 import com.trinia.items.TriniaItems;
+import com.trinia.util.Reference;
 import com.trinia.world.TriniaTeleporter;
 import com.trinia.world.TriniaTeleporterPlatform;
 

@@ -1,7 +1,7 @@
 package com.trinia.gui.buttons;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.util.Reference;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

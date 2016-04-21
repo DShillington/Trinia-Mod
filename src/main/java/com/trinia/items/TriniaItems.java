@@ -1,9 +1,9 @@
 package com.trinia.items;
 
 import com.google.common.base.Function;
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.blocks.TriniaBlocks;
+import com.trinia.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoublePlant;

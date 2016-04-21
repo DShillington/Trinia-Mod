@@ -17,11 +17,7 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import com.trinia.TriniaEntities;
 import com.trinia.TriniaMod;
-import com.trinia.TriniaRecipes;
-import com.trinia.TriniaRenderRegistry;
-import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.items.ItemAmulet;
 import com.trinia.items.TriniaItems;
@@ -50,10 +46,14 @@ import com.trinia.mob.model.ModelCentaur;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
 import com.trinia.mob.model.ModelRedDragon;
+import com.trinia.mob.register.TriniaEntities;
 import com.trinia.model.ModelAmulet;
 import com.trinia.model.ModelAngelHalo;
 import com.trinia.model.ModelAngelWings;
 import com.trinia.model.ModelTriniaCape;
+import com.trinia.util.TriniaRecipes;
+import com.trinia.util.TriniaRenderRegistry;
+import com.trinia.util.TriniaTileEntities;
 import com.trinia.world.gen.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{

@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.util;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.registry.GameRegistry;

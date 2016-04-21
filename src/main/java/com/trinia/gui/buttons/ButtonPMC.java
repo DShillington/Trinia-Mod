@@ -4,8 +4,8 @@ import java.awt.Desktop;
 import java.net.URI;
 import java.net.URL;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.util.Reference;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

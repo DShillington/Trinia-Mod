@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.mob.register;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 
+import com.trinia.TriniaMod;
 import com.trinia.mob.Render.RenderBlemmyae;
 import com.trinia.mob.Render.RenderIceDragon;
 import com.trinia.mob.Render.RenderMermaid;
@@ -68,23 +69,23 @@ public class TriniaEntities {
 				entityID9);
 
 		EntityRegistry.registerModEntity(EntityMermaid.class, "mermaid",
-				entityID, TriniaMod.instance, 5, 1, true);
+				entityID, TriniaMod.instance, 120, 1, true);
 		EntityRegistry.registerModEntity(EntityBlemmyae.class, "blemmyae",
-				entityID2, TriniaMod.instance, 5, 2, true);
+				entityID2, TriniaMod.instance, 120, 2, true);
 		EntityRegistry.registerModEntity(EntityIceDragon.class, "icedragon",
-				entityID3, TriniaMod.instance, 5, 3, true);
+				entityID3, TriniaMod.instance, 220, 3, true);
 		EntityRegistry.registerModEntity(EntityRedDragon.class, "reddragon",
-				entityID4, TriniaMod.instance, 5, 4, true);
+				entityID4, TriniaMod.instance, 220, 4, true);
 		EntityRegistry.registerModEntity(EntityTownsmen.class, "townsmen",
-				entityID5, TriniaMod.instance, 5, 5, true);
+				entityID5, TriniaMod.instance, 120, 5, true);
 		EntityRegistry.registerModEntity(EntityTownswoman.class, "townswoman",
-				entityID6, TriniaMod.instance, 5, 6, true);
+				entityID6, TriniaMod.instance, 120, 6, true);
 		EntityRegistry.registerModEntity(EntityAngelBoss.class, "angelboss",
-				entityID7, TriniaMod.instance, 5, 7, true);
+				entityID7, TriniaMod.instance, 120, 7, true);
 		EntityRegistry.registerModEntity(EntityButterfly.class, "butterfly",
-				entityID8, TriniaMod.instance, 5, 8, true);
+				entityID8, TriniaMod.instance, 120, 8, true);
 		EntityRegistry.registerModEntity(EntityCentaur.class, "centaur",
-				entityID9, TriniaMod.instance, 5, 9, true);
+				entityID9, TriniaMod.instance, 120, 9, true);
 
 		EntityList.entityEggs.put(Integer.valueOf(entityID),
 				new EntityList.EntityEggInfo(entityID, (0 << 16) + (255 << 8)

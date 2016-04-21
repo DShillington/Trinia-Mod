@@ -2,8 +2,8 @@ package com.trinia.web;
 
 import java.util.List;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.util.Reference;
 /**
  * @author Magik
  */

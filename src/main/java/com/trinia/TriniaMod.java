@@ -40,6 +40,7 @@ import com.trinia.handler.KeyBindings;
 import com.trinia.handler.keyboardHandler;
 import com.trinia.handler.tickHandler;
 import com.trinia.items.TriniaItems;
+import com.trinia.mob.register.TriniaEntities;
 import com.trinia.proxy.ClientProxy;
 import com.trinia.proxy.CommonProxy;
 import com.trinia.tabs.TriniaArmorTab;
@@ -50,6 +51,10 @@ import com.trinia.tabs.TriniaToolsTab;
 import com.trinia.tileentity.TileEntityPipeLine;
 import com.trinia.tileentity.TileEntityScroll;
 import com.trinia.tileentity.TileEntitySunDial;
+import com.trinia.util.Reference;
+import com.trinia.util.TriniaRecipes;
+import com.trinia.util.TriniaRenderRegistry;
+import com.trinia.util.TriniaTileEntities;
 import com.trinia.web.Update;
 import com.trinia.world.gen.TriniaBiomes;
 
@@ -93,7 +98,9 @@ public class TriniaMod {
 	
 	//Dimension ID
 	public static int DIM_TRINIA_ID = 6;
+	
 	public Random ChunkGenRand;
+	
 	public int ChunkGenRandNum = 0;
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
@@ -104,9 +111,11 @@ public class TriniaMod {
 	public static CreativeTabs TriniaItemsTab = new TriniaItemsTab("tabTriniaItems");
 	public static CreativeTabs TriniaToolsTab = new TriniaToolsTab("tabTriniaTools");
 	public static CreativeTabs TriniaArmorTab = new TriniaArmorTab("tabTriniaArmor");
+	
 	public static int SunDialGui;
 	public static int ScrollGui;
 	public static int Compressor;
+	
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
 	
@@ -167,7 +176,7 @@ public class TriniaMod {
 			int RandPosX = i + rand.nextInt(16);
 			int RandPosZ = j + rand.nextInt(16);
 			int j1 = world.getChunksLowestHorizon(RandPosX, RandPosZ);
-			(new WorldGenCastleOne()).generate(world, rand, RandPosX, j1, RandPosZ);
+			
 		}
 	}
 

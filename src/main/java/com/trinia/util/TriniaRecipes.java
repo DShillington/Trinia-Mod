@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.util;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.items.TriniaItems;

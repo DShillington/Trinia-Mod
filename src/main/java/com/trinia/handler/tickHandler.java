@@ -1,11 +1,11 @@
 package com.trinia.handler;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.gui.GameOverGUI;
 import com.trinia.gui.MainMenuGui;
 import com.trinia.gui.buttons.ButtonCustomGui;
 import com.trinia.items.TriniaItems;
+import com.trinia.util.Reference;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;

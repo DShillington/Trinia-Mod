@@ -10,9 +10,9 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.tileentity.TileEntityTriniaWorkBench;
+import com.trinia.util.Reference;
 //test, also fuck you github.
 public class TriniaBlocks 
 	{

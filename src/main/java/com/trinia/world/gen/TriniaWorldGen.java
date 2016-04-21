@@ -38,6 +38,11 @@ public class TriniaWorldGen implements IWorldGenerator
 		        
 		    case 6: //Trinia
 		        this.runGenerator(this.gen_orca_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		        this.runGenerator(this.gen_steel_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		    	this.runGenerator(this.gen_copper_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		    	this.runGenerator(this.gen_silver_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		    	this.runGenerator(this.gen_tin_ore, world, random, chunkX, chunkZ, 20, 0, 64);
+		      
 		        break;
 		    }
 	 	}

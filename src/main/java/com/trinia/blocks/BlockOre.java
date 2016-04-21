@@ -3,9 +3,9 @@ package com.trinia.blocks;
 import java.util.List;
 import java.util.Random;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.items.TriniaItems;
+import com.trinia.util.Reference;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

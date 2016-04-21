@@ -1,4 +1,4 @@
-package com.trinia;
+package com.trinia.util;
 
 public class Reference {
 	//Main Trinia References

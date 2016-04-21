@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Scanner;
 
-import com.trinia.Reference;
+import com.trinia.util.Reference;
 
 import net.minecraft.launchwrapper.LogWrapper;
 

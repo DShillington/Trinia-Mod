@@ -3,8 +3,8 @@ package com.trinia.items;
 
 import java.util.List;
 
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
+import com.trinia.util.Reference;
 import com.trinia.world.TriniaTeleporter;
 
 import net.minecraft.client.model.ModelBiped;

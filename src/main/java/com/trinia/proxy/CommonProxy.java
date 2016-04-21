@@ -2,11 +2,7 @@ package com.trinia.proxy;
 
 import java.util.logging.Level;
 
-import com.trinia.TriniaEntities;
 import com.trinia.TriniaMod;
-import com.trinia.TriniaRecipes;
-import com.trinia.TriniaRenderRegistry;
-import com.trinia.TriniaTileEntities;
 import com.trinia.blocks.BlockTriniaSmelter;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
@@ -16,8 +12,11 @@ import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
 import com.trinia.handler.ChatHandler;
 import com.trinia.items.TriniaItems;
+import com.trinia.mob.register.TriniaEntities;
 import com.trinia.model.ModelAmulet;
-import com.trinia.world.SteelGeneration;
+import com.trinia.util.TriniaRecipes;
+import com.trinia.util.TriniaRenderRegistry;
+import com.trinia.util.TriniaTileEntities;
 import com.trinia.world.gen.TriniaBiomes;
 import com.trinia.world.gen.TriniaWorldGen;
 

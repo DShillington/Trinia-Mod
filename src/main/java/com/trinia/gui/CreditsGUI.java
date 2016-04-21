@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.lwjgl.opengl.GL11;
 
-import com.trinia.Reference;
 import com.trinia.gui.buttons.ButtonBack;
 import com.trinia.gui.buttons.ButtonMods;
+import com.trinia.util.Reference;
 import com.trinia.TriniaMod;
 
 import net.minecraft.client.audio.PositionedSoundRecord;

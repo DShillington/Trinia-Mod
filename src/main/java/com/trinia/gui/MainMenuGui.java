@@ -1,7 +1,6 @@
 package com.trinia.gui;
 
 import com.google.common.collect.Lists;
-import com.trinia.Reference;
 import com.trinia.TriniaMod;
 import com.trinia.gui.buttons.ButtonCustomGui;
 import com.trinia.gui.buttons.ButtonDonate;
@@ -10,6 +9,7 @@ import com.trinia.gui.buttons.ButtonPMC;
 import com.trinia.gui.buttons.ButtonTwitter;
 import com.trinia.gui.buttons.ButtonYoutube;
 import com.trinia.handler.tickHandler;
+import com.trinia.util.Reference;
 
 import java.awt.Desktop;
 import java.awt.List;
