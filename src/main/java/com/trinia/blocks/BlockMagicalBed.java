@@ -6,8 +6,8 @@ import java.util.Random;
 
 import com.trinia.items.TriniaItems;
 import com.trinia.util.Reference;
-import com.trinia.world.TriniaTeleporter;
-import com.trinia.world.TriniaTeleporterPlatform;
+import com.trinia.world.teleporter.TriniaTeleporter;
+import com.trinia.world.teleporter.TriniaTeleporterPlatform;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;

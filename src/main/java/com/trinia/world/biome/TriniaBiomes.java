@@ -1,7 +1,6 @@
-package com.trinia.world.gen;
+package com.trinia.world.biome;
 
 import com.trinia.TriniaMod;
-import com.trinia.world.biome.BiomeGenTrinia;
 
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary;
@@ -16,17 +15,17 @@ public class TriniaBiomes {
 		registerBiome();
 	}
 	
-	public static BiomeGenBase biomeTrinia;
+	public static BiomeGenBase biomeBloom;
 	public static void initializeBiome(){
 		
-		biomeTrinia = new BiomeGenTrinia(TriniaMod.DIM_TRINIA_ID, false).setBiomeName("Trinia");
+		biomeBloom = new BiomeGenBloom(TriniaMod.DIM_TRINIA_ID).setBiomeName("Bloom");
 		
 		}
 	
 	public static void registerBiome(){
-		BiomeDictionary.registerBiomeType(biomeTrinia, Type.MAGICAL);
+		BiomeDictionary.registerBiomeType(biomeBloom, Type.MAGICAL);
 	
-		BiomeManager.addSpawnBiome(biomeTrinia);
+		BiomeManager.addSpawnBiome(biomeBloom);
 		
 		
 	}

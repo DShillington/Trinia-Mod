@@ -56,7 +56,7 @@ import com.trinia.util.TriniaRecipes;
 import com.trinia.util.TriniaRenderRegistry;
 import com.trinia.util.TriniaTileEntities;
 import com.trinia.web.Update;
-import com.trinia.world.gen.TriniaBiomes;
+import com.trinia.world.biome.TriniaBiomes;
 
 import net.java.games.input.Keyboard;
 import net.minecraft.client.Minecraft;

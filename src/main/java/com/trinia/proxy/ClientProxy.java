@@ -54,7 +54,7 @@ import com.trinia.model.ModelTriniaCape;
 import com.trinia.util.TriniaRecipes;
 import com.trinia.util.TriniaRenderRegistry;
 import com.trinia.util.TriniaTileEntities;
-import com.trinia.world.gen.TriniaBiomes;
+import com.trinia.world.biome.TriniaBiomes;
 
 public class ClientProxy extends CommonProxy{
 	

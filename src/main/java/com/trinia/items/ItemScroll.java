@@ -4,7 +4,7 @@ import com.trinia.TriniaMod;
 import com.trinia.gui.GameOverGUI;
 import com.trinia.gui.SunDialGui;
 import com.trinia.tileentity.TileEntitySunDial;
-import com.trinia.world.TriniaTeleporter;
+import com.trinia.world.teleporter.TriniaTeleporter;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;

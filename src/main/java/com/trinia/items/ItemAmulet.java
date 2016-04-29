@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.trinia.TriniaMod;
 import com.trinia.util.Reference;
-import com.trinia.world.TriniaTeleporter;
+import com.trinia.world.teleporter.TriniaTeleporter;
 
 import net.minecraft.client.model.ModelBiped;
 import net.minecraft.entity.Entity;

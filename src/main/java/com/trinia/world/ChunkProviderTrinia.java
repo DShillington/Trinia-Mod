@@ -7,6 +7,16 @@ import java.util.List;
 import java.util.Random;
 
 import com.trinia.blocks.TriniaBlocks;
+import com.trinia.world.gen.WorldGenBloomVillage;
+import com.trinia.world.gen.WorldGenBlueCloud;
+import com.trinia.world.gen.WorldGenBlueFlower;
+import com.trinia.world.gen.WorldGenCloud;
+import com.trinia.world.gen.WorldGenGoldenDungeon;
+import com.trinia.world.gen.WorldGenIsland;
+import com.trinia.world.gen.WorldGenMagicTree;
+import com.trinia.world.gen.WorldGenRedFlower;
+import com.trinia.world.gen.WorldGenTower;
+import com.trinia.world.gen.WorldGenYellowFlower;
 
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockFlower;
@@ -51,24 +61,10 @@ public class ChunkProviderTrinia implements IChunkProvider {
     private BiomeGenBase[] biomesForGeneration;
     private MapGenScatteredFeature scatteredFeatureGenerator;
     private BlockPos field_180294_c;
-    private WorldGenFlowers yellowFlowerGen;
-    private WorldGenerator dirtGen;
-    private WorldGenerator gravelGen;
-    private WorldGenerator graniteGen;
-    private WorldGenerator dioriteGen;
-    private WorldGenerator andesiteGen;
-    private WorldGenerator gravelAsSandGen;
-    private WorldGenerator reedGen;
     private double[] noiseArray, stoneNoise = new double[256];
     private double[] noise3, noise1, noise2, noise5, noise6;
     private double[] generatedTemperatures;
     private int[][] field_914_i = new int[32][32];
-    private int treesPerChunk;
-    private int flowersPerChunk;
-    private int grassPerChunk;
-    private int reedsPerChunk;
-    private int sandPerChunk;
-    private boolean generateLakes;
 
 
     public ChunkProviderTrinia(World var1, long var2){
@@ -86,14 +82,7 @@ public class ChunkProviderTrinia implements IChunkProvider {
             {
             	scatteredFeatureGenerator = (MapGenScatteredFeature)TerrainGen.getModdedMapGen(scatteredFeatureGenerator, SCATTERED_FEATURE);
             }
-             gravelAsSandGen = new WorldGenSand(Blocks.gravel, 6);
-             yellowFlowerGen = new WorldGenFlowers(Blocks.yellow_flower, BlockFlower.EnumFlowerType.DANDELION);
-             reedGen = new WorldGenReed();
-             flowersPerChunk = 2;
-             grassPerChunk = 1;
-             sandPerChunk = 1;
-             treesPerChunk = 1;
-             generateLakes = true;
+
     }
 
     @Override
@@ -115,7 +104,89 @@ public class ChunkProviderTrinia implements IChunkProvider {
             chunk.generateSkylightMap();
             return chunk;
     }
-
+    
+    private static WorldGenerator island = new WorldGenIsland();
+    private static WorldGenerator tower = new WorldGenTower();
+	private static WorldGenerator redflower = new WorldGenRedFlower();
+	private static WorldGenerator blueflower = new WorldGenBlueFlower();
+	private static WorldGenerator yellowflower = new WorldGenYellowFlower();
+	private static WorldGenerator magictree = new WorldGenMagicTree();
+	private static WorldGenerator cloud = new WorldGenCloud();
+	private static WorldGenerator bluecloud = new WorldGenBlueCloud();
+	private static WorldGenerator bloomvillage = new WorldGenBloomVillage();
+	private static WorldGenerator goldendungeon = new WorldGenGoldenDungeon();
+	
+	@Override
+	public void populate(IChunkProvider c, int cx, int cz) {
+		this.rand.setSeed(this.worldObj.getSeed() * (cx + cz) * this.rand.nextInt());
+		int x1 = cx * 16;
+		int z1 = cz * 16;
+		int x, z;
+		x = x1 + this.rand.nextInt(16);
+		z = z1 + this.rand.nextInt(16);
+		
+		if (this.rand.nextInt(25) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))redflower.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(25) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))blueflower.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(25) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))yellowflower.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(5) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))island.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(90) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))tower.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(6) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int y = rand.nextInt(250);
+			if(y > 30 && y < 130) new WorldGenCloud().generate(worldObj, rand, new BlockPos(x, y, z));
+			}
+		if (this.rand.nextInt(8) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int y = rand.nextInt(250);
+			if(y > 30 && y < 130) new WorldGenBlueCloud().generate(worldObj, rand, new BlockPos(x, y, z));
+			}
+		if (this.rand.nextInt(30) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))magictree.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(140) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))bloomvillage.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(140) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))goldendungeon.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+	}
+	
     public void generateTerrain(int var1, int var2, ChunkPrimer primer) {
     	byte b0 = 2;
 		int k = b0 + 1;
@@ -267,162 +338,13 @@ public class ChunkProviderTrinia implements IChunkProvider {
             return var1;
     }
 
-    @Override
-    public void populate(IChunkProvider ichunkprovider, int i, int j) {
-    	BlockFalling.fallInstantly = true;
-    	int k = i * 16;
-        int l = j * 16;
-        BlockPos blockpos = new BlockPos(k, 0, l);
-        BiomeGenBase biomegenbase =  worldObj.getBiomeGenForCoords(blockpos.add(16, 0, 16));
-         rand.setSeed( worldObj.getSeed());
-        long i1 =  rand.nextLong() / 2L * 2L + 1L;
-        long j1 =  rand.nextLong() / 2L * 2L + 1L;
-         rand.setSeed((long)i * i1 + (long)j * j1 ^  worldObj.getSeed());
-        boolean flag = false;
-        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Pre(ichunkprovider, worldObj, rand, i, j, flag));
-
-        if (currentWorld != null)
-        {
-            throw new RuntimeException("Already decorating");
-        }
-        else
-        {
-            currentWorld = worldObj;
-            String s = worldObj.getWorldInfo().getGeneratorOptions();
-
-            if (s != null)
-            {
-                chunkProviderSettings = ChunkProviderSettings.Factory.func_177865_a(s).func_177864_b();
-            }
-            else
-            {
-                chunkProviderSettings = ChunkProviderSettings.Factory.func_177865_a("").func_177864_b();
-            }
-
-            randomGenerator = rand;
-            field_180294_c = blockpos;
-            dirtGen = new WorldGenMinable(TriniaBlocks.triniaDirt.getDefaultState(), chunkProviderSettings.dirtSize);
-            gravelGen = new WorldGenMinable(Blocks.gravel.getDefaultState(), chunkProviderSettings.gravelSize);
-            genDecorations(biomegenbase);
-            currentWorld = null;
-            randomGenerator = null;
-        }
-
-        MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(ichunkprovider, worldObj, rand, i, j, flag));
-    	BlockFalling.fallInstantly = false;
-    	
-    }
+   
 
     public void genDecorations(BiomeGenBase biomegenbase) {
     	MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, field_180294_c));
         int i;
         int j;
         int k;
-
-        boolean doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, SAND);
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, SAND_PASS2);
-        for (i = 0; doGen && i <  sandPerChunk; ++i)
-        {
-            j = randomGenerator.nextInt(16) + 8;
-            k = randomGenerator.nextInt(16) + 8;
-            gravelAsSandGen.generate(currentWorld, randomGenerator, currentWorld.getTopSolidOrLiquidBlock(field_180294_c.add(j, 0, k)));
-        }
-        
-        i = treesPerChunk;
-
-        if (randomGenerator.nextInt(10) == 0)
-        {
-            ++i;
-        }
-
-        int l;
-        BlockPos blockpos;
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, TREE);
-        for (j = 0; doGen && j < i; ++j)
-        {
-            k = randomGenerator.nextInt(16) + 8;
-            l = randomGenerator.nextInt(16) + 8;
-            WorldGenAbstractTree worldgenabstracttree = biomegenbase.genBigTreeChance(randomGenerator);
-            worldgenabstracttree.func_175904_e();
-            blockpos = currentWorld.getHorizon(field_180294_c.add(k, 0, l));
-
-            if (worldgenabstracttree.generate(currentWorld, randomGenerator, blockpos))
-            {
-                worldgenabstracttree.func_180711_a(currentWorld, randomGenerator, blockpos);
-            }
-        }
-
-
-        int i1;
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, FLOWERS);
-        for (j = 0; doGen && j < flowersPerChunk; ++j)
-        {
-            k = randomGenerator.nextInt(16) + 8;
-            l = randomGenerator.nextInt(16) + 8;
-            i1 = nextInt(currentWorld.getHorizon(field_180294_c.add(k, 0, l)).getY() + 32);
-            blockpos = field_180294_c.add(k, i1, l);
-            BlockFlower.EnumFlowerType enumflowertype = biomegenbase.pickRandomFlower(randomGenerator, blockpos);
-            BlockFlower blockflower = enumflowertype.getBlockType().getBlock();
-
-            if (blockflower.getMaterial() != Material.air)
-            {
-                yellowFlowerGen.setGeneratedBlock(blockflower, enumflowertype);
-                yellowFlowerGen.generate(currentWorld, randomGenerator, blockpos);
-            }
-        }
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, GRASS);
-        for (j = 0; doGen && j < grassPerChunk; ++j)
-        {
-            k = randomGenerator.nextInt(16) + 8;
-            l = randomGenerator.nextInt(16) + 8;
-            i1 = nextInt(currentWorld.getHorizon( field_180294_c.add(k, 0, l)).getY() * 2);
-            biomegenbase.getRandomWorldGenForGrass(randomGenerator).generate(currentWorld, randomGenerator, field_180294_c.add(k, i1, l));
-        }
-
-        j = 0;
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, REED);
-        for (j = 0; doGen && j < reedsPerChunk; ++j)
-        {
-            k = randomGenerator.nextInt(16) + 8;
-            l = randomGenerator.nextInt(16) + 8;
-            i1 = nextInt(currentWorld.getHorizon( field_180294_c.add(k, 0, l)).getY() * 2);
-             reedGen.generate(currentWorld, randomGenerator, field_180294_c.add(k, i1, l));
-        }
-
-        for (j = 0; doGen && j < 10; ++j)
-        {
-            k = randomGenerator.nextInt(16) + 8;
-            l = randomGenerator.nextInt(16) + 8;
-            i1 = nextInt(currentWorld.getHorizon(field_180294_c.add(k, 0, l)).getY() * 2);
-             reedGen.generate(currentWorld, randomGenerator, field_180294_c.add(k, i1, l));
-        }
-
-        doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, PUMPKIN);
-        if (doGen &&  randomGenerator.nextInt(32) == 0)
-        {
-            j = randomGenerator.nextInt(16) + 8;
-            k = randomGenerator.nextInt(16) + 8;
-            l = nextInt(currentWorld.getHorizon( field_180294_c.add(j, 0, k)).getY() * 2);
-            (new WorldGenPumpkin()).generate(currentWorld, randomGenerator, field_180294_c.add(j, l, k));
-        }
-
-        if (generateLakes)
-        {
-            BlockPos blockpos1;
-
-            doGen = TerrainGen.decorate(currentWorld, randomGenerator, field_180294_c, LAKE_WATER);
-            for (j = 0; doGen && j < 50; ++j)
-            {
-                blockpos1 =  field_180294_c.add( randomGenerator.nextInt(16) + 8, randomGenerator.nextInt(randomGenerator.nextInt(248) + 8), randomGenerator.nextInt(16) + 8);
-                (new WorldGenLiquids(Blocks.flowing_water)).generate(currentWorld, randomGenerator, blockpos1);
-            }
-
-        }
 
         MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(currentWorld, randomGenerator, field_180294_c));
     }

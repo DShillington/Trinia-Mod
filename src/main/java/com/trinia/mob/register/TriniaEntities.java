@@ -24,7 +24,7 @@ import com.trinia.mob.entity.EntityTownswoman;
 import com.trinia.mob.model.ModelBlemmyae;
 import com.trinia.mob.model.ModelIceDragon;
 import com.trinia.mob.model.ModelMermaid;
-import com.trinia.world.gen.TriniaBiomes;
+import com.trinia.world.biome.TriniaBiomes;
 
 public class TriniaEntities {
 
@@ -116,23 +116,23 @@ public class TriniaEntities {
 						+ 255, (0 << 16) + (0 << 8) + 204));
 
 		EntityRegistry.addSpawn(EntityMermaid.class, 5, 1, 3,
-				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.MONSTER, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityBlemmyae.class, 5, 2, 4,
-				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.MONSTER, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityIceDragon.class, 5, 1, 1,
-				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.MONSTER, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityRedDragon.class, 5, 1, 2,
-				EnumCreatureType.MONSTER, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.MONSTER, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityTownsmen.class, 5, 1, 2,
-				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.CREATURE, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityTownswoman.class, 5, 1, 2,
-				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.CREATURE, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityAngelBoss.class, 5, 1, 2,
-				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.CREATURE, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityButterfly.class, 5, 1, 2,
-				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.CREATURE, TriniaBiomes.biomeBloom);
 		EntityRegistry.addSpawn(EntityCentaur.class, 5, 1, 2,
-				EnumCreatureType.CREATURE, TriniaBiomes.biomeTrinia);
+				EnumCreatureType.CREATURE, TriniaBiomes.biomeBloom);
 
 	}
 

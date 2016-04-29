@@ -1,4 +1,4 @@
-package com.trinia.world.gen;
+package com.trinia.world;
 
 import java.util.Random;
 

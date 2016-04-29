@@ -17,8 +17,8 @@ import com.trinia.model.ModelAmulet;
 import com.trinia.util.TriniaRecipes;
 import com.trinia.util.TriniaRenderRegistry;
 import com.trinia.util.TriniaTileEntities;
-import com.trinia.world.gen.TriniaBiomes;
-import com.trinia.world.gen.TriniaWorldGen;
+import com.trinia.world.TriniaWorldGen;
+import com.trinia.world.biome.TriniaBiomes;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
