@@ -11,10 +11,12 @@ import com.trinia.world.gen.WorldGenBloomVillage;
 import com.trinia.world.gen.WorldGenBlueCloud;
 import com.trinia.world.gen.WorldGenBlueFlower;
 import com.trinia.world.gen.WorldGenCloud;
+import com.trinia.world.gen.WorldGenFlowerOne;
 import com.trinia.world.gen.WorldGenGoldenDungeon;
 import com.trinia.world.gen.WorldGenIsland;
 import com.trinia.world.gen.WorldGenMagicTree;
 import com.trinia.world.gen.WorldGenRedFlower;
+import com.trinia.world.gen.WorldGenTemple;
 import com.trinia.world.gen.WorldGenTower;
 import com.trinia.world.gen.WorldGenYellowFlower;
 
@@ -67,7 +69,6 @@ public class ChunkProviderTrinia implements IChunkProvider {
     private double[] generatedTemperatures;
     private int[][] field_914_i = new int[32][32];
 
-
     public ChunkProviderTrinia(World var1, long var2){
              worldObj = var1;
              rand = new Random(var2);
@@ -83,7 +84,6 @@ public class ChunkProviderTrinia implements IChunkProvider {
             {
             	scatteredFeatureGenerator = (MapGenScatteredFeature)TerrainGen.getModdedMapGen(scatteredFeatureGenerator, SCATTERED_FEATURE);
             }
-
     }
 
     @Override
@@ -116,6 +116,9 @@ public class ChunkProviderTrinia implements IChunkProvider {
 	private static WorldGenerator bluecloud = new WorldGenBlueCloud();
 	private static WorldGenerator bloomvillage = new WorldGenBloomVillage();
 	private static WorldGenerator goldendungeon = new WorldGenGoldenDungeon();
+	
+	private static WorldGenerator flowerone = new WorldGenFlowerOne();
+	private static WorldGenerator temple = new WorldGenTemple();
 	
 	@Override
 	public void populate(IChunkProvider c, int cx, int cz) {
@@ -202,6 +205,18 @@ public class ChunkProviderTrinia implements IChunkProvider {
 		for(p = 0; p < 200; p++) {
 			z = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
 			(new WorldGenMinable(TriniaBlocks.orisoneOre.getDefaultState(), 8, BlockHelper.forBlock(TriniaBlocks.triniaStone))).generate(worldObj, rand, new BlockPos(x, p, z));
+		}
+		if (this.rand.nextInt(25) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))flowerone.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		if (this.rand.nextInt(25) == 0) {
+			x = x1 + this.rand.nextInt(16) + 8;
+			z = z1 + this.rand.nextInt(16) + 8;
+			int yCoord = rand.nextInt(20) + 64;
+			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))temple.generate(worldObj, rand, new BlockPos(x, yCoord, z));
 		}
 	}
 	
