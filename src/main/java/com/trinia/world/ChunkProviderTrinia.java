@@ -23,6 +23,7 @@ import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockStone;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.state.pattern.BlockHelper;
 import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.BlockPos;
@@ -121,7 +122,7 @@ public class ChunkProviderTrinia implements IChunkProvider {
 		this.rand.setSeed(this.worldObj.getSeed() * (cx + cz) * this.rand.nextInt());
 		int x1 = cx * 16;
 		int z1 = cz * 16;
-		int x, z;
+		int x, z, o, p;
 		x = x1 + this.rand.nextInt(16);
 		z = z1 + this.rand.nextInt(16);
 		
@@ -184,6 +185,23 @@ public class ChunkProviderTrinia implements IChunkProvider {
 			z = z1 + this.rand.nextInt(16) + 8;
 			int yCoord = rand.nextInt(20) + 64;
 			if(worldObj.isAirBlock(new BlockPos(x, yCoord, z)))goldendungeon.generate(worldObj, rand, new BlockPos(x, yCoord, z));
+		}
+		for(p = 0; p < 200; p++) {
+			z = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			(new WorldGenMinable(TriniaBlocks.adimiteOre.getDefaultState(), 8, BlockHelper.forBlock(TriniaBlocks.triniaStone))).generate(worldObj, rand, new BlockPos(x, p, z));
+		}
+
+		for(p = 0; p < 200; p++) {
+			z = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			(new WorldGenMinable(TriniaBlocks.bridroneOre.getDefaultState(), 8, BlockHelper.forBlock(TriniaBlocks.triniaStone))).generate(worldObj, rand, new BlockPos(x, p, z));
+		}
+		for(p = 0; p < 200; p++) {
+			z = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			(new WorldGenMinable(TriniaBlocks.orcaOre.getDefaultState(), 8, BlockHelper.forBlock(TriniaBlocks.triniaStone))).generate(worldObj, rand, new BlockPos(x, p, z));
+		}
+		for(p = 0; p < 200; p++) {
+			z = rand.nextInt(250); x = x1 + this.rand.nextInt(16) + 8; z = z1 + this.rand.nextInt(16) + 8;
+			(new WorldGenMinable(TriniaBlocks.orisoneOre.getDefaultState(), 8, BlockHelper.forBlock(TriniaBlocks.triniaStone))).generate(worldObj, rand, new BlockPos(x, p, z));
 		}
 	}
 	

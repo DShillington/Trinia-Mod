@@ -3,6 +3,7 @@ package com.trinia.proxy;
 import java.util.logging.Level;
 
 import com.trinia.TriniaMod;
+import com.trinia.achievement.TriniaAchievements;
 import com.trinia.blocks.BlockTriniaSmelter;
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
@@ -53,6 +54,7 @@ public class CommonProxy implements ProxyInterface {
 		NetworkRegistry.INSTANCE.registerGuiHandler(TriniaMod.instance,
 				new GuiHandler());
 		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 2);
+		TriniaAchievements.init();
 	}
 
 	public void registerRenders() {

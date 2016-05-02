@@ -24,4 +24,11 @@ public class Reference {
 	public static final String MAGIC_BED_DAYTIME = "You may only drift off to Trinia at night!";
 	public static final String MAGIC_BED_UNSAFE = "Not now.. there's bad creatures around..shh";
 	public static final String MAGIC_BED_OCCUPIED = "Occupied!";
+	
+	//Forge Mod List Stuff
+	public static final String MOD_CREDITS = "Papertazer (Owner, Programmer, Modeller), OMGItsMiniME (Co-Owner, Programmer), Snurly (Artist)";
+	public static final String MOD_URL = "http://www.papertazer.com/home/mods/trinia/";
+	public static final String MOD_AUTHOR = "papertazer";
+	public static final String MOD_LOGO_FILE = "assets/trinia/textures/logo.png";
+	public static final String MOD_DESCRIPTION = "Minecrafts mystical side.";
 }
