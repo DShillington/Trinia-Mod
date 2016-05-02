@@ -47,6 +47,7 @@ public class TriniaBlocks
 	public static Block MagicalBed;
 	public static Block CastingBench;
 	public static Block triniaDeadGrass;
+	public static Block bamboo;
 	//Trinia Blocks
 	public static Block steelBlock;
 	public static Block copperBlock;
@@ -128,6 +129,7 @@ public class TriniaBlocks
 		CastingBench = new BlockCastingBench(Material.iron).setUnlocalizedName("CastingBench");
 		cloud = new BlockCloud().setUnlocalizedName("cloud");
 		bluecloud = new BlockBlueCloud().setUnlocalizedName("bluecloud");
+		bamboo = new BlockBamboo().setUnlocalizedName("bamboo").setLightOpacity(0);
 		
 		//Trinia Blocks
 		steelBlock = new BlockTrinia(Material.rock).setUnlocalizedName("steelBlock");
@@ -153,6 +155,8 @@ public class TriniaBlocks
 		GameRegistry.registerBlock(sunDial, sunDial.getUnlocalizedName().substring(5)).setHardness(0.6F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(pipeLine, pipeLine.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(compressor, compressor.getUnlocalizedName().substring(5)).setHardness(10.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		GameRegistry.registerBlock(bamboo, bamboo.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(TriniaMod.TriniaBlocksTab);
+		
 		
 		GameRegistry.registerBlock(steelOre, steelOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
 		GameRegistry.registerBlock(copperOre, copperOre.getUnlocalizedName().substring(5)).setHardness(1.5F).setResistance(10.0F).setStepSound(Block.soundTypeStone).setCreativeTab(TriniaMod.TriniaBlocksTab);
@@ -235,6 +239,8 @@ public class TriniaBlocks
 		RegisterRender(triniaDeadGrass);
 		RegisterRender(pipeLine);
 		RegisterRender(compressor);
+		RegisterRender(bamboo);
+		
 		//Random
 		RegisterRender(redLeaves);
 		RegisterRender(greenLeaves);
