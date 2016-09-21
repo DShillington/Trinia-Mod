@@ -1,0 +1,9 @@
+{
+    "variants": {
+        "normal": { "model": "trinia:rocks" },
+        "facing=north": { "model": "trinia:rocks" },
+        "facing=south": { "model": "trinia:rocks", "y": 180 },
+        "facing=west":  { "model": "trinia:rocks", "y": 270 },
+        "facing=east":  { "model": "trinia:rocks", "y": 90 }
+    }
+}

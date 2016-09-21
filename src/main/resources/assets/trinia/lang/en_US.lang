@@ -3,6 +3,9 @@ itemGroup.tabTriniaItems=Trinia Items
 itemGroup.tabTriniaTools=Trinia Tools
 itemGroup.tabTriniaArmor=Trinia Armor
 
+achievement.wentfullretard=Went Full Badass
+achievement.wentfullretard.desc=You just went full Badass!!!!
+
 entity.mermaid.name=Mermaid
 entity.blemmyae.name=Blemmyae
 entity.icedragon.name=Ice Dragon
@@ -27,7 +30,11 @@ item.Chisel.name=Chisel
 item.MagicalBedItem.name=Magical Bed
 item.angelWings.name=Angel Wings
 item.angelHalo.name=Angel Halo
-item.SteelPickaxe.name=Steel Pickaxe
+item.rockPickaxe.name=Rock Pickaxe
+item.rockAxe.name=Rock Axe
+item.rockSpade.name=Rock Shovel
+item.rockSword.name=Rock Sword
+item.steelPickaxe.name=Steel Pickaxe
 item.steelAxe.name=Steel Axe
 item.steelSpade.name=Steel Shovel
 item.steelSword.name=Steel Sword
@@ -110,6 +117,7 @@ item.adimiteSword.name=Adimite Sword
 item.triniaCape.name=Trinia Cape
 item.compressed_inomite.name=Compressed Inomite
 
+tile.rocks.name=Rocks
 tile.sunDial.name=Sun Dial
 tile.bluecloud.name=Blue High Elevation Cloud
 tile.goldenBrick.name=Golden Brick

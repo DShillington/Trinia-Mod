@@ -31,6 +31,7 @@ import javax.swing.text.JTextComponent.KeyBinding;
 
 import com.trinia.blocks.TriniaBlocks;
 import com.trinia.blocks.gui.GuiHandler;
+import com.trinia.events.EventFullRetard;
 import com.trinia.events.EventHandlerCommon;
 import com.trinia.events.EventUpdate;
 import com.trinia.events.UpdateHandler;
@@ -61,8 +62,10 @@ import com.trinia.world.biome.TriniaBiomes;
 import net.java.games.input.Keyboard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
@@ -119,6 +122,9 @@ public class TriniaMod {
 	public static String ASSET_PREFIX = "trinia";
     public static String TEXTURE_PREFIX = TriniaMod.ASSET_PREFIX + ":";
 	
+    public static Achievement achievementWentFullRetard;
+    	
+    
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -129,6 +135,7 @@ public class TriniaMod {
 		FMLCommonHandler.instance().bus().register(new GuiHandler());
 		FMLCommonHandler.instance().bus().register(new tickHandler(Minecraft.getMinecraft()));
 		FMLCommonHandler.instance().bus().register(new EventUpdate());
+		FMLCommonHandler.instance().bus().register(new EventFullRetard());
 		UpdateHandler.init();
 		TriniaBlocks.init();
 		TriniaBlocks.register();
@@ -143,7 +150,6 @@ public class TriniaMod {
 		 KeyBindings.init();
 		GameRegistry.registerTileEntity(TileEntitySunDial.class, "sunDial");
 		GameRegistry.registerTileEntity(TileEntityScroll.class, "scroll");
-		GameRegistry.registerTileEntity(TileEntityPipeLine.class, "pipe");
 
 		ArrayList<String> author = new ArrayList<String>();
 		author.add(Reference.MOD_AUTHOR);
@@ -173,6 +179,15 @@ public class TriniaMod {
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		System.out.println("postInit done");
+	}
+	
+	@EventHandler
+	public void load(FMLInitializationEvent event)
+	{
+		achievementWentFullRetard = (Achievement) new Achievement("achievement.wentFullRetard", "wentfullretard", 
+	    	      0, 0, TriniaBlocks.triniaGrass, (Achievement)null).initIndependentStat().registerStat();
+		
+		AchievementPage.registerAchievementPage(new AchievementPage("Trinia Achievements", new Achievement[]{achievementWentFullRetard}));
 	}
 
 	public void generateSurface(World world, Random rand, int i, int j)

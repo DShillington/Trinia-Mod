@@ -28,7 +28,9 @@ import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.stats.Achievement;
 import net.minecraft.world.World;
+import net.minecraftforge.common.AchievementPage;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Loader;
@@ -55,6 +57,12 @@ public class CommonProxy implements ProxyInterface {
 				new GuiHandler());
 		GameRegistry.registerWorldGenerator(new TriniaWorldGen(), 2);
 		TriniaAchievements.init();
+		TriniaMod.achievementWentFullRetard.registerStat(); 
+		
+		AchievementPage.registerAchievementPage(
+			      new AchievementPage("Magic Beans Achievements", 
+			            new Achievement[] {TriniaMod.achievementWentFullRetard}));
+		
 	}
 
 	public void registerRenders() {

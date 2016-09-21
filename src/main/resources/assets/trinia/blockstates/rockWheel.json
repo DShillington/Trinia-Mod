@@ -1,9 +1,0 @@
-{
-    "variants": {
-        "normal": { "model": "trinia:rockWheel" },
-        "facing=north": { "model": "trinia:rockWheel" },
-        "facing=south": { "model": "trinia:rockWheel", "y": 180 },
-        "facing=west":  { "model": "trinia:rockWheel", "y": 270 },
-        "facing=east":  { "model": "trinia:rockWheel", "y": 90 }
-    }
-}

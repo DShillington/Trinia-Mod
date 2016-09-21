@@ -2,11 +2,11 @@ package com.trinia.items;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraft.item.ItemSword;
+import net.minecraft.item.ItemPickaxe;
 
-public class MaterialTool extends ItemSword{
+public class MaterialPickaxe extends ItemPickaxe{
 
-	public MaterialTool(String unlocalizedName, ToolMaterial material) {
+	public MaterialPickaxe(String unlocalizedName, ToolMaterial material) {
 		super(material);
 	    this.setUnlocalizedName(unlocalizedName);
 	}

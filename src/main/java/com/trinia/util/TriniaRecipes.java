@@ -115,6 +115,15 @@ public class TriniaRecipes {
 				TriniaItems.SilverSpadeHead, 1), TriniaItems.CastSpade,
 				TriniaBlocks.hardenedBucketSilver);
 		// -Tools-
+		
+		//Rocks
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.RockPickaxe), "PSP", " S ", " S ", 'S', Items.stick, 'P', TriniaItems.Rock);
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.RockAxe), "PS", "PS", " S",
+				'S', Items.stick, 'P', TriniaItems.Rock);
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.RockSpade), "P", "S", "S",
+				'S', Items.stick, 'P', TriniaItems.Rock);
+		GameRegistry.addRecipe(new ItemStack(TriniaItems.RockSword), "P", "P", "S",
+				'S', Items.stick, 'P', TriniaItems.Rock);
 		// Steel
 		GameRegistry.addRecipe(new ItemStack(TriniaItems.SteelPickaxe), "P",
 				"S", 'S', Items.stick, 'P', TriniaItems.SteelPickaxeHead);
