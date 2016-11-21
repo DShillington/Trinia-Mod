@@ -24,7 +24,7 @@ public class TriniaRecipes {
 				"CCC", "CCC", 'C', TriniaItems.silverIngot);
 		GameRegistry.addRecipe(new ItemStack(TriniaBlocks.tinBlock), "CCC",
 				"CCC", "CCC", 'C', TriniaItems.tinIngot);
-		// Crafting Table
+		// Crafting Table //Edit
 		// GameRegistry.addRecipe(new
 		// ItemStack(TriniaBlocks.craftingTable),"WCW", " R ", "RRR",'C',
 		// Blocks.crafting_table,'R', TriniaBlocks.triniaCobblestone,'W',
